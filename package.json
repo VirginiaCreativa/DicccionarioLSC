@@ -1,0 +1,16 @@
+{
+  "name": "diccionariolsc",
+  "version": "1.0.0",
+  "description": "Diccionario de la LSC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Cultura",
+    "Educacion",
+    "Idioma"
+  ],
+  "author": "@Virginia.Creativa",
+  "license": "ISC"
+}
