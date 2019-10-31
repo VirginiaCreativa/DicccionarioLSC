@@ -11,6 +11,9 @@ const path = require('path');
 
 const app = express();
 
+// ==== FILES ROUTER ==== //
+const Getting = require('./routes/Getting');
+
 // ==== MIDDLWARES ==== //
 app.use(logger('dev'));
 app.use(methodOverride());
@@ -30,7 +33,8 @@ app.use(passport.initialize());
 app.use(passport.authenticate('session'));
 app.use(passport.session());
 
-
+// ==== ROUTES ==== //
+app.use(Getting);
 
 // ==== STARTING THE SERVE ==== //
 const PORT = process.env.PORT || 8080;
