@@ -1,0 +1,79 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
+
+body {
+  font-family: 'interstate', 'Source Sans Pro', Helvetica, sans-serif !important;
+  background-color: $body;
+}
+
+p,
+li,
+abbr {
+  color: $black;
+  font-weight: 400;
+}
+
+a {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  color: $black;
+  font-weight: 600;
+}
+
+*:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+input,
+label,
+li span {
+  &::selection {
+    color: #fff !important;
+    background-color: $green !important;
+
+    @media (max-width: 575.98px) {
+      color: $black;
+      background-color: #fff;
+    }
+  }
+}
+
+input {
+  caret-color: $green;
+}
+
+.btn-primary {
+  background-color: $green !important;
+
+  a {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: $green_medium !important;
+  }
+}
+
+[class*="btn-"] {
+  border: none;
+}
