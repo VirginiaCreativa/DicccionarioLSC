@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "client": "npm start --prefix client",
+    "admin": "npm start --prefix admin",
+    "devAdmin": "concurrently \"npm run server\" \"npm run client\"",
+    "devClient": "concurrently \"npm run server\" \"npm run admin\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [
     "Cultura",
