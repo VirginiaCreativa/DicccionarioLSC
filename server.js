@@ -16,6 +16,7 @@ connectedDB();
 
 // ==== FILES ROUTER ==== //
 const Getting = require('./routes/Getting');
+const Routes = require('./routes/router');
 
 // ==== MIDDLWARES ==== //
 app.use(logger('dev'));
@@ -38,6 +39,7 @@ app.use(passport.session());
 
 // ==== ROUTES ==== //
 app.use(Getting);
+Routes.admin(app);
 
 // ==== STARTING THE SERVE ==== //
 const PORT = process.env.PORT || 8080;

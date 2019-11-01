@@ -2,9 +2,7 @@ const mongoose = require('mongoose');
 const chalk = require('chalk');
 const keys = require('../config/keys');
 
-// require('../models/Stripe');
-// require('../components/Users/model');
-// require('../components/Encuestas/model');
+require('../components/Admin/model');
 
 const connectedDB = async () => {
   try {
