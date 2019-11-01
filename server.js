@@ -8,8 +8,11 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const cors = require('cors');
 const path = require('path');
+const connectedDB = require('./services/mongodb');
 
 const app = express();
+
+connectedDB();
 
 // ==== FILES ROUTER ==== //
 const Getting = require('./routes/Getting');
