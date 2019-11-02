@@ -1,9 +1,19 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators, compose } from 'redux';
+import { history } from './redux/store/store';
+import Routes from './routes/routes';
+import Layout from './layouts/Layout';
 
 function App() {
   return (
     <div className="App">
-      <h2>Diccionario LSC</h2>
+      <Router history={history}>
+        <Layout>
+          <Routes />
+        </Layout>
+      </Router>
     </div>
   );
 }

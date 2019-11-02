@@ -18,6 +18,7 @@ connectedDB();
 const Getting = require('./routes/Getting');
 const Routes = require('./routes/router');
 
+
 // ==== MIDDLWARES ==== //
 app.use(logger('dev'));
 app.use(methodOverride());
@@ -40,6 +41,14 @@ app.use(passport.session());
 // ==== ROUTES ==== //
 app.use(Getting);
 Routes.admin(app);
+
+// ==== STATIC FILES ==== //
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 // ==== STARTING THE SERVE ==== //
 const PORT = process.env.PORT || 8080;
