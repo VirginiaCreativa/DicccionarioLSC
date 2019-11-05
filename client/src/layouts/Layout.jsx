@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     left: '0',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 0.95)',
     backgroundSize: 'cover',
   };
   return (

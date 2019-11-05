@@ -1,8 +1,20 @@
 .Menus {
-  .btnClose {
-    padding: 0;
-    line-height: 0;
-    background-color: transparent;
-    border: none;
+  .Heading {
+    padding: 20px 0;
+    .btnClose {
+      padding: 0;
+      font-size: 30px;
+      line-height: 0;
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .Navs {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
   }
 }

@@ -27,11 +27,12 @@ const Menus = () => {
     width: 30px;
     height: 30px;
     margin-right: 9px;
+    border: 2px solid #ddd;
     border-radius: 100%;
   `;
   const P = styled.p`
     margin-bottom: 0px;
-    color: #a3a9af;
+    color: #fff;
     font-size: 0.875rem;
   `;
 
@@ -44,29 +45,42 @@ const Menus = () => {
   };
   return (
     <div className={classes.Menus}>
-      <button type="button" onClick={handleMenu} className={classes.btnClose}>
-        <box-icon name="x" color="white" />
-      </button>
-      <ul className="list-unstyled">
-        <Li>
-          <BoxNavItem>
-            <Image src="https://i.pravatar.cc/40" alt="Profile" />
-            <P>Virginia Velásquez Soto</P>
-          </BoxNavItem>
-        </Li>
-        <Li>
-          <h4 style={pUppe}>Vocabularios</h4>
-        </Li>
-        <Li>
-          <h4 style={pUppe}>Marcadores</h4>
-        </Li>
-        <Li>
-          <h4 style={pUppe}>Desconectar</h4>
-        </Li>
-        <Li>
-          <h4 style={pUppe}>Vocabularios</h4>
-        </Li>
-      </ul>
+      <div className={classes.Heading}>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-6">
+              <BoxNavItem>
+                <Image src="https://i.pravatar.cc/40" alt="Profile" />
+                <P>Virginia Velásquez Soto</P>
+              </BoxNavItem>
+            </div>
+            <div className="col-6 d-flex justify-content-end">
+              <button
+                type="button"
+                onClick={handleMenu}
+                className={classes.btnClose}>
+                <box-icon name="x" color="white" size="60px" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.Navs}>
+        <ul className="list-unstyled">
+          <Li>
+            <h4 style={pUppe}>Vocabularios</h4>
+          </Li>
+          <Li>
+            <h4 style={pUppe}>Marcadores</h4>
+          </Li>
+          <Li>
+            <h4 style={pUppe}>Desconectar</h4>
+          </Li>
+          <Li>
+            <h4 style={pUppe}>Vocabularios</h4>
+          </Li>
+        </ul>
+      </div>
     </div>
   );
 };
