@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import classes from './Navbar.module.scss';
+import classes from './Menus.module.scss';
 
-const Navbar = () => {
+import { getMenuActive } from '../../redux/actions/GettingAction.js';
+
+const Menus = () => {
   const [onMarkNotif, setMarkNotif] = useState(true);
   const [onVocab, setVocab] = useState(true);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const Li = styled.li`
     display: flex;
@@ -34,8 +38,15 @@ const Navbar = () => {
   const pUppe = {
     textTransform: 'uppercase',
   };
+
+  const handleMenu = () => {
+    dispatch(getMenuActive(false));
+  };
   return (
-    <div className={classes.NavBar}>
+    <div className={classes.Menus}>
+      <button type="button" onClick={handleMenu} className={classes.btnClose}>
+        <box-icon name="x" color="white" />
+      </button>
       <ul className="list-unstyled">
         <Li>
           <BoxNavItem>
@@ -60,4 +71,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Menus;

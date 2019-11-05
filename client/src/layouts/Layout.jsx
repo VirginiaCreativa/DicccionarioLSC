@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from './Header/Header';
+import Menus from './Menus/Menus';
 
 const Layout = ({ children }) => {
   const [onShowMenu, setShowMeu] = useState(true);
@@ -22,7 +23,11 @@ const Layout = ({ children }) => {
   };
   return (
     <>
-      {onShowMenu && <div style={OverlayStyle} />}
+      {onShowMenu && (
+        <div style={OverlayStyle}>
+          <Menus />
+        </div>
+      )}
       <Header />
       <main>
         <>{children}</>
