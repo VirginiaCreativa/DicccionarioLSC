@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import createReduxStore, { history } from './redux/store/store';
+import './styles/utilis.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/scss/bootstrap.scss';

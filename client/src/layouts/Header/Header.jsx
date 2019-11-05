@@ -5,11 +5,11 @@ import NavBar from './Navbar/Navbar';
 
 const Header = () => {
   const Div = styled.div`
-    margin: 20px 0;
+    margin: 10px 0;
   `;
   return (
     <Div>
-      <div className="container-full">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-6">
             <Logo />

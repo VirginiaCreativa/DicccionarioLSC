@@ -3,9 +3,12 @@
 
 body {
   font-family: 'interstate', 'Source Sans Pro', Helvetica, sans-serif !important;
-  background-color: $body;
+  background-color: $body !important;
 }
 
+p {
+  
+}
 p,
 li,
 abbr {
