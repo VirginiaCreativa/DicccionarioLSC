@@ -7,6 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/scss/bootstrap.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'boxicons';
 import Spinner from './common/Spinner/Spinner';
 
 const Loader = () => <Spinner heighted="100vh" />;
