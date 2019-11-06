@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   const isMenuActive = useSelector(state => state.Getting.activeMenu);
 
   useEffect(() => {
-    setShowMeu(isMenuActive);
+    // setShowMeu(isMenuActive);
   }, [isMenuActive]);
 
   const OverlayStyle = {
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     left: '0',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.95)',
+    backgroundColor: 'rgba(11, 12, 33, 0.95)',
     backgroundSize: 'cover',
   };
   return (

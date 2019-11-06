@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+
 import styled from 'styled-components';
 import classes from './Menus.module.scss';
 
@@ -12,12 +13,6 @@ const Menus = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const Li = styled.li`
-    display: flex;
-    margin-right: 26px;
-    line-height: 3.2;
-    cursor: pointer;
-  `;
   const BoxNavItem = styled.div`
     display: flex;
     padding: 6px 0 10px;
@@ -45,7 +40,7 @@ const Menus = () => {
   };
   return (
     <div className={classes.Menus}>
-      <div className={classes.Heading}>
+      <header className={classes.Heading}>
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
@@ -64,23 +59,50 @@ const Menus = () => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
       <div className={classes.Navs}>
         <ul className="list-unstyled">
-          <Li>
-            <h4 style={pUppe}>Vocabularios</h4>
-          </Li>
-          <Li>
-            <h4 style={pUppe}>Marcadores</h4>
-          </Li>
-          <Li>
-            <h4 style={pUppe}>Desconectar</h4>
-          </Li>
-          <Li>
-            <h4 style={pUppe}>Vocabularios</h4>
-          </Li>
+          <li style={{ marginBottom: '60px' }}>
+            <Link to="/">Home</Link>
+          </li>
+          <li style={{ marginBottom: '60px' }}>
+            <Link to="/">Tu vocabulario</Link>
+          </li>
+          <li style={{ marginBottom: '60px' }}>
+            <Link to="/">Tus Marcadores</Link>
+          </li>
+          <li style={{ marginTop: '60px' }}>
+            <box-icon name="log-out-circle" color="white" size="md" />
+          </li>
         </ul>
       </div>
+      <footer>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-6">
+              <div className={classes.BoxContact}>
+                <h5>Contáctenos</h5>
+                <p>Complex Ruta N, Medellin, Colombia</p>
+                <a href="mailto:info@ldlsc.com">info@yourdomain.com</a>
+              </div>
+              <ul className="list-inline">
+                <li className="list-inline-item">
+                  <box-icon name="facebook-square" type="logo" color="white" />
+                </li>
+                <li className="list-inline-item">
+                  <box-icon name="instagram-alt" type="logo" color="white" />
+                </li>
+                <li className="list-inline-item">
+                  <box-icon name="twitter" type="logo" color="white" />
+                </li>
+              </ul>
+            </div>
+            <div className="col-6 d-flex justify-content-end align-items-end">
+              <p>© 2019 DLSC. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
