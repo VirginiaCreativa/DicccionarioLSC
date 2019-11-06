@@ -54,7 +54,7 @@ const Menus = () => {
                 type="button"
                 onClick={handleMenu}
                 className={classes.btnClose}>
-                <box-icon name="x" color="white" size="60px" />
+                <i className="bx bx-x" />
               </button>
             </div>
           </div>
@@ -63,16 +63,28 @@ const Menus = () => {
       <div className={classes.Navs}>
         <ul className="list-unstyled">
           <li style={{ marginBottom: '60px' }}>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => dispatch(getMenuActive(false))}>
+              Home
+            </Link>
           </li>
           <li style={{ marginBottom: '60px' }}>
-            <Link to="/">Tu vocabulario</Link>
+            <Link
+              to="/vocabulario"
+              onClick={() => dispatch(getMenuActive(false))}>
+              Tu vocabulario
+            </Link>
+            <p>Añadir cada una seña para imprimir</p>
           </li>
           <li style={{ marginBottom: '60px' }}>
-            <Link to="/">Tus Marcadores</Link>
+            <Link
+              to="/marcadores"
+              onClick={() => dispatch(getMenuActive(false))}>
+              Tus Marcadores
+            </Link>
+            <p>Añadir señas para guardarlas</p>
           </li>
           <li style={{ marginTop: '60px' }}>
-            <box-icon name="log-out-circle" color="white" size="md" />
+            <i className="bx bx-log-out-circle" />
           </li>
         </ul>
       </div>
@@ -87,18 +99,20 @@ const Menus = () => {
               </div>
               <ul className="list-inline">
                 <li className="list-inline-item">
-                  <box-icon name="facebook-square" type="logo" color="white" />
+                  <i className="bx bxl-facebook-square" />
                 </li>
                 <li className="list-inline-item">
-                  <box-icon name="instagram-alt" type="logo" color="white" />
+                  <i className="bx bxl-instagram" />
                 </li>
                 <li className="list-inline-item">
-                  <box-icon name="twitter" type="logo" color="white" />
+                  <i className="bx bxl-twitter" />
                 </li>
               </ul>
             </div>
             <div className="col-6 d-flex justify-content-end align-items-end">
-              <p>© 2019 DLSC. All Rights Reserved.</p>
+              <p>
+                © 2019 DLSC. All Rights Reserved. Dev/Design: @Virginia.Creativa
+              </p>
             </div>
           </div>
         </div>
