@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
@@ -8,9 +8,6 @@ import classes from './Menus.module.scss';
 import { getMenuActive } from '../../redux/actions/GettingAction.js';
 
 const Menus = () => {
-  const [onMarkNotif, setMarkNotif] = useState(true);
-  const [onVocab, setVocab] = useState(true);
-  const history = useHistory();
   const dispatch = useDispatch();
 
   const BoxNavItem = styled.div`
@@ -30,10 +27,6 @@ const Menus = () => {
     color: #fff;
     font-size: 0.875rem;
   `;
-
-  const pUppe = {
-    textTransform: 'uppercase',
-  };
 
   const handleMenu = () => {
     dispatch(getMenuActive(false));
