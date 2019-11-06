@@ -1,10 +1,10 @@
 @import './variables';
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap');
+
 body {
   font-family: 'Work Sans', sans-serif !important;
   background-color: $body !important;
 }
-
 
 p,
 li,
@@ -48,8 +48,8 @@ input,
 label,
 li span {
   &::selection {
-    color: #fff !important;
-    background-color: $green !important;
+    color: $blue_gray !important;
+    background-color: $yellow !important;
 
     @media (max-width: 575.98px) {
       color: $black;

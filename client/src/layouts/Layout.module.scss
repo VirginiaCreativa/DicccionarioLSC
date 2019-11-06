@@ -1,3 +1,4 @@
+@import '../styles/variables';
 .Layout {
   .Overlay {
     position: absolute;
@@ -21,7 +22,120 @@
     transform: scale(0.5);
     opacity: 0;
   }
-  
+}
 
+.Header {
+  margin: 10px 0;
+  button {
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+  }
+  :global {
+    .bx {
+      color: $gray_medium;
+      font-size: 24px;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.Menus {
+  header {
+    padding: 40px;
+
+    .btnClose {
+      padding: 0;
+      line-height: 0;
+      background-color: transparent;
+      border: none;
+      transition: all .1s ease-in-out;
+      :global {
+          .bx {
+            color: #fff;
+            font-size: 60px;
+            transform: rotate(0);
+            cursor: pointer;
+            transition: all .3s ease-in;
+            &:hover {
+              color: $red;
+              transform: rotate(90deg);
+            }
+          }
+        }
+    }
+  }
+
+  .Navs {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+
+    ul {
+      li {
+        text-align: center;
+
+        a {
+          color: #fff;
+          font-weight: 500;
+          font-size: 2rem;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        p {
+          color: rgba(225, 225, 225, 0.5)
+        }
+
+        :global {
+          .bx {
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: all .3s ease-in;
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 40px;
+    p {
+      color: rgba(225, 225, 225, 0.2)
+    }
+
+    .BoxContact {
+      h5 {
+        color: #fff;
+      }
+     
+      a {
+        color: rgba(225, 225, 225, 0.7)
+      }
+
+    }
+
+    ul {
+      li {
+        :global {
+          .bx {
+            color: #fff;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
 
 }

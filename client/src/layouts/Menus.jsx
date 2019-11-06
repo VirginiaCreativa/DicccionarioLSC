@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
-import classes from './Menus.module.scss';
+import classes from './Layout.module.scss';
 
-import { getMenuActive } from '../../redux/actions/GettingAction.js';
+import { getMenuActive } from '../redux/actions/GettingAction.js';
 
 const Menus = () => {
   const dispatch = useDispatch();
