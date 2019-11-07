@@ -1,7 +1,7 @@
 import React from 'react';
 import SkyLight from 'react-skylight';
 import Search from '../common/Search/Search';
-import Filter from './Filter';
+import Filter from '../components/Filter/Filter';
 
 const Searching = () => {
   let animated;
@@ -11,14 +11,23 @@ const Searching = () => {
   const handleFilter = () => {
     console.log('CLICK');
   };
+
+  const SkyLightStyled = {
+    width: '80%',
+    height: '80vh',
+    marginTop: '-400px',
+    marginLeft: '-40%',
+  };
+
   return (
     <div style={{ marginBottom: '60px' }}>
       <Search onChange={changeSearch} onFilter={() => animated.show()} />
       <SkyLight
         hideOnOverlayClicked
+        dialogStyles={SkyLightStyled}
         ref={ref => (animated = ref)}
         transitionDuration={400}>
-        Filter
+        <Filter />
       </SkyLight>
     </div>
   );
