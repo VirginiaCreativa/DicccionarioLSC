@@ -1,4 +1,5 @@
 @import '../styles/variables';
+
 .Layout {
   .Overlay {
     position: absolute;
@@ -11,13 +12,13 @@
     background-size: cover;
     transition: all 0.2s ease-in;
   }
-  
+
   .onOverlay {
     transform: scale(1);
     opacity: 1;
-   
+
   }
-  
+
   .offOverlay {
     transform: scale(0.5);
     opacity: 0;
@@ -26,15 +27,18 @@
 
 .Header {
   margin: 10px 0;
+
   button {
     line-height: 0;
     background-color: transparent;
     border: none;
   }
+
   :global {
     .bx {
       color: $gray_medium;
       font-size: 24px;
+
       &:hover {
         color: $blue;
       }
@@ -52,19 +56,21 @@
       background-color: transparent;
       border: none;
       transition: all .1s ease-in-out;
+
       :global {
-          .bx {
-            color: #fff;
-            font-size: 60px;
-            transform: rotate(0);
-            cursor: pointer;
-            transition: all .3s ease-in;
-            &:hover {
-              color: $red;
-              transform: rotate(90deg);
-            }
+        .bx {
+          color: #fff;
+          font-size: 60px;
+          transform: rotate(0);
+          cursor: pointer;
+          transition: all .3s ease-in;
+
+          &:hover {
+            color: $red;
+            transform: rotate(90deg);
           }
         }
+      }
     }
   }
 
@@ -100,6 +106,7 @@
             font-size: 30px;
             cursor: pointer;
             transition: all .3s ease-in;
+
             &:hover {
               color: $red;
             }
@@ -111,28 +118,43 @@
 
   footer {
     padding: 40px;
+
     p {
       color: rgba(225, 225, 225, 0.2)
     }
 
-    .BoxContact {
+    .BottomLeft {
       h5 {
         color: #fff;
       }
-     
+
       a {
         color: rgba(225, 225, 225, 0.7)
       }
 
+      ul {
+        margin-top: 8px;
+        li {
+          :global {
+            .bx {
+              color: #fff;
+              font-size: 24px;
+            }
+          }
+        }
+      }
     }
-
+    .BottomRight {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: end;
+      height: 100%;
+    }
     ul {
       li {
-        :global {
-          .bx {
-            color: #fff;
-            font-size: 24px;
-          }
+        a {
+          color: #fff;
         }
       }
     }

@@ -1,7 +1,7 @@
 import { GET_MENU_ACTIVE } from '../types';
 
 const initialState = {
-  activeMenu: false,
+  activeMenu: true,
 };
 
 function AuthReducer(state = initialState, action) {

@@ -85,27 +85,57 @@ const Menus = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
-              <div className={classes.BoxContact}>
+              <div className={classes.BottomLeft}>
                 <h5>Contáctenos</h5>
                 <p>Complex Ruta N, Medellin, Colombia</p>
                 <a href="mailto:info@ldlsc.com">info@yourdomain.com</a>
+                <ul className="list-inline">
+                  <li className="list-inline-item">
+                    <i className="bx bxl-facebook-square" />
+                  </li>
+                  <li className="list-inline-item">
+                    <i className="bx bxl-instagram" />
+                  </li>
+                  <li className="list-inline-item">
+                    <i className="bx bxl-twitter" />
+                  </li>
+                </ul>
               </div>
-              <ul className="list-inline">
-                <li className="list-inline-item">
-                  <i className="bx bxl-facebook-square" />
-                </li>
-                <li className="list-inline-item">
-                  <i className="bx bxl-instagram" />
-                </li>
-                <li className="list-inline-item">
-                  <i className="bx bxl-twitter" />
-                </li>
-              </ul>
             </div>
-            <div className="col-6 d-flex justify-content-end align-items-end">
-              <p>
-                © 2019 DLSC. All Rights Reserved. Dev/Design: @Virginia.Creativa
-              </p>
+            <div className="col-6">
+              <div className={classes.BottomRight}>
+                <div className={classes.BoxPages}>
+                  <ul className="list-unstyled list-inline">
+                    <li className="list-inline-item">
+                      <Link
+                        to="/apoyo"
+                        onClick={() => dispatch(getMenuActive(false))}>
+                        Apoyo
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link
+                        to="/legal"
+                        onClick={() => dispatch(getMenuActive(false))}>
+                        Legal
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link
+                        to="/equipo"
+                        onClick={() => dispatch(getMenuActive(false))}>
+                        Equipo
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p>
+                    © 2019 DLSC. All Rights Reserved. Dev/Design:
+                    @Virginia.Creativa
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
