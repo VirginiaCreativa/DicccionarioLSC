@@ -11,9 +11,14 @@ const CardCheck = ({ value, img, width, heigth }) => {
     height: ${props => props.heigth};
     margin: 0 10px;
     padding: 20px;
-    background-color: #ddd;
+    background-color: #fff;
+    border: 2px solid #ced6e0;
     border-radius: 6px;
     &:last-child {
+      margin-right: 0;
+    }
+    &:first-child {
+      margin-left: 0;
     }
   `;
   const Check = styled.input`
@@ -23,7 +28,7 @@ const CardCheck = ({ value, img, width, heigth }) => {
     visibility: hidden;
     opacity: 0;
     ~ img {
-      height: 40px;
+      height: 45px;
     }
   `;
   return (

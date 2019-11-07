@@ -21,9 +21,9 @@ const Filter = () => {
         Opciones de búsqueda avanzada
       </h4>
       <BoxFilter>
-        <CardCheck img={icon1} heigth="140px" width="120px" />
-        <CardCheck img={icon2} heigth="140px" width="120px" />
-        <CardCheck img={icon3} heigth="140px" width="120px" />
+        <CardCheck img={icon1} heigth="120px" width="100px" />
+        <CardCheck img={icon2} heigth="120px" width="100px" />
+        <CardCheck img={icon3} heigth="120px" width="100px" />
       </BoxFilter>
     </>
   );
