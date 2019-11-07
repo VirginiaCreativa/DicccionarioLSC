@@ -45,6 +45,7 @@ const Menus = () => {
             <div className="col-6 d-flex justify-content-end">
               <button
                 type="button"
+                aria-label="Cerrar"
                 onClick={handleMenu}
                 className={classes.btnClose}>
                 <i className="bx bx-x" />

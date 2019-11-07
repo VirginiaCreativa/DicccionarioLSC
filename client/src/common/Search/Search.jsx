@@ -42,8 +42,14 @@ const Search = ({ onChange, value, onClick }) => {
   return (
     <BoxSearch>
       <Icon className="bx bx-search-alt" />
-      <Search type="text" value={value} onChange={onChange} />
-      <Filter type="button" onClick={onClick}>
+      <Search
+        type="text"
+        value={value}
+        onChange={onChange}
+        name="search"
+        aria-label="Buscador"
+      />
+      <Filter type="button" onClick={onClick} aria-label="ButtonFilter">
         <i className="bx bx-slider-alt" />
       </Filter>
     </BoxSearch>

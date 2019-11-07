@@ -19,7 +19,7 @@ const Header = () => {
             <Logo />
           </div>
           <div className="col-6 d-flex justify-content-end">
-            <button type="button" onClick={handleMenu}>
+            <button type="button" aria-label="Menus" onClick={handleMenu}>
               <i className="bx bx-menu-alt-right" />
             </button>
           </div>
