@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Categorias from '../components/Categorias/Categorias';
+
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
+  <>
+    <Categorias />
+  </>
 );
 
 export default Home;
