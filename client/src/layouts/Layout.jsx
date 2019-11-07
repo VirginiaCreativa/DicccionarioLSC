@@ -4,6 +4,7 @@ import classes from './Layout.module.scss';
 
 import Header from './Header';
 import Menus from './Menus';
+import Search from './Search';
 
 const Layout = ({ children }) => {
   const isMenuActive = useSelector(state => state.Getting.activeMenu);
@@ -22,9 +23,12 @@ const Layout = ({ children }) => {
       {/* ==== HEADER ==== */}
       <Header />
       {/* ==== MAIN ==== */}
-      <main>
-        <>{children}</>
-      </main>
+      <div className="container">
+        <main>
+          <Search />
+          <>{children}</>
+        </main>
+      </div>
     </div>
   );
 };
