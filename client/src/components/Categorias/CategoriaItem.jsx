@@ -7,12 +7,12 @@ const CategoriaItem = ({ title, onClick, icon }) => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 160px;
     margin: 0 10px;
     padding: 20px;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
     transform: scale(1);
     cursor: pointer;
     transition: all 0.3s ease-out;
@@ -34,7 +34,7 @@ const CategoriaItem = ({ title, onClick, icon }) => {
         position: relative;
         top: 15px;
         color: #57606f;
-        font-size: 30px;
+        font-size: 34px;
         transition: all 0.3s ease-in;
         &:hover {
           color: #2572dd;

@@ -5,14 +5,17 @@ const Search = ({ onChange, value, onClick }) => {
   const BoxSearch = styled.div`
     position: relative;
     display: flex;
-    width: 320px;
+    width: 400px;
   `;
 
   const Search = styled.input`
     width: 100%;
-    padding: 8px 10px 8px 38px;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 10px 10px 38px;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    border-left: none;
+    border-radius: 6px;
   `;
 
   const Icon = styled.i`
@@ -34,7 +37,7 @@ const Search = ({ onChange, value, onClick }) => {
         color: #a3a9af;
         font-size: 24px;
         &:hover {
-          color: #162e68;
+          color: #134fa3;
         }
       }
     }

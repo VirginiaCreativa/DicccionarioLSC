@@ -10,7 +10,7 @@ const Searching = () => {
     console.log('CLICK');
   };
   return (
-    <div style={{ marginBottom: '30px' }}>
+    <div style={{ marginBottom: '60px' }}>
       <Search onChange={changeSearch} onClick={handleFilter} />
     </div>
   );
