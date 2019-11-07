@@ -13,9 +13,7 @@ const Categorias = () => {
   return (
     <>
       {items.map(item => (
-        <div key={item.id}>
-          <Item tema={item.tema} />
-        </div>
+        <Item key={item.id} tema={item.tema} />
       ))}
     </>
   );
