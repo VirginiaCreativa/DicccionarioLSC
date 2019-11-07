@@ -13,15 +13,7 @@ $red: #e03325;
 $blue_gray: #2e516d;
 $body: #E8ECF1;
 
+$col_yellow: #FED217;
+$col_blue: #162E68;
+$col_red: #CF1327;
 
-%boxShadowContent {
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(33, 44, 52, 0.05);
-  -moz-box-shadow: 0px 0px 6px 0px rgba(33, 44, 52, 0.05);
-  box-shadow: 0px 0px 6px 0px rgba(33, 44, 52, 0.05);
-}
-
-%boxContent {
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 6px;
-}

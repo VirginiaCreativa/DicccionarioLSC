@@ -48,7 +48,7 @@ input,
 label,
 li span {
   &::selection {
-    color: $blue_gray !important;
+    color: $black !important;
     background-color: $yellow !important;
 
     @media (max-width: 575.98px) {
@@ -59,7 +59,7 @@ li span {
 }
 
 input {
-  caret-color: $green;
+  caret-color: $blue;
 }
 
 .btn-primary {

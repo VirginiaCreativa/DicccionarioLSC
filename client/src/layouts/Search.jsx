@@ -6,9 +6,12 @@ const Searching = () => {
   const changeSearch = ev => {
     console.log(ev.target.value);
   };
+  const handleFilter = () => {
+    console.log('CLICK');
+  };
   return (
     <>
-      <Search onChange={changeSearch} />
+      <Search onChange={changeSearch} onClick={handleFilter} />
     </>
   );
 };
