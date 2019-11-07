@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Search = ({ onChange, value, onClick }) => {
+const Search = ({ onSubmit, onChange, value, onFilter }) => {
   const BoxSearch = styled.div`
     position: relative;
     display: flex;
@@ -48,11 +48,12 @@ const Search = ({ onChange, value, onClick }) => {
       <Search
         type="text"
         value={value}
+        onSubmit={onSubmit}
         onChange={onChange}
         name="search"
         aria-label="Buscador"
       />
-      <Filter type="button" onClick={onClick} aria-label="ButtonFilter">
+      <Filter type="button" onClick={onFilter} aria-label="ButtonFilter">
         <i className="bx bx-slider-alt" />
       </Filter>
     </BoxSearch>
