@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -11,39 +12,39 @@ const Categorias = () => {
   const items = [
     {
       id: 1,
-      tema: 'Temas',
-      icon: 'https://image.flaticon.com/icons/svg/149/149330.svg',
+      title: 'Temas',
+      icon: 'bx-cabinet',
       page: 'temas',
     },
     {
       id: 2,
-      tema: 'Alfabetos',
-      icon: 'https://image.flaticon.com/icons/svg/2219/2219077.svg',
-      page: 'alfabetos',
+      title: 'Alfabeto',
+      icon: 'bx-font-family',
+      page: 'alfabeto',
     },
     {
       id: 3,
-      tema: 'Numeros',
-      icon: 'https://image.flaticon.com/icons/svg/106/106954.svg',
+      title: 'Números',
+      icon: 'bx-hash',
       page: 'numeros',
     },
     {
       id: 4,
-      tema: 'Cordiales',
-      icon: 'https://image.flaticon.com/icons/svg/159/159777.svg',
+      title: 'Cordiales',
+      icon: 'bx-chat',
       page: 'cordiales',
     },
     {
       id: 5,
-      tema: 'Notas para orientar',
-      icon: 'https://image.flaticon.com/icons/svg/994/994410.svg',
+      title: 'Orientar',
+      icon: 'bx-receipt',
       page: 'orientar',
     },
   ];
   return (
     <Items>
       {items.map(item => (
-        <Item key={item.id} tema={item.tema} />
+        <Item key={item.id} {...item} />
       ))}
     </Items>
   );

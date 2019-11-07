@@ -12,7 +12,7 @@ const LogoIcon = () => {
     lineHeight: '0',
   };
   const iconStyle = {
-    height: '35px',
+    height: '45px',
     cursor: 'pointer',
   };
 
