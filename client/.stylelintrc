@@ -1,31 +1,21 @@
 {
   "extends": [
-    "stylelint-config-recommended",
-    "stylelint-config-standard",
-    "stylelint-config-css-modules",
+    "stylelint-config-recommended", 
+    "stylelint-config-concentric-order", 
+    "stylelint-config-standard", 
     "stylelint-config-rational-order",
-    "stylelint-config-prettier",
-    "stylelint-config-styled-components"
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
   ],
-
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
   "plugins": [
     "stylelint-order",
     "stylelint-config-rational-order/plugin",
     "stylelint-scss"
   ],
   "rules": {
-    "order/order": [
-      "custom-properties",
-      "declarations"
-    ],
-    "no-descending-specificity": null,
-    "at-rule-no-unknown": null,
-    "declaration-empty-line-before": null,
-    "length-zero-no-unit": null,
-    "function-whitespace-after": null,
-    "plugin/rational-order": [true, {
-      "border-in-box-model": false,
-      "empty-line-between-groups": false
-    }]
+    "at-rule-empty-line-before": null
   }
 }
