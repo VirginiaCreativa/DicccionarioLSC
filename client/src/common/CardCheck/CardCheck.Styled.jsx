@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const CardWarpper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  margin: 0 10px;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 80px;
   height: 100px;
+  margin: 0 10px;
+  padding: 20px;
   background-color: #fff;
   border-radius: 6px;
   transition: all 0.3s ease-in;
@@ -29,24 +29,24 @@ export const SpanCard = styled.span`
   left: -1;
   width: 80px;
   height: 100px;
+  border: 2px solid var(--gray_2);
   border-radius: 6px;
-  border: 2px solid #f0f0f0;
   transition: all 0.2s ease-in;
 `;
 
 export const IconCheck = styled.i`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: -8px;
   right: -8px;
   z-index: 4;
-  opacity: 0;
-  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
-  background-color: #134fa3;
+  background-color: var(--blue_medium);
+  border-radius: 100%;
+  opacity: 0;
   transition: all 0.2s ease-in;
   &.bx {
     color: #fff;
@@ -55,18 +55,18 @@ export const IconCheck = styled.i`
 `;
 
 export const Check = styled.input.attrs({ type: 'checkbox' })`
-  z-index: 3;
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
-  cursor: pointer;
+  z-index: 3;
   width: 80px;
   height: 100px;
+  cursor: pointer;
+  opacity: 0;
   &:checked {
     ~ ${SpanCard} {
+      border: 2px solid var(--blue_medium);
       border-radius: 6px;
-      border: 2px solid #134fa3;
       ${IconCheck} {
         opacity: 1;
       }
@@ -74,7 +74,7 @@ export const Check = styled.input.attrs({ type: 'checkbox' })`
   }
   &:hover {
     ~ ${SpanCard} {
-      border: 2px solid #134fa3;
+      border: 2px solid var(--blue_medium);
       ${IconCheck} {
         opacity: 1;
       }

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Item } from './CategoriaItem.Styled';
+import { Item, IconCat, Title } from './CategoriaItem.Styled';
 
 const CategoriaItem = ({ title, onClick, icon }) => (
   <Item onClick={onClick}>
-    <i className={`bx ${icon}`} />
-    <p>{title}</p>
+    <IconCat className={`bx ${icon}`} />
+    <Title>{title}</Title>
   </Item>
 );
 

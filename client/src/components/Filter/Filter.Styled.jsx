@@ -17,14 +17,14 @@ export const GroupFilter = styled.div`
   h2 {
     position: relative;
     margin-bottom: 16px;
-    color: #134fa3;
+    color: var(--blue_medium);
     font-size: 1.125rem;
 
     &::after {
       display: block;
       width: 100%;
       margin: 10px 0;
-      border-bottom: 2px solid #f3f4f5;
+      border-bottom: 2px solid var(--gray_1);
       content: '';
     }
 
@@ -34,7 +34,7 @@ export const GroupFilter = styled.div`
       left: 0;
       display: block;
       width: 6%;
-      border-bottom: 2px solid #2572dd;
+      border-bottom: 2px solid var(--blue_medium);
       content: '';
     }
   }

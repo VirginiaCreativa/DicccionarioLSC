@@ -23,7 +23,7 @@ const Menus = () => {
     border-radius: 100%;
   `;
   const P = styled.p`
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: #fff;
     font-size: 0.875rem;
   `;

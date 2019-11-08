@@ -8,9 +8,6 @@ const Searching = () => {
   const changeSearch = ev => {
     console.log(ev.target.value);
   };
-  const handleFilter = () => {
-    console.log('CLICK');
-  };
 
   const SkyLightStyled = {
     width: '70%',

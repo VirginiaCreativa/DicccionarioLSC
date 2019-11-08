@@ -14,12 +14,13 @@ export const Item = styled.div`
   transform: scale(1);
   cursor: pointer;
   transition: all 0.3s ease-out;
+
   &:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     transform: scale(1.05);
     i {
       &.bx {
-        top: 0px;
+        top: 0;
         color: #2572dd;
       }
     }
@@ -27,22 +28,24 @@ export const Item = styled.div`
       opacity: 1;
     }
   }
-  i {
-    &.bx {
-      position: relative;
-      top: 15px;
-      color: #57606f;
-      font-size: 34px;
-      transition: all 0.3s ease-in;
-      &:hover {
-        color: #2572dd;
-      }
+`;
+
+export const IconCat = styled.i`
+  &.bx {
+    position: relative;
+    top: 15px;
+    color: var(--gray_dark);
+    font-size: 34px !important;
+    transition: all 0.3s ease-in;
+    &:hover {
+      color: var(--blue);
     }
   }
-  p {
-    margin: 4px 0 0;
-    color: #57606f;
-    opacity: 0;
-    transition: all 0.3s ease-out;
-  }
+`;
+
+export const Title = styled.p`
+  margin: 4px 0 0;
+  color: var(--gray_dark);
+  opacity: 0;
+  transition: all 0.3s ease-out;
 `;

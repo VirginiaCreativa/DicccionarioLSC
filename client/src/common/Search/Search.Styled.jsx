@@ -11,7 +11,7 @@ export const SearchInp = styled.input`
   padding: 10px 10px 10px 38px;
   border-top: none;
   border-right: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--gray_2);
   border-left: none;
   border-radius: 6px;
 `;
