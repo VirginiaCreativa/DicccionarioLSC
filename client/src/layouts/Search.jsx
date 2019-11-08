@@ -15,7 +15,7 @@ const Searching = () => {
   const SkyLightStyled = {
     width: '70%',
     height: '90vh',
-    marginTop: '-430px',
+    marginTop: '-450px',
     marginLeft: '-35%',
   };
 

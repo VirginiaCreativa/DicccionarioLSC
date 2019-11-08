@@ -23,7 +23,9 @@ const Filter = () => {
 
   return (
     <>
-      <Title>Opciones de búsqueda avanzada</Title>
+      <Title>
+        Opciones <span>de búsqueda avanzada</span>
+      </Title>
 
       <GroupFilter>
         <h2>Forma de la mano</h2>
