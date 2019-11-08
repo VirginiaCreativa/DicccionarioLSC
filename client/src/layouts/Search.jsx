@@ -13,10 +13,10 @@ const Searching = () => {
   };
 
   const SkyLightStyled = {
-    width: '80%',
-    height: '80vh',
-    marginTop: '-400px',
-    marginLeft: '-40%',
+    width: '70%',
+    height: '90vh',
+    marginTop: '-430px',
+    marginLeft: '-35%',
   };
 
   return (
