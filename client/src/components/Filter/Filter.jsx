@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, BoxFilter } from './Filter.Styled';
+import { GroupFilter, BoxFilters, Title } from './Filter.Styled';
 import CardCheck from '../../common/CardCheck/CardCheck';
 
 const Filter = () => {
@@ -10,11 +10,15 @@ const Filter = () => {
   return (
     <>
       <Title>Opciones de búsqueda avanzada</Title>
-      <BoxFilter>
-        <CardCheck img={icon1} />
-        <CardCheck img={icon2} />
-        <CardCheck img={icon3} />
-      </BoxFilter>
+
+      <GroupFilter>
+        <h2>Forma de la mano</h2>
+        <BoxFilters>
+          <CardCheck img={icon1} />
+          <CardCheck img={icon2} />
+          <CardCheck img={icon3} />
+        </BoxFilters>
+      </GroupFilter>
     </>
   );
 };
