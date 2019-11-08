@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Title, BoxFilter } from './Filter.Styled';
 import CardCheck from '../../common/CardCheck/CardCheck';
 
 const Filter = () => {
@@ -7,23 +7,13 @@ const Filter = () => {
   const icon2 = 'https://image.flaticon.com/icons/svg/2165/2165888.svg';
   const icon3 = 'https://image.flaticon.com/icons/svg/2165/2165802.svg';
 
-  const BoxFilter = styled.div`
-    display: flex;
-  `;
   return (
     <>
-      <h4
-        style={{
-          textAlign: 'center',
-          marginBottom: '30px',
-          textTransform: 'uppercase',
-        }}>
-        Opciones de búsqueda avanzada
-      </h4>
+      <Title>Opciones de búsqueda avanzada</Title>
       <BoxFilter>
-        <CardCheck img={icon1} heigth="120px" width="100px" />
-        <CardCheck img={icon2} heigth="120px" width="100px" />
-        <CardCheck img={icon3} heigth="120px" width="100px" />
+        <CardCheck img={icon1} />
+        <CardCheck img={icon2} />
+        <CardCheck img={icon3} />
       </BoxFilter>
     </>
   );
