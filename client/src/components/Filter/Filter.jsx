@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { GroupFilter, BoxFilters, Title } from './Filter.Styled';
 
 import CardCheck from '../../common/CardCheck/CardCheck';
@@ -7,7 +8,8 @@ import UbicacionCuerpoData from '../../assets/Data/UbicacionCuerpo';
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
-const Filter = () => {
+const Filter = ({ onClick }) => {
+  const history = useHistory();
   const changeManos = ev => {
     console.log(ev.target.value);
   };
@@ -19,6 +21,10 @@ const Filter = () => {
   };
   const changeUso = ev => {
     console.log(ev.target.value);
+  };
+
+  const handleSubmitFilter = () => {
+    history.push('/resultado');
   };
 
   return (
@@ -62,6 +68,15 @@ const Filter = () => {
           ))}
         </BoxFilters>
       </GroupFilter>
+      <div className="d-flex justify-content-center">
+        <button
+          type="button"
+          className="btn btn-primary"
+          style={{ width: '200px' }}
+          onClick={onClick}>
+          BUSCADOR
+        </button>
+      </div>
     </>
   );
 };

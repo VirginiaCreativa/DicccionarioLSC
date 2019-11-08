@@ -7,6 +7,8 @@ const Home = lazy(() => import('../containers/Home'));
 // const Landing = lazy(() => import('../containers/Landing'));
 const Marcadores = lazy(() => import('../containers/Marcadores'));
 const Vocabulario = lazy(() => import('../containers/Vocabulario'));
+const Resultado = lazy(() => import('../containers/Resultado'));
+const Temas = lazy(() => import('../containers/Temas'));
 
 const Routers = () => (
   <>
@@ -15,6 +17,8 @@ const Routers = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/marcadores" component={Marcadores} />
         <Route exact path="/vocabulario" component={Vocabulario} />
+        <Route exact path="/resultado" component={Resultado} />
+        <Route exact path="/temas" component={Temas} />
         {/* <Route exact path="/landing" component={Landing} /> */}
         {/* <Route component={NotFound} /> */}
       </Switch>

@@ -63,14 +63,14 @@ input {
 }
 
 .btn-primary {
-  background-color: $green !important;
+  background-color: $blue !important;
 
   a {
     color: #fff;
   }
 
   &:hover {
-    background-color: $green_medium !important;
+    background-color:  $blue_medium !important;
   }
 }
 

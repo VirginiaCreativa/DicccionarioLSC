@@ -29,10 +29,18 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    justify-content: center;
-    justify-items: center;
-    height: 80vh;
+    transition: all 0.3s ease-in;
+    height: 89vh;
+    
   }
+
+  // .mainDown {
+  //   justify-content: center;
+  // }
+
+  // .mainUp {
+  //   justify-content: start;
+  // }
 }
 
 .Header {
@@ -181,7 +189,7 @@
   }
 
   .skylight-dialog {
-    padding: 20px 30px !important;
+    padding: 30px !important;
     border-radius: 6px !important;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1) !important;
   }
