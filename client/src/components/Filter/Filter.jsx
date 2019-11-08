@@ -1,11 +1,13 @@
 import React from 'react';
 import { GroupFilter, BoxFilters, Title } from './Filter.Styled';
+
 import CardCheck from '../../common/CardCheck/CardCheck';
+import ManosDatas from '../../assets/Data/Manos.json';
 
 const Filter = () => {
-  const icon1 = 'https://image.flaticon.com/icons/svg/2166/2166000.svg';
-  const icon2 = 'https://image.flaticon.com/icons/svg/2165/2165888.svg';
-  const icon3 = 'https://image.flaticon.com/icons/svg/2165/2165802.svg';
+  const changeManos = ev => {
+    console.log(ev.target.value);
+  };
 
   return (
     <>
@@ -14,9 +16,9 @@ const Filter = () => {
       <GroupFilter>
         <h2>Forma de la mano</h2>
         <BoxFilters>
-          <CardCheck img={icon1} />
-          <CardCheck img={icon2} />
-          <CardCheck img={icon3} />
+          {ManosDatas.map(mano => (
+            <CardCheck key={mano.id} {...mano} onChange={changeManos} />
+          ))}
         </BoxFilters>
       </GroupFilter>
     </>

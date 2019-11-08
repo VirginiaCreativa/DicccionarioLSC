@@ -11,7 +11,7 @@ export const GroupFilter = styled.div`
   margin-bottom: 20px;
   h2 {
     font-size: 1.25rem;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 `;
 

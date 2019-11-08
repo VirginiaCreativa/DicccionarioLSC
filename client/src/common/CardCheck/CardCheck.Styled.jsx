@@ -10,7 +10,6 @@ export const CardWarpper = styled.div`
   width: 80px;
   height: 100px;
   background-color: #fff;
-  border: 2px solid #ced6e0;
   border-radius: 6px;
   transition: all 0.3s ease-in;
   &:last-child {
@@ -31,7 +30,7 @@ export const SpanCard = styled.span`
   width: 80px;
   height: 100px;
   border-radius: 6px;
-  border: 2px solid #ced6e0;
+  border: 2px solid #f0f0f0;
   transition: all 0.2s ease-in;
 `;
 
