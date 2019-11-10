@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       <Header />
       {/* ==== MAIN ==== */}
       <div className="container">
-        <main className={hasMain ? classes.mainDown : classes.mainUp}>
+        <main className={classes.mainUp}>
           <Search />
           <>{children}</>
         </main>

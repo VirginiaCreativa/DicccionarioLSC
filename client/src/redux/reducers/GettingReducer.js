@@ -1,7 +1,8 @@
-import { GET_MENU_ACTIVE } from '../types';
+import { GET_MENU_ACTIVE, GET_SEARCH_PREPOSITIOM } from '../types';
 
 const initialState = {
   activeMenu: false,
+  prepos: true,
 };
 
 function AuthReducer(state = initialState, action) {
@@ -10,6 +11,11 @@ function AuthReducer(state = initialState, action) {
       return {
         ...state,
         activeMenu: action.payload,
+      };
+    case GET_SEARCH_PREPOSITIOM:
+      return {
+        ...state,
+        prepos: action.payload,
       };
 
     default:

@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 import styled from 'styled-components';
 import SkyLight from 'react-skylight';
 
 import Search from '../common/Search/Search';
 import Filter from '../components/Filter/Filter';
 
-const Searching = () => {
+import { getSearchPrepos } from '../redux/actions/GettingAction.js';
+
+const Searching = ({ prepos }) => {
+  const isSearchPrepos = useSelector(state => state.Getting.prepos);
+  const dispatch = useDispatch();
   const history = useHistory();
   let animated;
+
+  useEffect(() => {
+    dispatch(getSearchPrepos(true));
+  }, [dispatch]);
+
   const changeSearch = ev => {
     console.log(ev.target.value);
   };
@@ -25,13 +36,11 @@ const Searching = () => {
   };
 
   const Searching = styled.div`
-    margin-top: ${props => (props.prepos ? '0' : '300px')};
     margin-bottom: 60px;
-    transition: all 0.3s ease-in;
   `;
 
   return (
-    <Searching prepos={false}>
+    <Searching>
       <Search onChange={changeSearch} onFilter={() => animated.show()} />
       <SkyLight
         hideOnOverlayClicked
