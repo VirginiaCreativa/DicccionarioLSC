@@ -12,7 +12,7 @@ export const Title = styled.h1`
 `;
 
 export const GroupFilter = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   h2 {
     position: relative;
@@ -44,6 +44,7 @@ export const Selections = styled.div`
   display: flex;
   button {
     margin-right: 10px;
+    margin-bottom: 6px;
     font-size: 0.8rem;
     line-height: 1;
     text-transform: uppercase;
@@ -52,7 +53,7 @@ export const Selections = styled.div`
 `;
 
 export const BoxFilters = styled.div`
-  padding: 10px 0;
+  padding: 10px 0 0;
   overflow: scroll;
   scrollbar-color: transparent transparent;
   ::-webkit-scrollbar {
