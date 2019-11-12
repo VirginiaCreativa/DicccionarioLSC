@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   GroupFilter,
@@ -16,6 +16,12 @@ import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
 const Filter = () => {
+  const [isUbicDelante, setUbicDelante] = useState(true);
+  const [isUbicSuperior, setUbicSuperior] = useState(false);
+  const [isUbicCentral, setUbicCentral] = useState(false);
+  const [isUbicInferior, setUbicInferior] = useState(false);
+  const [isUbicBrazo, setUbicBrazo] = useState(false);
+  const [isUbicActive, setUbicActive] = useState(false);
   const history = useHistory();
 
   const changeManos = ev => {
@@ -29,6 +35,42 @@ const Filter = () => {
   };
   const changeUso = ev => {
     console.log(ev.target.value);
+  };
+
+  const handleUbicDelante = () => {
+    setUbicDelante(true);
+    setUbicSuperior(false);
+    setUbicCentral(false);
+    setUbicInferior(false);
+    setUbicBrazo(false);
+  };
+  const handleUbicSuperior = () => {
+    setUbicDelante(false);
+    setUbicSuperior(true);
+    setUbicCentral(false);
+    setUbicInferior(false);
+    setUbicBrazo(false);
+  };
+  const handleUbicCentral = () => {
+    setUbicDelante(false);
+    setUbicSuperior(false);
+    setUbicCentral(true);
+    setUbicInferior(false);
+    setUbicBrazo(false);
+  };
+  const handleUbicInferior = () => {
+    setUbicDelante(false);
+    setUbicSuperior(false);
+    setUbicCentral(false);
+    setUbicInferior(true);
+    setUbicBrazo(false);
+  };
+  const handleUbicBrazo = () => {
+    setUbicDelante(false);
+    setUbicSuperior(false);
+    setUbicCentral(false);
+    setUbicInferior(false);
+    setUbicBrazo(true);
   };
 
   return (
@@ -47,19 +89,34 @@ const Filter = () => {
       <GroupFilter>
         <h2>Ubicación del cuerpo</h2>
         <Selections>
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleUbicDelante}>
             Delante
           </button>
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleUbicSuperior}>
             Superior
           </button>
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleUbicCentral}>
             Central
           </button>
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleUbicInferior}>
             Inferior
           </button>
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleUbicBrazo}>
             Brazo
           </button>
         </Selections>
