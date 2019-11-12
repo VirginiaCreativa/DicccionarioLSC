@@ -43,7 +43,7 @@ const Filter = () => {
   };
 
   const handleUbicDelante = () => {
-    setUbicDelante(true);
+    setUbicDelante(!isUbicDelante);
   };
   const handleUbicSuperior = () => {
     setUbicSuperior(!isUbicSuperior);
@@ -84,15 +84,31 @@ const Filter = () => {
       <GroupFilter>
         <h2>Ubicación del cuerpo</h2>
         <Selections>
-          <ButtonSecondary onClick={handleUbicDelante}>Delante</ButtonSecondary>
-          <ButtonSecondary onClick={handleUbicSuperior}>
+          <ButtonSecondary
+            onClick={handleUbicDelante}
+            active={isUbicDelante ? '#f54c73' : ''}>
+            Delante
+          </ButtonSecondary>
+          <ButtonSecondary
+            onClick={handleUbicSuperior}
+            active={isUbicSuperior ? '#f54c73' : ''}>
             Superior
           </ButtonSecondary>
-          <ButtonSecondary onClick={handleUbicCentral}>Central</ButtonSecondary>
-          <ButtonSecondary onClick={handleUbicInferior}>
+          <ButtonSecondary
+            onClick={handleUbicCentral}
+            active={isUbicCentral ? '#f54c73' : ''}>
+            Central
+          </ButtonSecondary>
+          <ButtonSecondary
+            onClick={handleUbicInferior}
+            active={isUbicInferior ? '#f54c73' : ''}>
             Inferior
           </ButtonSecondary>
-          <ButtonSecondary onClick={handleUbicBrazo}>Brazo</ButtonSecondary>
+          <ButtonSecondary
+            onClick={handleUbicBrazo}
+            active={isUbicBrazo ? '#f54c73' : ''}>
+            Brazo
+          </ButtonSecondary>
         </Selections>
         <Row>
           {isUbicDelante && (
