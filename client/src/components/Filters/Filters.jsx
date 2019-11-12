@@ -9,6 +9,7 @@ import {
 } from './Filters.Styled';
 
 import CardCheck from '../../common/CardCheck/CardCheck';
+import FilterItem from './Filter';
 import FormaManoData from '../../assets/Data/FormaMano';
 import UbicacionCuerpoData from '../../assets/Data/UbicacionCuerpo';
 import TemasData from '../../assets/Data/Temas';
@@ -16,6 +17,7 @@ import UsoData from '../../assets/Data/Uso';
 
 const Filter = () => {
   const history = useHistory();
+
   const changeManos = ev => {
     console.log(ev.target.value);
   };
@@ -35,56 +37,47 @@ const Filter = () => {
         Opciones <span>de búsqueda avanzada</span>
       </Title>
 
+      {/* FORMA DE LA MANO */}
       <GroupFilter>
         <h2>Forma de la mano</h2>
-        <BoxFilters>
-          <BoxFilter>
-            {FormaManoData.map(mano => (
-              <CardCheck key={mano.id} {...mano} onChange={changeManos} />
-            ))}
-          </BoxFilter>
-        </BoxFilters>
+        <FilterItem items={FormaManoData} onChange={changeManos} />
       </GroupFilter>
 
+      {/* UBICACION DEL CUERPO */}
       <GroupFilter>
         <h2>Ubicación del cuerpo</h2>
         <Selections>
-          <button type="button">Delante</button>
-          <button type="button">Superior</button>
-          <button type="button">Central</button>
-          <button type="button">Inferior</button>
-          <button type="button">Brazo</button>
+          <button type="button" className="btn btn-primary">
+            Delante
+          </button>
+          <button type="button" className="btn btn-primary">
+            Superior
+          </button>
+          <button type="button" className="btn btn-primary">
+            Central
+          </button>
+          <button type="button" className="btn btn-primary">
+            Inferior
+          </button>
+          <button type="button" className="btn btn-primary">
+            Brazo
+          </button>
         </Selections>
-        <BoxFilters>
-          <BoxFilter>
-            {UbicacionCuerpoData.map(mano => (
-              <CardCheck key={mano.id} {...mano} onChange={changeUbicCuerpo} />
-            ))}
-          </BoxFilter>
-        </BoxFilters>
+        <FilterItem items={UbicacionCuerpoData} onChange={changeUbicCuerpo} />
       </GroupFilter>
 
+      {/* TEMAS */}
       <GroupFilter>
         <h2>Temas</h2>
-        <BoxFilters>
-          <BoxFilter>
-            {TemasData.map(mano => (
-              <CardCheck key={mano.id} {...mano} onChange={changeTemas} />
-            ))}
-          </BoxFilter>
-        </BoxFilters>
+        <FilterItem items={TemasData} onChange={changeTemas} />
       </GroupFilter>
 
+      {/* USO */}
       <GroupFilter>
         <h2>Uso</h2>
-        <BoxFilters>
-          <BoxFilter>
-            {UsoData.map(mano => (
-              <CardCheck key={mano.id} {...mano} onChange={changeUso} />
-            ))}
-          </BoxFilter>
-        </BoxFilters>
+        <FilterItem items={UsoData} onChange={changeUso} />
       </GroupFilter>
+
       <div className="d-flex justify-content-center">
         <button
           type="button"

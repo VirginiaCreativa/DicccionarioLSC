@@ -42,6 +42,13 @@ export const GroupFilter = styled.div`
 
 export const Selections = styled.div`
   display: flex;
+  button {
+    margin-right: 10px;
+    font-size: 0.8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    border: none;
+  }
 `;
 
 export const BoxFilters = styled.div`
