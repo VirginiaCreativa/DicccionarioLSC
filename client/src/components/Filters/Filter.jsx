@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  GroupFilter,
-  Selections,
-  BoxFilters,
-  BoxFilter,
-  Title,
-} from './Filters.Styled';
+import { BoxFilters, BoxFilter } from './Filters.Styled';
 
 import CardCheck from '../../common/CardCheck/CardCheck';
 

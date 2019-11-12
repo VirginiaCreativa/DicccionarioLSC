@@ -60,9 +60,9 @@ const Filter = () => {
 
   const Row = styled.div`
     display: flex;
-    width: 100%;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    width: 100%;
   `;
 
   return (
@@ -92,46 +92,36 @@ const Filter = () => {
           <ButtonSecondary onClick={handleUbicBrazo}>Brazo</ButtonSecondary>
         </Selections>
         <Row>
-          <div>
-            {isUbicDelante && (
-              <FilterItem
-                items={UbicCuerpoDelanteData}
-                onChange={changeUbicCuerpo}
-              />
-            )}
-          </div>
-          <div>
-            {isUbicSuperior && (
-              <FilterItem
-                items={UbicCuerpoSuperiorData}
-                onChange={changeUbicCuerpo}
-              />
-            )}
-          </div>
-          <div>
-            {isUbicCentral && (
-              <FilterItem
-                items={UbicCuerpoCentralData}
-                onChange={changeUbicCuerpo}
-              />
-            )}
-          </div>
-          <div>
-            {isUbicInferior && (
-              <FilterItem
-                items={UbicCuerpoInferiorData}
-                onChange={changeUbicCuerpo}
-              />
-            )}
-          </div>
-          <div>
-            {isUbicBrazo && (
-              <FilterItem
-                items={UbicCuerpoBrazoData}
-                onChange={changeUbicCuerpo}
-              />
-            )}
-          </div>
+          {isUbicDelante && (
+            <FilterItem
+              items={UbicCuerpoDelanteData}
+              onChange={changeUbicCuerpo}
+            />
+          )}
+          {isUbicSuperior && (
+            <FilterItem
+              items={UbicCuerpoSuperiorData}
+              onChange={changeUbicCuerpo}
+            />
+          )}
+          {isUbicCentral && (
+            <FilterItem
+              items={UbicCuerpoCentralData}
+              onChange={changeUbicCuerpo}
+            />
+          )}
+          {isUbicInferior && (
+            <FilterItem
+              items={UbicCuerpoInferiorData}
+              onChange={changeUbicCuerpo}
+            />
+          )}
+          {isUbicBrazo && (
+            <FilterItem
+              items={UbicCuerpoBrazoData}
+              onChange={changeUbicCuerpo}
+            />
+          )}
         </Row>
       </GroupFilter>
 
