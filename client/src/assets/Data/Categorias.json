@@ -2,30 +2,35 @@
     "id": 1,
     "title": "Temas",
     "icon": "bx-cabinet",
-    "page": "temas"
+    "page": "temas",
+    "path": "/temas"
   },
   {
     "id": 2,
     "title": "Alfabeto",
     "icon": "bx-font-family",
-    "page": "alfabeto"
+    "page": "alfabeto",
+    "path": "/alfabeto"
   },
   {
     "id": 3,
     "title": "Números",
     "icon": "bx-hash",
-    "page": "numeros"
+    "page": "numeros",
+    "path": "/numeros"
   },
   {
     "id": 4,
     "title": "Cordiales",
     "icon": "bx-chat",
-    "page": "cordiales"
+    "page": "cordiales",
+    "path": "/cordiales"
   },
   {
     "id": 5,
     "title": "Orientar",
     "icon": "bx-receipt",
-    "page": "orientar"
+    "page": "orientar",
+    "path": "/orientar"
   }
 ]

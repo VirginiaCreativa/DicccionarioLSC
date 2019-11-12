@@ -5,20 +5,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import SkyLight from 'react-skylight';
 
-import Search from '../common/Search/Search';
-import Filter from '../components/Filter/Filter';
+import SearchCommon from '../common/Search/Search';
+import Filters from '../components/Filters/Filters';
 
-import { getSearchPrepos } from '../redux/actions/GettingAction.js';
-
-const Searching = ({ prepos }) => {
-  const isSearchPrepos = useSelector(state => state.Getting.prepos);
-  const dispatch = useDispatch();
+const Search = () => {
   const history = useHistory();
   let animated;
-
-  useEffect(() => {
-    dispatch(getSearchPrepos(true));
-  }, [dispatch]);
 
   const changeSearch = ev => {
     console.log(ev.target.value);
@@ -26,7 +18,7 @@ const Searching = ({ prepos }) => {
 
   const SkyLightStyled = {
     width: '70%',
-    marginTop: '-420px',
+    marginTop: '-445px',
     marginLeft: '-35%',
   };
 
@@ -35,22 +27,22 @@ const Searching = ({ prepos }) => {
     history.push('/resultado');
   };
 
-  const Searching = styled.div`
+  const Div = styled.div`
     margin-bottom: 60px;
   `;
 
   return (
-    <Searching>
-      <Search onChange={changeSearch} onFilter={() => animated.show()} />
+    <Div>
+      <SearchCommon onChange={changeSearch} onFilter={() => animated.show()} />
       <SkyLight
         hideOnOverlayClicked
         dialogStyles={SkyLightStyled}
         ref={ref => (animated = ref)}
         transitionDuration={400}>
-        <Filter onClick={handleSubmitFilter} />
+        <Filters onClick={handleSubmitFilter} />
       </SkyLight>
-    </Searching>
+    </Div>
   );
 };
 
-export default Searching;
+export default Search;

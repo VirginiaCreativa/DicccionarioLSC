@@ -20,6 +20,48 @@
     "id": 4,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "mano",
-    "value": "mano en B"
+    "value": "mano en Bb"
+  },
+  {
+    "id": 5,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "mano",
+    "value": "mano en Bd"
+  },
+  {
+    "id": 6,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "mano",
+    "value": "mano en C"
+  },
+  {
+    "id": 7,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
+    "artibuto": "mano",
+    "value": "mano en D"
+  },
+  {
+    "id": 8,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "mano",
+    "value": "mano en D"
+  },
+  {
+    "id": 9,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "mano",
+    "value": "mano en F"
+  },
+  {
+    "id": 10,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "mano",
+    "value": "mano en G"
+  },
+  {
+    "id": 11,
+    "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
+    "artibuto": "mano",
+    "value": "mano en H"
   }
 ]

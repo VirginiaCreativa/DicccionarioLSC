@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 
 import classes from './Layout.module.scss';
@@ -8,8 +9,8 @@ import Menus from './Menus';
 import Search from './Search';
 
 const Layout = ({ children }) => {
-  const [hasMain, setHasMain] = useState(false);
   const isMenuActive = useSelector(state => state.Getting.activeMenu);
+  const location = useLocation();
 
   return (
     <div className={classes.Layout}>
@@ -26,7 +27,10 @@ const Layout = ({ children }) => {
       <Header />
       {/* ==== MAIN ==== */}
       <div className="container">
-        <main className={classes.mainUp}>
+        <main
+          className={
+            location.pathname === '/' ? classes.mainDown : classes.mainUp
+          }>
           <Search />
           <>{children}</>
         </main>

@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Spinner from '../common/Spinner/Spinner';
 
-// const NotFound = lazy(() => import('../containers/NotFound'));
+const NotFound = lazy(() => import('../containers/NotFound'));
 const Home = lazy(() => import('../containers/Home'));
 // const Landing = lazy(() => import('../containers/Landing'));
 const Marcadores = lazy(() => import('../containers/Marcadores'));
@@ -20,7 +20,7 @@ const Routers = () => (
         <Route exact path="/resultado" component={Resultado} />
         <Route exact path="/temas" component={Temas} />
         {/* <Route exact path="/landing" component={Landing} /> */}
-        {/* <Route component={NotFound} /> */}
+        <Route component={NotFound} />
       </Switch>
     </Suspense>
   </>

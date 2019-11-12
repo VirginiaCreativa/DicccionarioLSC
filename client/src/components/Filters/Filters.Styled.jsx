@@ -12,7 +12,7 @@ export const Title = styled.h1`
 `;
 
 export const GroupFilter = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   h2 {
     position: relative;
@@ -40,6 +40,19 @@ export const GroupFilter = styled.div`
   }
 `;
 
+export const Selections = styled.div`
+  display: flex;
+`;
+
 export const BoxFilters = styled.div`
+  padding: 10px 0;
+  overflow: scroll;
+  scrollbar-color: transparent transparent;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const BoxFilter = styled.div`
   display: inline-flex;
 `;

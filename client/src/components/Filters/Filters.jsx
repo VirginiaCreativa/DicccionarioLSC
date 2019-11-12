@@ -1,6 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { GroupFilter, BoxFilters, Title } from './Filter.Styled';
+import {
+  GroupFilter,
+  Selections,
+  BoxFilters,
+  BoxFilter,
+  Title,
+} from './Filters.Styled';
 
 import CardCheck from '../../common/CardCheck/CardCheck';
 import FormaManoData from '../../assets/Data/FormaMano';
@@ -8,7 +14,7 @@ import UbicacionCuerpoData from '../../assets/Data/UbicacionCuerpo';
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
-const Filter = ({ onClick }) => {
+const Filter = () => {
   const history = useHistory();
   const changeManos = ev => {
     console.log(ev.target.value);
@@ -23,10 +29,6 @@ const Filter = ({ onClick }) => {
     console.log(ev.target.value);
   };
 
-  const handleSubmitFilter = () => {
-    history.push('/resultado');
-  };
-
   return (
     <>
       <Title>
@@ -36,36 +38,51 @@ const Filter = ({ onClick }) => {
       <GroupFilter>
         <h2>Forma de la mano</h2>
         <BoxFilters>
-          {FormaManoData.map(mano => (
-            <CardCheck key={mano.id} {...mano} onChange={changeManos} />
-          ))}
+          <BoxFilter>
+            {FormaManoData.map(mano => (
+              <CardCheck key={mano.id} {...mano} onChange={changeManos} />
+            ))}
+          </BoxFilter>
         </BoxFilters>
       </GroupFilter>
 
       <GroupFilter>
         <h2>Ubicación del cuerpo</h2>
+        <Selections>
+          <button type="button">Delante</button>
+          <button type="button">Superior</button>
+          <button type="button">Central</button>
+          <button type="button">Inferior</button>
+          <button type="button">Brazo</button>
+        </Selections>
         <BoxFilters>
-          {UbicacionCuerpoData.map(mano => (
-            <CardCheck key={mano.id} {...mano} onChange={changeUbicCuerpo} />
-          ))}
+          <BoxFilter>
+            {UbicacionCuerpoData.map(mano => (
+              <CardCheck key={mano.id} {...mano} onChange={changeUbicCuerpo} />
+            ))}
+          </BoxFilter>
         </BoxFilters>
       </GroupFilter>
 
       <GroupFilter>
         <h2>Temas</h2>
         <BoxFilters>
-          {TemasData.map(mano => (
-            <CardCheck key={mano.id} {...mano} onChange={changeTemas} />
-          ))}
+          <BoxFilter>
+            {TemasData.map(mano => (
+              <CardCheck key={mano.id} {...mano} onChange={changeTemas} />
+            ))}
+          </BoxFilter>
         </BoxFilters>
       </GroupFilter>
 
       <GroupFilter>
         <h2>Uso</h2>
         <BoxFilters>
-          {UsoData.map(mano => (
-            <CardCheck key={mano.id} {...mano} onChange={changeUso} />
-          ))}
+          <BoxFilter>
+            {UsoData.map(mano => (
+              <CardCheck key={mano.id} {...mano} onChange={changeUso} />
+            ))}
+          </BoxFilter>
         </BoxFilters>
       </GroupFilter>
       <div className="d-flex justify-content-center">
@@ -73,7 +90,7 @@ const Filter = ({ onClick }) => {
           type="button"
           className="btn btn-primary"
           style={{ width: '200px' }}
-          onClick={onClick}>
+          onClick={() => history.push('/resultado')}>
           BUSCADOR
         </button>
       </div>

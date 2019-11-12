@@ -1,7 +1,7 @@
 import React from 'react';
 import { BoxSearch, SearchInp, Icon, Filter } from './Search.Styled';
 
-const Search = ({ onSubmit, onChange, value, onFilter }) => (
+const SearchCommon = ({ onSubmit, onChange, value, onFilter }) => (
   <BoxSearch>
     <Icon className="bx bx-search-alt" />
     <SearchInp
@@ -18,4 +18,4 @@ const Search = ({ onSubmit, onChange, value, onFilter }) => (
   </BoxSearch>
 );
 
-export default Search;
+export default SearchCommon;

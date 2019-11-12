@@ -14,7 +14,11 @@ const Categorias = () => {
   return (
     <Items>
       {CategoriasData.map(item => (
-        <Item key={item.id} {...item} onClick={() => history.push('/temas')} />
+        <Item
+          key={item.id}
+          {...item}
+          onClick={() => history.push(`${item.path}`)}
+        />
       ))}
     </Items>
   );
