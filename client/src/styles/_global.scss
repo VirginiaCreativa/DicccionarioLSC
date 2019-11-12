@@ -70,10 +70,22 @@ input {
   }
 
   &:hover {
-    background-color:  $blue_medium !important;
+    background-color: $blue_medium !important;
   }
 }
 
 [class*="btn-"] {
   border: none;
+}
+
+.btn-succes {
+  background-color: $green;
+}
+
+.btn-secondary {
+  background-color: $gray_medium;
+
+  &:hover {
+    background-color: $gray_dark;
+  }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 import {
   GroupFilter,
   Selections,
@@ -8,7 +9,7 @@ import {
   Title,
 } from './Filters.Styled';
 
-import CardCheck from '../../common/CardCheck/CardCheck';
+import ButtonSecondary from '../../common/Buttons/ButtonSecondary';
 import FilterItem from './Filter';
 import FormaManoData from '../../assets/Data/FormaMano';
 import UbicCuerpoDelanteData from '../../assets/Data/UbicacionCuerpo_Delante';
@@ -43,39 +44,26 @@ const Filter = () => {
 
   const handleUbicDelante = () => {
     setUbicDelante(true);
-    setUbicSuperior(false);
-    setUbicCentral(false);
-    setUbicInferior(false);
-    setUbicBrazo(false);
   };
   const handleUbicSuperior = () => {
-    setUbicDelante(false);
-    setUbicSuperior(true);
-    setUbicCentral(false);
-    setUbicInferior(false);
-    setUbicBrazo(false);
+    setUbicSuperior(!isUbicSuperior);
   };
   const handleUbicCentral = () => {
-    setUbicDelante(false);
-    setUbicSuperior(false);
-    setUbicCentral(true);
-    setUbicInferior(false);
-    setUbicBrazo(false);
+    setUbicCentral(!isUbicCentral);
   };
   const handleUbicInferior = () => {
-    setUbicDelante(false);
-    setUbicSuperior(false);
-    setUbicCentral(false);
-    setUbicInferior(true);
-    setUbicBrazo(false);
+    setUbicInferior(!isUbicInferior);
   };
   const handleUbicBrazo = () => {
-    setUbicDelante(false);
-    setUbicSuperior(false);
-    setUbicCentral(false);
-    setUbicInferior(false);
-    setUbicBrazo(true);
+    setUbicBrazo(!isUbicBrazo);
   };
+
+  const Row = styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  `;
 
   return (
     <>
@@ -93,64 +81,58 @@ const Filter = () => {
       <GroupFilter>
         <h2>Ubicación del cuerpo</h2>
         <Selections>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleUbicDelante}>
-            Delante
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleUbicSuperior}>
+          <ButtonSecondary onClick={handleUbicDelante}>Delante</ButtonSecondary>
+          <ButtonSecondary onClick={handleUbicSuperior}>
             Superior
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleUbicCentral}>
-            Central
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleUbicInferior}>
+          </ButtonSecondary>
+          <ButtonSecondary onClick={handleUbicCentral}>Central</ButtonSecondary>
+          <ButtonSecondary onClick={handleUbicInferior}>
             Inferior
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={handleUbicBrazo}>
-            Brazo
-          </button>
+          </ButtonSecondary>
+          <ButtonSecondary onClick={handleUbicBrazo}>Brazo</ButtonSecondary>
         </Selections>
-        {isUbicDelante && (
-          <FilterItem
-            items={UbicCuerpoDelanteData}
-            onChange={changeUbicCuerpo}
-          />
-        )}
-        {isUbicSuperior && (
-          <FilterItem
-            items={UbicCuerpoSuperiorData}
-            onChange={changeUbicCuerpo}
-          />
-        )}
-        {isUbicCentral && (
-          <FilterItem
-            items={UbicCuerpoCentralData}
-            onChange={changeUbicCuerpo}
-          />
-        )}
-        {isUbicInferior && (
-          <FilterItem
-            items={UbicCuerpoInferiorData}
-            onChange={changeUbicCuerpo}
-          />
-        )}
-        {isUbicBrazo && (
-          <FilterItem items={UbicCuerpoBrazoData} onChange={changeUbicCuerpo} />
-        )}
+        <Row>
+          <div>
+            {isUbicDelante && (
+              <FilterItem
+                items={UbicCuerpoDelanteData}
+                onChange={changeUbicCuerpo}
+              />
+            )}
+          </div>
+          <div>
+            {isUbicSuperior && (
+              <FilterItem
+                items={UbicCuerpoSuperiorData}
+                onChange={changeUbicCuerpo}
+              />
+            )}
+          </div>
+          <div>
+            {isUbicCentral && (
+              <FilterItem
+                items={UbicCuerpoCentralData}
+                onChange={changeUbicCuerpo}
+              />
+            )}
+          </div>
+          <div>
+            {isUbicInferior && (
+              <FilterItem
+                items={UbicCuerpoInferiorData}
+                onChange={changeUbicCuerpo}
+              />
+            )}
+          </div>
+          <div>
+            {isUbicBrazo && (
+              <FilterItem
+                items={UbicCuerpoBrazoData}
+                onChange={changeUbicCuerpo}
+              />
+            )}
+          </div>
+        </Row>
       </GroupFilter>
 
       {/* TEMAS */}
