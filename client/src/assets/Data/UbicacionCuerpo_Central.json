@@ -1,0 +1,22 @@
+[{
+    "id": 1,
+    "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
+    "artibuto": "ubicacion",
+    "seleccion": "inferior",
+    "value": "mano en A"
+  },
+  {
+    "id": 2,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
+    "artibuto": "ubicacion",
+    "seleccion": "inferior",
+    "value": "mano en Ab"
+  },
+  {
+    "id": 3,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
+    "artibuto": "ubicacion",
+    "seleccion": "inferior",
+    "value": "mano en B"
+  }
+]

@@ -11,7 +11,11 @@ import {
 import CardCheck from '../../common/CardCheck/CardCheck';
 import FilterItem from './Filter';
 import FormaManoData from '../../assets/Data/FormaMano';
-import UbicacionCuerpoData from '../../assets/Data/UbicacionCuerpo';
+import UbicCuerpoDelanteData from '../../assets/Data/UbicacionCuerpo_Delante';
+import UbicCuerpoSuperiorData from '../../assets/Data/UbicacionCuerpo_Superior';
+import UbicCuerpoCentralData from '../../assets/Data/UbicacionCuerpo_Central';
+import UbicCuerpoInferiorData from '../../assets/Data/UbicacionCuerpo_Inferior';
+import UbicCuerpoBrazoData from '../../assets/Data/UbicacionCuerpo_Brazo';
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
@@ -120,7 +124,33 @@ const Filter = () => {
             Brazo
           </button>
         </Selections>
-        <FilterItem items={UbicacionCuerpoData} onChange={changeUbicCuerpo} />
+        {isUbicDelante && (
+          <FilterItem
+            items={UbicCuerpoDelanteData}
+            onChange={changeUbicCuerpo}
+          />
+        )}
+        {isUbicSuperior && (
+          <FilterItem
+            items={UbicCuerpoSuperiorData}
+            onChange={changeUbicCuerpo}
+          />
+        )}
+        {isUbicCentral && (
+          <FilterItem
+            items={UbicCuerpoCentralData}
+            onChange={changeUbicCuerpo}
+          />
+        )}
+        {isUbicInferior && (
+          <FilterItem
+            items={UbicCuerpoInferiorData}
+            onChange={changeUbicCuerpo}
+          />
+        )}
+        {isUbicBrazo && (
+          <FilterItem items={UbicCuerpoBrazoData} onChange={changeUbicCuerpo} />
+        )}
       </GroupFilter>
 
       {/* TEMAS */}

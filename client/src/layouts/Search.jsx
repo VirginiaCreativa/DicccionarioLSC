@@ -12,10 +12,6 @@ const Search = () => {
   const history = useHistory();
   let animated;
 
-  useEffect(() => {
-    animated.show();
-  });
-
   const changeSearch = ev => {
     console.log(ev.target.value);
   };
