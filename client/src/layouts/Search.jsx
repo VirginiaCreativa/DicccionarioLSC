@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
 import SkyLight from 'react-skylight';
@@ -11,7 +10,7 @@ import IconArrow from '../common/Arrow/Arrow';
 import Filters from '../components/Filters/Filters';
 
 const Search = () => {
-  const [onFilter, setOnFilter] = useState(true);
+  const [onFilter, setOnFilter] = useState(false);
   const history = useHistory();
   let animated;
 
@@ -41,32 +40,32 @@ const Search = () => {
     display: grid;
     justify-content: center;
     justify-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   `;
 
   return (
     <Div>
       <SearchCommon onChange={changeSearch} onFilter={handleOnFilters} />
-      {onFilter && (
-        <div className={classes.Filters}>
-          <button type="button" className={classes.BoxFilter}>
-            Forma de la mano
-            <IconArrow height="10px" width="10px" rotate="90" />
-          </button>
-          <button type="button" className={classes.BoxFilter}>
-            Ubicación del cuerpo
-            <IconArrow height="10px" width="10px" rotate="90" />
-          </button>
-          <button type="button" className={classes.BoxFilter}>
-            Temas
-            <IconArrow height="10px" width="10px" rotate="90" />
-          </button>
-          <button type="button" className={classes.BoxFilter}>
-            Uso
-            <IconArrow height="10px" width="10px" rotate="90" />
-          </button>
-        </div>
-      )}
+
+      <div className={onFilter ? classes.OnFilters : classes.OffFiltres}>
+        <button type="button" className={classes.BoxFilter}>
+          Forma de la mano
+          <IconArrow height="10px" width="10px" rotate="90" />
+        </button>
+        <button type="button" className={classes.BoxFilter}>
+          Ubicación del cuerpo
+          <IconArrow height="10px" width="10px" rotate="90" />
+        </button>
+        <button type="button" className={classes.BoxFilter}>
+          Temas
+          <IconArrow height="10px" width="10px" rotate="90" />
+        </button>
+        <button type="button" className={classes.BoxFilter}>
+          Uso
+          <IconArrow height="10px" width="10px" rotate="90" />
+        </button>
+      </div>
+
       <SkyLight
         hideOnOverlayClicked
         dialogStyles={SkyLightStyled}
