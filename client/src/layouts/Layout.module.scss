@@ -183,6 +183,26 @@
 
 }
 
+.Filters {
+  padding: 10px 0 20px;
+  width: 100%;
+  margin: 20px 0 0;
+  border-bottom: 1px solid $gray_light;
+  transition: all 0.5s ease-in;
+  button {
+    background-color: $gray_light;
+    line-height: 2;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    &:hover {
+      color: #fff;
+      background-color: $gray_dark;
+    }
+  }
+}
+
 :global {
   .skylight-overlay {
     background-color: transparent !important;

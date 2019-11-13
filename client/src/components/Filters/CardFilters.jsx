@@ -1,16 +1,16 @@
 import React from 'react';
-import { BoxFilters, BoxFilter } from './Filters.Styled';
+import { GroupCard, BoxCard } from './Filters.Styled';
 
 import CardCheck from '../../common/CardCheck/CardCheck';
 
-const Filter = ({ items, onChange }) => (
-  <BoxFilters>
-    <BoxFilter>
+const FilterCard = ({ items, onChange }) => (
+  <GroupCard>
+    <BoxCard>
       {items.map(mano => (
         <CardCheck key={mano.id} {...mano} onChange={onChange} />
       ))}
-    </BoxFilter>
-  </BoxFilters>
+    </BoxCard>
+  </GroupCard>
 );
 
-export default Filter;
+export default FilterCard;

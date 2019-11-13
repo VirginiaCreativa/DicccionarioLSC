@@ -1,67 +1,129 @@
 [{
     "id": 1,
-    "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
-    "artibuto": "mano",
-    "value": "mano en A"
+    "tema": "ser humano"
   },
   {
     "id": 2,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
-    "artibuto": "mano",
-    "value": "mano en Ab"
+    "tema": "cuerpo humano"
   },
   {
     "id": 3,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
-    "artibuto": "mano",
-    "value": "mano en B"
+    "tema": "fisiologia"
   },
   {
     "id": 4,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
-    "artibuto": "mano",
-    "value": "mano en Bb"
+    "tema": "frutas y verduras"
   },
   {
     "id": 5,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
-    "artibuto": "mano",
-    "value": "mano en Bd"
+    "tema": "comidas, bebidas y afines"
   },
   {
     "id": 6,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
-    "artibuto": "mano",
-    "value": "mano en C"
+    "tema": "ropa"
   },
   {
     "id": 7,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
-    "artibuto": "mano",
-    "value": "mano en D"
+    "tema": "aseo personal"
   },
   {
     "id": 8,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
-    "artibuto": "mano",
-    "value": "mano en D"
+    "tema": "espacio"
   },
   {
     "id": 9,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
-    "artibuto": "mano",
-    "value": "mano en F"
+    "tema": "expresiones de espacio"
   },
   {
     "id": 10,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
-    "artibuto": "mano",
-    "value": "mano en G"
+    "tema": "tiempo"
   },
   {
     "id": 11,
-    "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
-    "artibuto": "mano",
-    "value": "mano en H"
+    "tema": "cantidad"
+  },
+  {
+    "id": 12,
+    "tema": "familia y relaciones personales "
+  },
+  {
+    "id": 13,
+    "tema": "profesionales y oficios"
+  },
+  {
+    "id": 14,
+    "tema": "acciones y actividades"
+  },
+  {
+    "id": 15,
+    "tema": "deportes"
+  },
+  {
+    "id": 16,
+    "tema": "pais y ciudad"
+  },
+  {
+    "id": 17,
+    "tema": "transporte"
+  },
+  {
+    "id": 18,
+    "tema": "tecnologia"
+  },
+  {
+    "id": 19,
+    "tema": "hogar y vivenda"
+  },
+  {
+    "id": 20,
+    "tema": "administracion, gobierno y comercio"
+  },
+  {
+    "id": 21,
+    "tema": "entorno educativo"
+  },
+  {
+    "id": 22,
+    "tema": "redes sociales"
+  },
+  {
+    "id": 23,
+    "tema": "comunicaciones y afines"
+  },
+  {
+    "id": 24,
+    "tema": "naturaleza"
+  },
+  {
+    "id": 25,
+    "tema": "animales"
+  },
+  {
+    "id": 26,
+    "tema": "cualidades de objetos"
+  },
+  {
+    "id": 27,
+    "tema": "colores"
+  },
+  {
+    "id": 28,
+    "tema": "lengua y lingüisticos"
+  },
+  {
+    "id": 29,
+    "tema": "emociones y sentimientos"
+  },
+  {
+    "id": 30,
+    "tema": "eventos y celebracion"
+  },
+  {
+    "id": 31,
+    "tema": "marcas"
+  },
+  {
+    "id": 32,
+    "tema": "fincacias"
   }
 ]

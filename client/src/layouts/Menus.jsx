@@ -56,12 +56,18 @@ const Menus = () => {
       </header>
       <div className={classes.Navs}>
         <ul className="list-unstyled">
-          <li style={{ marginBottom: '60px' }}>
+          <li
+            style={{
+              marginBottom: '60px',
+            }}>
             <Link to="/" onClick={() => dispatch(getMenuActive(false))}>
               Home
             </Link>
           </li>
-          <li style={{ marginBottom: '60px' }}>
+          <li
+            style={{
+              marginBottom: '60px',
+            }}>
             <Link
               to="/vocabulario"
               onClick={() => dispatch(getMenuActive(false))}>
@@ -69,7 +75,10 @@ const Menus = () => {
             </Link>
             <p>Añadir cada una seña para imprimir</p>
           </li>
-          <li style={{ marginBottom: '60px' }}>
+          <li
+            style={{
+              marginBottom: '60px',
+            }}>
             <Link
               to="/marcadores"
               onClick={() => dispatch(getMenuActive(false))}>
@@ -77,7 +86,10 @@ const Menus = () => {
             </Link>
             <p>Añadir señas para guardarlas</p>
           </li>
-          <li style={{ marginTop: '60px' }}>
+          <li
+            style={{
+              marginTop: '60px',
+            }}>
             <i className="bx bx-log-out-circle" />
           </li>
         </ul>

@@ -1,19 +1,25 @@
 [{
     "id": 1,
-    "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
-    "artibuto": "mano",
-    "value": "mano en A"
+    "uso": "antiguo"
   },
   {
     "id": 2,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
-    "artibuto": "mano",
-    "value": "mano en Ab"
+    "uso": "informal"
   },
   {
     "id": 3,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
-    "artibuto": "mano",
-    "value": "mano en B"
+    "uso": "neologismo"
+  },
+  {
+    "id": 4,
+    "uso": "fundarvid"
+  },
+  {
+    "id": 5,
+    "uso": "groseria"
+  },
+  {
+    "id": 6,
+    "uso": "raro"
   }
 ]

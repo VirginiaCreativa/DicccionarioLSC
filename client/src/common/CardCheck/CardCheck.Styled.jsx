@@ -5,9 +5,9 @@ export const CardWarpper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 100px;
-  margin: 0 10px;
+  width: 72px;
+  height: 80px;
+  margin: 0 6px;
   padding: 20px;
   background-color: #fff;
   border-radius: 6px;
@@ -27,8 +27,8 @@ export const SpanCard = styled.span`
   position: absolute;
   top: -1;
   left: -1;
-  width: 80px;
-  height: 100px;
+  width: 72px;
+  height: 80px;
   border: 2px solid var(--gray_2);
   border-radius: 6px;
   transition: all 0.2s ease-in;

@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import {
-  GroupFilter,
-  Selections,
-  BoxFilters,
-  BoxFilter,
-  Title,
-} from './Filters.Styled';
+import { GroupFilter, Selections, Title } from './Filters.Styled';
 
 import ButtonSecondary from '../../common/Buttons/ButtonSecondary';
-import FilterItem from './Filter';
+import FilterCard from './CardFilters';
+import FilterTemas from './TemasFilters';
+import FilterUso from './UsoFilters';
 import FormaManoData from '../../assets/Data/FormaMano';
 import UbicCuerpoDelanteData from '../../assets/Data/UbicacionCuerpo_Delante';
 import UbicCuerpoSuperiorData from '../../assets/Data/UbicacionCuerpo_Superior';
@@ -26,7 +22,6 @@ const Filter = () => {
   const [isUbicCentral, setUbicCentral] = useState(false);
   const [isUbicInferior, setUbicInferior] = useState(false);
   const [isUbicBrazo, setUbicBrazo] = useState(false);
-  const [isUbicActive, setUbicActive] = useState(false);
   const history = useHistory();
 
   const changeManos = ev => {
@@ -64,7 +59,7 @@ const Filter = () => {
     flex-wrap: wrap;
     width: 100%;
     div {
-      margin-right: 10px;
+      margin-right: 6px;
     }
   `;
 
@@ -77,7 +72,7 @@ const Filter = () => {
       {/* FORMA DE LA MANO */}
       <GroupFilter>
         <h2>Forma de la mano</h2>
-        <FilterItem items={FormaManoData} onChange={changeManos} />
+        <FilterCard items={FormaManoData} onChange={changeManos} />
       </GroupFilter>
 
       {/* UBICACION DEL CUERPO */}
@@ -86,57 +81,57 @@ const Filter = () => {
         <Selections>
           <ButtonSecondary
             onClick={handleUbicDelante}
-            active={isUbicDelante ? '#f54c73' : ''}>
+            active={isUbicDelante ? '#2572dd' : ''}>
             Delante
           </ButtonSecondary>
           <ButtonSecondary
             onClick={handleUbicSuperior}
-            active={isUbicSuperior ? '#f54c73' : ''}>
+            active={isUbicSuperior ? '#2572dd' : ''}>
             Superior
           </ButtonSecondary>
           <ButtonSecondary
             onClick={handleUbicCentral}
-            active={isUbicCentral ? '#f54c73' : ''}>
+            active={isUbicCentral ? '#2572dd' : ''}>
             Central
           </ButtonSecondary>
           <ButtonSecondary
             onClick={handleUbicInferior}
-            active={isUbicInferior ? '#f54c73' : ''}>
+            active={isUbicInferior ? '#2572dd' : ''}>
             Inferior
           </ButtonSecondary>
           <ButtonSecondary
             onClick={handleUbicBrazo}
-            active={isUbicBrazo ? '#f54c73' : ''}>
+            active={isUbicBrazo ? '#2572dd' : ''}>
             Brazo
           </ButtonSecondary>
         </Selections>
         <Row>
           {isUbicDelante && (
-            <FilterItem
+            <FilterCard
               items={UbicCuerpoDelanteData}
               onChange={changeUbicCuerpo}
             />
           )}
           {isUbicSuperior && (
-            <FilterItem
+            <FilterCard
               items={UbicCuerpoSuperiorData}
               onChange={changeUbicCuerpo}
             />
           )}
           {isUbicCentral && (
-            <FilterItem
+            <FilterCard
               items={UbicCuerpoCentralData}
               onChange={changeUbicCuerpo}
             />
           )}
           {isUbicInferior && (
-            <FilterItem
+            <FilterCard
               items={UbicCuerpoInferiorData}
               onChange={changeUbicCuerpo}
             />
           )}
           {isUbicBrazo && (
-            <FilterItem
+            <FilterCard
               items={UbicCuerpoBrazoData}
               onChange={changeUbicCuerpo}
             />
@@ -144,17 +139,22 @@ const Filter = () => {
         </Row>
       </GroupFilter>
 
-      {/* TEMAS */}
-      <GroupFilter>
-        <h2>Temas</h2>
-        <FilterItem items={TemasData} onChange={changeTemas} />
-      </GroupFilter>
-
-      {/* USO */}
-      <GroupFilter>
-        <h2>Uso</h2>
-        <FilterItem items={UsoData} onChange={changeUso} />
-      </GroupFilter>
+      <div className="row" style={{ marginBottom: '30px' }}>
+        <div className="col-6">
+          {/* TEMAS */}
+          <GroupFilter>
+            <h2>Temas</h2>
+            <FilterTemas items={TemasData} onChange={changeTemas} />
+          </GroupFilter>
+        </div>
+        <div className="col-6">
+          {/* USO */}
+          <GroupFilter>
+            <h2>Uso</h2>
+            <FilterUso items={UsoData} onChange={changeUso} />
+          </GroupFilter>
+        </div>
+      </div>
 
       <div className="d-flex justify-content-center">
         <button

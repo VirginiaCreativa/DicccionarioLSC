@@ -52,7 +52,7 @@ export const Selections = styled.div`
   }
 `;
 
-export const BoxFilters = styled.div`
+export const GroupCard = styled.div`
   padding: 10px 0 0;
   overflow: scroll;
   scrollbar-color: transparent transparent;
@@ -61,6 +61,46 @@ export const BoxFilters = styled.div`
   }
 `;
 
-export const BoxFilter = styled.div`
+export const BoxCard = styled.div`
   display: inline-flex;
+`;
+
+export const Group = styled.div`
+  position: relative;
+  padding: 10px 0 0;
+`;
+
+export const BoxRadio = styled.div`
+  display: flex;
+  padding: 10px 0 0;
+`;
+
+export const Icon = styled.i`
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  z-index: 3;
+  &.bx {
+    color: var(--gray_medium);
+  }
+`;
+
+export const Select = styled.select`
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 15px 10px;
+  color: #62717a;
+  line-height: 14px;
+  background-color: var(--body);
+  border: 0;
+  border-radius: 4px;
+  appearance: none;
+  option {
+    padding: 10px;
+  }
+`;
+
+export const Option = styled.option`
+  padding: 10px;
 `;
