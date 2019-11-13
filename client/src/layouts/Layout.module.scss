@@ -31,7 +31,7 @@
     align-items: center;
     transition: all 0.3s ease-in;
     height: 89vh;
-    
+
   }
 
   .mainDown {
@@ -184,30 +184,58 @@
 }
 
 
-.OnFilters {
-  animation: play 0.2s forwards;
-  @keyframes play {
-    from { 
-      height: 0;
-      opacity: 0; 
-    }
-    to { 
-      height: 100px;
-      opacity: 1; 
+
+
+
+
+.Filters {
+  
+  button {
+    color: #fff;
+    background-color: $blue;
+    padding: 6px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .hideFilter {
+    position: relative;
+    top: -5000px;
+  }
+
+  .OnFilters {
+    margin: 40px 0 0;
+    border-bottom: 1px dotted #ddd;
+    animation: play 0.2s forwards;
+
+    @keyframes play {
+      from {
+        height: 0;
+        opacity: 0;
+      }
+
+      to {
+        height: 60px;
+        opacity: 1;
+      }
     }
   }
-}
 
-.OffFiltres {
-  animation: off 0.2s forwards;
-  @keyframes off {
-    from { 
-      height: 100px;
-      opacity: 1; 
-    }
-    to { 
-      height: 0;
-      opacity: 0; 
+  .OffFiltres {
+    opacity: 0;
+    animation: off 0.2s forwards;
+
+    @keyframes off {
+      from {
+        height: 100px;
+        opacity: 1;
+      }
+
+      to {
+        height: 0;
+        opacity: 0;
+      }
     }
   }
 }
@@ -223,4 +251,3 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1) !important;
   }
 }
-

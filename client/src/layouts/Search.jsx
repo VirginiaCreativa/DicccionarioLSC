@@ -14,10 +14,6 @@ const Search = () => {
   const history = useHistory();
   let animated;
 
-  // useEffect(() => {
-  //   animated.show();
-  // });
-
   const changeSearch = ev => {
     console.log(ev.target.value);
   };
@@ -47,23 +43,30 @@ const Search = () => {
     <Div>
       <SearchCommon onChange={changeSearch} onFilter={handleOnFilters} />
 
-      <div className={onFilter ? classes.OnFilters : classes.OffFiltres}>
-        <button type="button" className={classes.BoxFilter}>
-          Forma de la mano
-          <IconArrow height="10px" width="10px" rotate="90" />
-        </button>
-        <button type="button" className={classes.BoxFilter}>
-          Ubicación del cuerpo
-          <IconArrow height="10px" width="10px" rotate="90" />
-        </button>
-        <button type="button" className={classes.BoxFilter}>
-          Temas
-          <IconArrow height="10px" width="10px" rotate="90" />
-        </button>
-        <button type="button" className={classes.BoxFilter}>
-          Uso
-          <IconArrow height="10px" width="10px" rotate="90" />
-        </button>
+      <div className={classes.Filters}>
+        <div
+          className={
+            onFilter
+              ? classes.OnFilters
+              : [classes.OffFiltres, classes.hideFilter].join(' ')
+          }>
+          <button type="button" className={classes.BoxFilter}>
+            Forma de la mano
+            <IconArrow height="10px" width="10px" rotate="90" />
+          </button>
+          <button type="button" className={classes.BoxFilter}>
+            Ubicación del cuerpo
+            <IconArrow height="10px" width="10px" rotate="90" />
+          </button>
+          <button type="button" className={classes.BoxFilter}>
+            Temas
+            <IconArrow height="10px" width="10px" rotate="90" />
+          </button>
+          <button type="button" className={classes.BoxFilter}>
+            Uso
+            <IconArrow height="10px" width="10px" rotate="90" />
+          </button>
+        </div>
       </div>
 
       <SkyLight
