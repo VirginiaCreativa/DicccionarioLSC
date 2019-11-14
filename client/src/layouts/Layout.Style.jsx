@@ -249,7 +249,7 @@ export const Filters = styled.div`
   }
   .OnFilters {
     margin: 40px 0 0;
-    border-bottom: 1px dotted #ddd;
+
     animation: ${OnFi} 0.2s forwards;
   }
   .OffFiltres {

@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconArrow from '../../../common/Arrow/Arrow';
 
-const Button = ({ children }) => {
+const Button = ({ children, onClick }) => {
   const Button = styled.button`
     margin: 0 5px;
     padding: 15px 20px;
@@ -25,7 +25,7 @@ const Button = ({ children }) => {
     }
   `;
   return (
-    <Button type="button">
+    <Button type="button" onClick={onClick}>
       <IconArrow height="8px" width="8px" rotate="90" className="bgIcon" />
       {children}
     </Button>
