@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import { getFilterOptionActive } from '../../redux/actions/GettingAction';
 
 import { BtnOptions, GroupFilter, Filters } from './Filters.Styled';
 import Button from './UI/ButtonFilter';
+import Spinner from '../../common/Spinner/Spinner';
 
 import FormaManoData from '../../assets/Data/FormaMano';
 import UbicCuerpoDelanteData from '../../assets/Data/UbicacionCuerpo_Delante';
@@ -16,7 +17,7 @@ import UbicCuerpoBrazoData from '../../assets/Data/UbicacionCuerpo_Brazo';
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
-import FilterCard from './CardFilters';
+const FilterCard = lazy(() => import('./CardFilters'));
 
 const Filter = () => {
   const hasOptionActive = useSelector(state => state.Getting.activeOption);
@@ -85,7 +86,9 @@ const Filter = () => {
 
       {isMano && (
         <GroupFilter>
-          <FilterCard items={FormaManoData} onChange={changeManos} />
+          <Suspense fallback={<Spinner />}>
+            <FilterCard items={FormaManoData} onChange={changeManos} />
+          </Suspense>
         </GroupFilter>
       )}
     </Filters>
