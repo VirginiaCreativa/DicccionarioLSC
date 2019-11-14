@@ -7,17 +7,11 @@ export const CardWarpper = styled.div`
   justify-content: center;
   width: 72px;
   height: 80px;
-  margin: 0 6px;
+  margin: 6px 10px;
   padding: 20px;
   background-color: #fff;
   border-radius: 6px;
   transition: all 0.3s ease-in;
-  &:last-child {
-    margin-right: 0;
-  }
-  &:first-child {
-    margin-left: 0;
-  }
   img {
     height: 42px;
   }

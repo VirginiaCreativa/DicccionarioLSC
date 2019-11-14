@@ -43,9 +43,7 @@ export const Selections = styled.div`
   }
 `;
 
-export const GroupCard = styled.div`
-  padding: 10px 0 0;
-`;
+export const GroupCard = styled.div``;
 
 export const BoxCard = styled.div`
   display: flex;
