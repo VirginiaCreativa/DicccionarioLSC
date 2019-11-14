@@ -2,59 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import styled from 'styled-components';
-import classes from './Layout.module.scss';
+import {
+  MenusComp,
+  MenusNavs,
+  MenusPerfil,
+  MenusClose,
+  Footer,
+  FooterBottomLeft,
+  FooterBottomRight,
+} from './Layout.Style';
 
 import { getMenuActive } from '../redux/actions/GettingAction.js';
 
 const Menus = () => {
   const dispatch = useDispatch();
 
-  const BoxNavItem = styled.div`
-    display: flex;
-    padding: 6px 0 10px;
-    line-height: 2.3;
-  `;
-  const Image = styled.img`
-    width: 30px;
-    height: 30px;
-    margin-right: 9px;
-    border: 2px solid #ddd;
-    border-radius: 100%;
-  `;
-  const P = styled.p`
-    margin-bottom: 0;
-    color: #fff;
-    font-size: 0.875rem;
-  `;
-
-  const handleMenu = () => {
+  const handleCloseMenu = () => {
     dispatch(getMenuActive(false));
   };
   return (
-    <div className={classes.Menus}>
-      <header className={classes.Heading}>
+    <MenusComp>
+      <header>
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
-              <BoxNavItem>
-                <Image src="https://i.pravatar.cc/40" alt="Profile" />
-                <P>Virginia Velásquez Soto</P>
-              </BoxNavItem>
+              <MenusPerfil>
+                <img src="https://i.pravatar.cc/40" alt="Profile" />
+                <p>Virginia Velásquez Soto</p>
+              </MenusPerfil>
             </div>
             <div className="col-6 d-flex justify-content-end">
-              <button
+              <MenusClose
                 type="button"
                 aria-label="Cerrar"
-                onClick={handleMenu}
-                className={classes.btnClose}>
+                onClick={handleCloseMenu}>
                 <i className="bx bx-x" />
-              </button>
+              </MenusClose>
             </div>
           </div>
         </div>
       </header>
-      <div className={classes.Navs}>
+      <MenusNavs>
         <ul className="list-unstyled">
           <li
             style={{
@@ -93,12 +81,12 @@ const Menus = () => {
             <i className="bx bx-log-out-circle" />
           </li>
         </ul>
-      </div>
-      <footer>
+      </MenusNavs>
+      <Footer>
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
-              <div className={classes.BottomLeft}>
+              <FooterBottomLeft>
                 <h5>Contáctenos</h5>
                 <p>Complex Ruta N, Medellin, Colombia</p>
                 <a href="mailto:info@ldlsc.com">info@yourdomain.com</a>
@@ -113,11 +101,11 @@ const Menus = () => {
                     <i className="bx bxl-twitter" />
                   </li>
                 </ul>
-              </div>
+              </FooterBottomLeft>
             </div>
             <div className="col-6">
-              <div className={classes.BottomRight}>
-                <div className={classes.BoxPages}>
+              <FooterBottomRight>
+                <div className="BoxPages">
                   <ul className="list-unstyled list-inline">
                     <li className="list-inline-item">
                       <Link
@@ -148,12 +136,12 @@ const Menus = () => {
                     @Virginia.Creativa
                   </p>
                 </div>
-              </div>
+              </FooterBottomRight>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </Footer>
+    </MenusComp>
   );
 };
 

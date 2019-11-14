@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import classes from './Layout.module.scss';
+import { HeaderComp } from './Layout.Style';
 import Logo from '../common/Logo/LogoIcon';
 
 import { getMenuActive } from '../redux/actions/GettingAction.js';
@@ -12,7 +12,7 @@ const Header = () => {
     dispatch(getMenuActive(true));
   };
   return (
-    <div className={classes.Header}>
+    <HeaderComp>
       <div className="container-fluid">
         <div className="row">
           <div className="col-6">
@@ -25,7 +25,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </HeaderComp>
   );
 };
 

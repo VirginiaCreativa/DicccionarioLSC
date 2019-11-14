@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
-
-import classes from './Layout.module.scss';
+import { LayoutComp, Main } from './Layout.Style';
 
 import Header from './Header';
 import Menus from './Menus';
@@ -13,13 +12,13 @@ const Layout = ({ children }) => {
   const location = useLocation();
 
   return (
-    <div className={classes.Layout}>
+    <LayoutComp>
       {/* ==== MENUS ==== */}
       <div
         className={
           isMenuActive
-            ? [classes.Overlay, classes.onOverlay].join(' ')
-            : [classes.Overlay, classes.offOverlay].join(' ')
+            ? ['Overlay', 'onOverlay'].join(' ')
+            : ['Overlay', 'offOverlay'].join(' ')
         }>
         <Menus />
       </div>
@@ -27,15 +26,12 @@ const Layout = ({ children }) => {
       <Header />
       {/* ==== MAIN ==== */}
       <div className="container">
-        <main
-          className={
-            location.pathname === '/' ? classes.mainDown : classes.mainUp
-          }>
+        <Main className={location.pathname === '/' ? 'mainDown' : 'mainUp'}>
           <Search />
           <>{children}</>
-        </main>
+        </Main>
       </div>
-    </div>
+    </LayoutComp>
   );
 };
 
