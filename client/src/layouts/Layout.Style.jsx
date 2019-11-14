@@ -225,14 +225,14 @@ const OnFi = keyframes`
   }
 
   to {
-    height: 60px;
+    height: 40px;
     opacity: 1;
   }    
 `;
 
 const OffFi = keyframes`
   from {
-    height: 100px;
+    height: 40px;
     opacity: 1;
   }
 
@@ -243,13 +243,15 @@ const OffFi = keyframes`
 `;
 
 export const Filters = styled.div`
+  z-index: 9999;
   .hideFilter {
     position: relative;
     top: -1000px;
   }
   .OnFilters {
-    margin: 40px 0 0;
-
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
     animation: ${OnFi} 0.2s forwards;
   }
   .OffFiltres {

@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
+export const Filters = styled.div`
+  position: relative;
+`;
+
 export const BtnOptions = styled.div`
-  padding-bottom: 20px;
-  border-bottom: 1px dotted #ddd;
+  display: flex;
+  justify-content: center;
 `;
 
 export const Title = styled.h1`
@@ -17,32 +21,14 @@ export const Title = styled.h1`
 `;
 
 export const GroupFilter = styled.div`
+  position: absolute;
+  top: 60px;
+  left: -20%;
+  width: 820px;
   margin-bottom: 15px;
-
-  h2 {
-    position: relative;
-    margin-bottom: 16px;
-    color: var(--blue_medium);
-    font-size: 1.125rem;
-
-    &::after {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      border-bottom: 2px solid var(--gray_1);
-      content: '';
-    }
-
-    &::before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 6%;
-      border-bottom: 2px solid var(--blue_medium);
-      content: '';
-    }
-  }
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
 `;
 
 export const Selections = styled.div`
@@ -59,15 +45,11 @@ export const Selections = styled.div`
 
 export const GroupCard = styled.div`
   padding: 10px 0 0;
-  overflow: scroll;
-  scrollbar-color: transparent transparent;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 export const BoxCard = styled.div`
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Group = styled.div`
