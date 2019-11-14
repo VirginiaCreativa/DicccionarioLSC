@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import IconArrow from '../../../common/Arrow/Arrow';
 
-const Button = ({ children, onClick }) => {
+const ButtonFilter = ({ children, onClick, active, activeColor }) => {
+  const hasOptionActive = useSelector(state => state.Getting.activeFilter);
   const Button = styled.button`
     margin: 0 5px;
     padding: 15px 20px;
@@ -17,19 +18,20 @@ const Button = ({ children, onClick }) => {
     &:hover {
       color: #fff;
       background-color: var(--gray_dark);
-      border-bottom: none;
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
     }
     .bgIcon {
       margin-right: 10px;
     }
   `;
   return (
-    <Button type="button" onClick={onClick}>
+    <Button
+      type="button"
+      onClick={onClick}
+      style={{ backgroundColor: `${active}`, color: `${activeColor}` }}>
       <IconArrow height="8px" width="8px" rotate="90" className="bgIcon" />
       {children}
     </Button>
   );
 };
 
-export default Button;
+export default ButtonFilter;

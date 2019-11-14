@@ -1,8 +1,13 @@
-import { GET_MENU_ACTIVE, GET_FILTER_ACTIVE } from '../types';
+import {
+  GET_MENU_ACTIVE,
+  GET_FILTER_ACTIVE,
+  GET_FILTER_OPTION_ACTIVE,
+} from '../types';
 
 const initialState = {
   activeMenu: false,
   activeFilter: false,
+  activeOption: false,
 };
 
 function AuthReducer(state = initialState, action) {
@@ -16,6 +21,11 @@ function AuthReducer(state = initialState, action) {
       return {
         ...state,
         activeFilter: action.payload,
+      };
+    case GET_FILTER_OPTION_ACTIVE:
+      return {
+        ...state,
+        activeOption: action.payload,
       };
 
     default:
