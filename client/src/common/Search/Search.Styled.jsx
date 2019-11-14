@@ -30,13 +30,14 @@ export const Filter = styled.button`
   padding: 0;
   background-color: transparent;
   border: none;
-  i {
-    &.bx {
-      color: #a3a9af;
-      font-size: 24px;
-      &:hover {
-        color: #134fa3;
-      }
+  .bx {
+    color: var(--gray_medium);
+    font-size: 24px;
+    &:hover {
+      color: var(--blue_medium);
+    }
+    &.active {
+      color: var(--blue_medium);
     }
   }
 `;

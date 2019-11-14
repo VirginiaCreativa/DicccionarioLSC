@@ -20,6 +20,7 @@ const Search = () => {
     console.log(ev.target.value);
   };
   const handleFilters = ev => {
+    dispatch(getFilterActive(true));
     setOnFilter(!onFilter);
   };
 
@@ -27,6 +28,10 @@ const Search = () => {
     animated.hide();
     history.push('/resultado');
   };
+
+  if (!onFilter) {
+    dispatch(getFilterActive(false));
+  }
 
   return (
     <SearchComp>
