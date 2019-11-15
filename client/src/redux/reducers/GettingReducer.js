@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   activeMenu: false,
-  activeFilter: false,
+  activeFilter: true,
   activeOption: false,
 };
 

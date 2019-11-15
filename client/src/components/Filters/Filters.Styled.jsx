@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Filters = styled.div`
   position: relative;
+  h3 {
+    padding-bottom: 10px;
+    text-align: center;
+  }
 `;
 
 export const BtnOptions = styled.div`
@@ -16,32 +20,6 @@ export const Title = styled.h1`
   text-transform: uppercase;
   span {
     font-weight: 300;
-  }
-`;
-
-export const GroupFilter = styled.div`
-  .Box {
-    position: absolute;
-    left: -20%;
-    z-index: 1;
-    width: 820px;
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: var(--boxshadow);
-    opacity: 0;
-    transition: all 0.2s ease;
-  }
-  .Show {
-    top: 60px;
-    z-index: 999;
-    opacity: 1;
-  }
-  .Hide {
-    top: 100px;
-    z-index: -999;
-    opacity: 0;
   }
 `;
 
@@ -102,4 +80,28 @@ export const Select = styled.select`
 
 export const Option = styled.option`
   padding: 10px;
+`;
+
+export const GroupFilter = styled.div`
+  .Box {
+    z-index: 1;
+    width: 600px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: var(--boxshadow);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  .Show {
+    opacity: 1;
+  }
+  .Hide {
+    display: none;
+    opacity: 0;
+    ${BoxCard} {
+      opacity: 0;
+    }
+  }
 `;

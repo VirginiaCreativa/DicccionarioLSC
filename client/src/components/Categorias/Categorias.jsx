@@ -1,18 +1,17 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
+import { Items } from './Categorias.Styled';
 import CategoriasData from '../../assets/Data/Categorias';
 import Item from './CategoriaItem';
 
 const Categorias = () => {
+  const isFilterActive = useSelector(state => state.Getting.activeFilter);
   const history = useHistory();
-  const Items = styled.div`
-    display: flex;
-  `;
 
   return (
-    <Items>
+    <Items className={isFilterActive ? 'Show' : 'Hide'}>
       {CategoriasData.map(item => (
         <Item
           key={item.id}

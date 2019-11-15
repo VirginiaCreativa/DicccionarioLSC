@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, IconCat, Title } from './CategoriaItem.Styled';
+import { Item, IconCat, Title } from './Categorias.Styled';
 
 const CategoriaItem = ({ title, onClick, icon }) => (
   <Item onClick={onClick}>

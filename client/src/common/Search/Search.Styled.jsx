@@ -4,11 +4,10 @@ export const BoxSearch = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  width: 600px;
 `;
 
 export const SearchInp = styled.input`
-  width: 60%;
+  width: 300px;
   padding: 10px 10px 10px 38px;
   border-top: none;
   border-right: none;
@@ -19,8 +18,8 @@ export const SearchInp = styled.input`
 
 export const Icon = styled.i`
   position: absolute;
-  top: 10px;
-  left: 19%;
+  top: 12px;
+  left: 12px;
   &.bx {
     color: #a3a9af;
     font-size: 22px;

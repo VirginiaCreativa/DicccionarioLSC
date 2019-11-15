@@ -1,4 +1,34 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const OnFi = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+const OffFi = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+`;
+
+export const Items = styled.div`
+  display: flex;
+  &.Show {
+    animation: ${OnFi} 0.3s forwards;
+  }
+  &.Hide {
+    animation: ${OffFi} 0.3s forwards;
+  }
+`;
 
 export const Item = styled.div`
   display: flex;

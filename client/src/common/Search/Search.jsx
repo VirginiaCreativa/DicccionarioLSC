@@ -17,9 +17,10 @@ const SearchCommon = ({ onSubmit, onChange, value, onFilter }) => {
       />
       <Filter type="button" onClick={onFilter} aria-label="ButtonFilter">
         <i
-          className={['bx bx-slider-alt', hasFilterActive ? 'active' : ''].join(
-            ' '
-          )}
+          className={[
+            'bx bx-slider-alt',
+            !hasFilterActive ? 'active' : '',
+          ].join(' ')}
         />
       </Filter>
     </BoxSearch>

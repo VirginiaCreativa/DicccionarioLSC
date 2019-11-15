@@ -20,8 +20,11 @@ const Search = () => {
     console.log(ev.target.value);
   };
   const handleFilters = ev => {
-    dispatch(getFilterActive(true));
+    dispatch(getFilterActive(false));
     setOnFilter(!onFilter);
+    if (onFilter !== false) {
+      dispatch(getFilterActive(true));
+    }
   };
 
   const handleSubmitFilter = () => {
@@ -29,22 +32,15 @@ const Search = () => {
     history.push('/resultado');
   };
 
-  if (!onFilter) {
-    dispatch(getFilterActive(false));
-  }
-
   return (
     <SearchComp>
       <SearchCommon onChange={changeSearch} onFilter={handleFilters} />
 
-      <Filters>
-        <div
-          className={
-            onFilter ? 'OnFilters' : ['OffFiltres', 'hideFilter'].join(' ')
-          }>
+      {onFilter && (
+        <Filters className={onFilter ? 'Show' : 'Hide'}>
           <FiltersOptions />
-        </div>
-      </Filters>
+        </Filters>
+      )}
     </SearchComp>
   );
 };

@@ -215,46 +215,38 @@ export const SearchComp = styled.div`
   display: grid;
   justify-content: center;
   justify-items: center;
+  width: 100%;
   margin-bottom: 40px;
 `;
 
 const OnFi = keyframes`
   from {
-    height: 0;
     opacity: 0;
   }
 
   to {
-    height: 40px;
     opacity: 1;
-  }    
+  }
 `;
 
 const OffFi = keyframes`
   from {
-    height: 40px;
     opacity: 1;
   }
 
   to {
-    height: 0;
     opacity: 0;
-  }   
+  }
 `;
 
 export const Filters = styled.div`
-  z-index: 9999;
-  .hideFilter {
-    position: relative;
-    top: -1000px;
-  }
-  .OnFilters {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+  margin-top: 40px;
+  transition: all 1s ease-in;
+  &.Show {
+    height: 100%;
     animation: ${OnFi} 0.2s forwards;
   }
-  .OffFiltres {
+  &.Hide {
     animation: ${OffFi} 0.2s forwards;
   }
 `;

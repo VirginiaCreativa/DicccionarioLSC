@@ -57,6 +57,7 @@ const Filter = () => {
 
   return (
     <Filters>
+      <h3>Búsqueda Avanzada</h3>
       <BtnOptions>
         <Button
           onClick={handleMano}
@@ -83,7 +84,6 @@ const Filter = () => {
           Uso
         </Button>
       </BtnOptions>
-
       <GroupFilter>
         <div
           className={
