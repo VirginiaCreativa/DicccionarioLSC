@@ -11,6 +11,7 @@ export const Item = styled.div`
   padding: 20px;
   background-color: #fff;
   border-radius: 6px;
+  box-shadow: var(--boxshadow);
   transform: scale(1);
   cursor: pointer;
   transition: all 0.3s ease-out;

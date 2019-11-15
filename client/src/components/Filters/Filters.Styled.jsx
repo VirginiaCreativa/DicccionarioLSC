@@ -29,6 +29,7 @@ export const GroupFilter = styled.div`
     padding: 10px;
     background-color: #fff;
     border-radius: 4px;
+    box-shadow: var(--boxshadow);
     opacity: 0;
     transition: all 0.2s ease;
   }
