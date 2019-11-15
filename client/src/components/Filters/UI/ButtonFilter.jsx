@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import IconArrow from '../../../common/Arrow/Arrow';
 
 const ButtonFilter = ({ children, onClick, active, activeColor }) => {
-  const hasOptionActive = useSelector(state => state.Getting.activeFilter);
   const Button = styled.button`
     margin: 0 5px;
     padding: 15px 20px;

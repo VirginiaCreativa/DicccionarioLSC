@@ -14,21 +14,34 @@ export const Title = styled.h1`
   font-size: 1.425rem;
   text-align: center;
   text-transform: uppercase;
-
   span {
     font-weight: 300;
   }
 `;
 
 export const GroupFilter = styled.div`
-  position: absolute;
-  top: 60px;
-  left: -20%;
-  width: 820px;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 4px;
+  .Box {
+    position: absolute;
+    left: -20%;
+    z-index: 1;
+    width: 820px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+  .Show {
+    top: 60px;
+    z-index: 999;
+    opacity: 1;
+  }
+  .Hide {
+    top: 100px;
+    z-index: -999;
+    opacity: 0;
+  }
 `;
 
 export const Selections = styled.div`

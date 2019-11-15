@@ -84,13 +84,16 @@ const Filter = () => {
         </Button>
       </BtnOptions>
 
-      {isMano && (
-        <GroupFilter>
+      <GroupFilter>
+        <div
+          className={
+            isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+          }>
           <Suspense fallback={<Spinner />}>
             <FilterCard items={FormaManoData} onChange={changeManos} />
           </Suspense>
-        </GroupFilter>
-      )}
+        </div>
+      </GroupFilter>
     </Filters>
   );
 };
