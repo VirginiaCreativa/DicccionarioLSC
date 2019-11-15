@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Filters = styled.div`
   position: relative;
@@ -82,9 +82,34 @@ export const Option = styled.option`
   padding: 10px;
 `;
 
+const OnOption = keyframes`
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const OffOption = keyframes`
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
 export const GroupFilter = styled.div`
+  margin-top: 10px;
   .Box {
-    z-index: 1;
+    position: relative;
     width: 600px;
     margin-bottom: 15px;
     padding: 10px;
@@ -95,13 +120,21 @@ export const GroupFilter = styled.div`
     transition: all 0.3s ease;
   }
   .Show {
+    top: 0;
+    z-index: 1;
+    height: 480px;
     opacity: 1;
+    ${BoxCard} {
+      animation: ${OnOption} 0.6s forwards;
+    }
   }
   .Hide {
-    display: none;
+    top: -120px;
+    z-index: -1;
+    height: 0;
     opacity: 0;
     ${BoxCard} {
-      opacity: 0;
+      animation: ${OffOption} 0.1s forwards;
     }
   }
 `;
