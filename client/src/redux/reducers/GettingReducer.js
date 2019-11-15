@@ -1,13 +1,20 @@
 import {
   GET_MENU_ACTIVE,
   GET_FILTER_ACTIVE,
-  GET_FILTER_OPTION_ACTIVE,
+  GET_OPTION_MANOS,
+  GET_OPTION_UBICACION,
+  GET_OPTION_TEMAS,
+  GET_OPTION_USO,
 } from '../types';
 
 const initialState = {
   activeMenu: false,
   activeFilter: true,
   activeOption: false,
+  optionManos: false,
+  optionUbicacion: false,
+  optionTemas: false,
+  optionUso: false,
 };
 
 function AuthReducer(state = initialState, action) {
@@ -22,10 +29,15 @@ function AuthReducer(state = initialState, action) {
         ...state,
         activeFilter: action.payload,
       };
-    case GET_FILTER_OPTION_ACTIVE:
+    case GET_OPTION_MANOS:
       return {
         ...state,
-        activeOption: action.payload,
+        optionManos: action.payload,
+      };
+    case GET_OPTION_UBICACION:
+      return {
+        ...state,
+        optionUbicacion: action.payload,
       };
 
     default:

@@ -1,7 +1,10 @@
 import {
   GET_MENU_ACTIVE,
   GET_FILTER_ACTIVE,
-  GET_FILTER_OPTION_ACTIVE,
+  GET_OPTION_MANOS,
+  GET_OPTION_UBICACION,
+  GET_OPTION_TEMAS,
+  GET_OPTION_USO,
 } from '../types';
 
 export const getMenuActive = payload => ({
@@ -12,7 +15,22 @@ export const getFilterActive = payload => ({
   type: GET_FILTER_ACTIVE,
   payload,
 });
-export const getFilterOptionActive = payload => ({
-  type: GET_FILTER_OPTION_ACTIVE,
+export const optionManos = payload => ({
+  type: GET_OPTION_MANOS,
+  payload,
+});
+
+export const optionUbicacion = payload => ({
+  type: GET_OPTION_UBICACION,
+  payload,
+});
+
+export const optionTemas = payload => ({
+  type: GET_OPTION_TEMAS,
+  payload,
+});
+
+export const optionUso = payload => ({
+  type: GET_OPTION_USO,
   payload,
 });

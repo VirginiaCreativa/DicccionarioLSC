@@ -106,35 +106,32 @@ const OffOption = keyframes`
   }
 `;
 
-export const GroupFilter = styled.div`
+export const OptionFilter = styled.div`
+  position: relative;
   margin-top: 10px;
-  .Box {
-    position: relative;
-    width: 600px;
-    margin-bottom: 15px;
-    padding: 10px;
+  &.Box {
+    width: 736px;
+    padding: 10px 0;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: var(--boxshadow);
-    opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in;
   }
-  .Show {
-    top: 0;
-    z-index: 1;
-    height: 480px;
+  &.Show {
+    top: ${props => props.top};
+    z-index: ${props => props.zindex};
+    height: ${props => props.height};
     opacity: 1;
     ${BoxCard} {
       animation: ${OnOption} 0.6s forwards;
     }
   }
-  .Hide {
-    top: -120px;
-    z-index: -1;
+  &.Hide {
+    top: 0;
     height: 0;
     opacity: 0;
     ${BoxCard} {
-      animation: ${OffOption} 0.1s forwards;
+      animation: ${OffOption} 0.3s forwards;
     }
   }
 `;

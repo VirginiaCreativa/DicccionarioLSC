@@ -2,9 +2,12 @@ import React, { useState, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { getFilterOptionActive } from '../../redux/actions/GettingAction';
+import {
+  optionManos,
+  optionUbicacion,
+} from '../../redux/actions/GettingAction';
 
-import { BtnOptions, GroupFilter, Filters } from './Filters.Styled';
+import { BtnOptions, OptionFilter, Filters } from './Filters.Styled';
 import Button from './UI/ButtonFilter';
 import Spinner from '../../common/Spinner/Spinner';
 
@@ -17,10 +20,10 @@ import UbicCuerpoBrazoData from '../../assets/Data/UbicacionCuerpo_Brazo';
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
-const FilterCard = lazy(() => import('./CardFilters'));
+const ManosFilter = lazy(() => import('./ManosFilters'));
+const UbicacionFilter = lazy(() => import('./UbicacionsFilters'));
 
 const Filter = () => {
-  const hasOptionActive = useSelector(state => state.Getting.activeOption);
   const dispatch = useDispatch();
   const [isMano, setMano] = useState(false);
   const [isUbicacion, setUbicacion] = useState(false);
@@ -44,9 +47,18 @@ const Filter = () => {
 
   const handleMano = () => {
     setMano(!isMano);
+    dispatch(optionManos(true));
+    if (isMano === true) {
+      dispatch(optionManos(false));
+    }
   };
   const handleUbicacion = () => {
+    setMano(false);
     setUbicacion(!isUbicacion);
+    dispatch(optionUbicacion(true));
+    if (isUbicacion === true) {
+      dispatch(optionUbicacion(false));
+    }
   };
   const handleTemas = () => {
     setTemas(!isTemas);
@@ -84,16 +96,31 @@ const Filter = () => {
           Uso
         </Button>
       </BtnOptions>
-      <GroupFilter>
-        <div
-          className={
-            isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
-          }>
-          <Suspense fallback={<Spinner />}>
-            <FilterCard items={FormaManoData} onChange={changeManos} />
-          </Suspense>
-        </div>
-      </GroupFilter>
+
+      <OptionFilter
+        className={
+          isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+        }
+        height="390px">
+        <Suspense fallback={<Spinner />}>
+          <ManosFilter items={FormaManoData} onChange={changeManos} />
+        </Suspense>
+      </OptionFilter>
+
+      <OptionFilter
+        className={
+          isUbicacion ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+        }
+        height="180px"
+        top="-30px"
+        zindex="2">
+        <Suspense fallback={<Spinner />}>
+          <UbicacionFilter
+            items={UbicCuerpoDelanteData}
+            onChange={changeManos}
+          />
+        </Suspense>
+      </OptionFilter>
     </Filters>
   );
 };
