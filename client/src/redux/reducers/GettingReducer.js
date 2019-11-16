@@ -39,6 +39,11 @@ function AuthReducer(state = initialState, action) {
         ...state,
         optionUbicacion: action.payload,
       };
+    case GET_OPTION_TEMAS:
+      return {
+        ...state,
+        optionTemas: action.payload,
+      };
 
     default:
       return state;

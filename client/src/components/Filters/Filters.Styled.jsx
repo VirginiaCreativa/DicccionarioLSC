@@ -47,6 +47,51 @@ export const Group = styled.div`
   padding: 10px 0 0;
 `;
 
+export const Ul = styled.ul`
+  margin: 0 20px;
+  column-count: 4;
+  column-gap: 20px;
+  li {
+    position: relative;
+    display: flex;
+    margin-bottom: 10px;
+    input {
+      position: absolute;
+      z-index: 3;
+      overflow: hidden;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      &:checked {
+        ~ span {
+          background-color: var(--blue);
+          border: none;
+          &::after {
+            position: relative;
+            z-index: 6;
+            content: '';
+          }
+        }
+      }
+    }
+    label {
+      margin-bottom: 0;
+      margin-left: 4px;
+      font-size: 0.845rem !important;
+    }
+    span {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--gray_2);
+      border-radius: 2px;
+      transition: all 0.3s ease-in;
+    }
+  }
+`;
+
 export const BoxRadio = styled.div`
   display: flex;
   padding: 10px 0 0;

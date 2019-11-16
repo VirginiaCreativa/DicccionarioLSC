@@ -5,6 +5,8 @@ import { useHistory } from 'react-router-dom';
 import {
   optionManos,
   optionUbicacion,
+  optionTemas,
+  optionUso,
 } from '../../redux/actions/GettingAction';
 
 import { BtnOptions, OptionFilter, Filters } from './Filters.Styled';
@@ -22,6 +24,7 @@ import UsoData from '../../assets/Data/Uso';
 
 const ManosFilter = lazy(() => import('./ManosFilters'));
 const UbicacionFilter = lazy(() => import('./UbicacionsFilters'));
+const TemasFilter = lazy(() => import('./TemasFilters'));
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -46,6 +49,9 @@ const Filter = () => {
   };
 
   const handleMano = () => {
+    setUbicacion(false);
+    setTemas(false);
+    setUso(false);
     setMano(!isMano);
     dispatch(optionManos(true));
     if (isMano === true) {
@@ -54,6 +60,8 @@ const Filter = () => {
   };
   const handleUbicacion = () => {
     setMano(false);
+    setTemas(false);
+    setUso(false);
     setUbicacion(!isUbicacion);
     dispatch(optionUbicacion(true));
     if (isUbicacion === true) {
@@ -61,10 +69,24 @@ const Filter = () => {
     }
   };
   const handleTemas = () => {
+    setMano(false);
+    setUbicacion(false);
+    setUso(false);
     setTemas(!isTemas);
+    dispatch(optionTemas(true));
+    if (isTemas === true) {
+      dispatch(optionTemas(false));
+    }
   };
   const handleUso = () => {
+    setMano(false);
+    setTemas(false);
+    setUbicacion(false);
     setUso(!isUso);
+    dispatch(optionUso(true));
+    if (isUso === true) {
+      dispatch(optionUso(false));
+    }
   };
 
   return (
@@ -119,6 +141,18 @@ const Filter = () => {
             items={UbicCuerpoDelanteData}
             onChange={changeManos}
           />
+        </Suspense>
+      </OptionFilter>
+
+      <OptionFilter
+        className={
+          isTemas ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+        }
+        height="390px"
+        top="-60px"
+        zindex="4">
+        <Suspense fallback={<Spinner />}>
+          <TemasFilter items={TemasData} onChange={changeManos} />
         </Suspense>
       </OptionFilter>
     </Filters>
