@@ -148,7 +148,7 @@ const Filter = () => {
         className={
           isTemas ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
         }
-        height="390px"
+        height="320px"
         top="-60px"
         zindex="4">
         <Suspense fallback={<Spinner />}>

@@ -66,18 +66,13 @@ export const Ul = styled.ul`
         ~ span {
           background-color: var(--blue);
           border: none;
-          &::after {
-            position: relative;
-            z-index: 6;
-            content: '';
-          }
         }
       }
     }
     label {
       margin-bottom: 0;
       margin-left: 4px;
-      font-size: 0.845rem !important;
+      font-size: 0.75rem !important;
     }
     span {
       position: absolute;
@@ -85,6 +80,7 @@ export const Ul = styled.ul`
       left: 0;
       width: 12px;
       height: 12px;
+      background-color: var(--gray_1);
       border: 2px solid var(--gray_2);
       border-radius: 2px;
       transition: all 0.3s ease-in;

@@ -4,7 +4,7 @@ import { Group, Select, Option, Icon, Ul } from './Filters.Styled';
 
 const TemasFilter = ({ items, onChange, valueSelect }) => {
   const hasOptionActive = useSelector(state => state.Getting.optionTemas);
-  const myData = [].concat(items).sort((a, b) => a.itemM > b.itemM);
+  const myData = [].concat(items).sort((a, b) => a.tema > b.tema);
 
   return (
     <>
