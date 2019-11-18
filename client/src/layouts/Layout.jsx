@@ -9,6 +9,7 @@ import Search from './Search';
 
 const Layout = ({ children }) => {
   const isMenuActive = useSelector(state => state.Getting.activeMenu);
+  const hasActiveFilter = useSelector(state => state.Getting.activeFilter);
   const location = useLocation();
 
   return (
@@ -26,7 +27,9 @@ const Layout = ({ children }) => {
       <Header />
       {/* ==== MAIN ==== */}
       <div className="container">
-        <Main className={location.pathname === '/' ? 'mainDown' : 'mainUp'}>
+        <Main
+          className={location.pathname === '/' ? 'mainDown' : 'mainUp'}
+          height={hasActiveFilter ? '89vh' : '58vh'}>
           <Search />
           <>{children}</>
         </Main>

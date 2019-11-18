@@ -28,7 +28,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-content: center;
-  height: 89vh;
+  height: ${props => props.height};
   transition: all 0.3s ease-in;
 
   &.mainDown {
