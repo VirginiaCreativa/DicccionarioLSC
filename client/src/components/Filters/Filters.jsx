@@ -14,17 +14,14 @@ import Button from './UI/ButtonFilter';
 import Spinner from '../../common/Spinner/Spinner';
 
 import FormaManoData from '../../assets/Data/FormaMano';
-import UbicCuerpoDelanteData from '../../assets/Data/UbicacionCuerpo_Delante';
-import UbicCuerpoSuperiorData from '../../assets/Data/UbicacionCuerpo_Superior';
-import UbicCuerpoCentralData from '../../assets/Data/UbicacionCuerpo_Central';
-import UbicCuerpoInferiorData from '../../assets/Data/UbicacionCuerpo_Inferior';
-import UbicCuerpoBrazoData from '../../assets/Data/UbicacionCuerpo_Brazo';
+
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
 const ManosFilter = lazy(() => import('./ManosFilters'));
 const UbicacionFilter = lazy(() => import('./UbicacionsFilters'));
 const TemasFilter = lazy(() => import('./TemasFilters'));
+const UsoFilter = lazy(() => import('./UsoFilters'));
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -32,6 +29,8 @@ const Filter = () => {
   const [isUbicacion, setUbicacion] = useState(false);
   const [isTemas, setTemas] = useState(false);
   const [isUso, setUso] = useState(false);
+  const activeOptionTemas = useSelector(state => state.Getting.optionUbicacion);
+  const activeOptionUbicacion = useSelector(state => state.Getting.optionTemas);
   let activeMano;
   let activeUbicacion;
 
@@ -64,6 +63,9 @@ const Filter = () => {
     setUso(false);
     setUbicacion(!isUbicacion);
     dispatch(optionUbicacion(true));
+    if (activeOptionTemas !== true) {
+      dispatch(optionTemas(false));
+    }
     if (isUbicacion === true) {
       dispatch(optionUbicacion(false));
     }
@@ -123,7 +125,7 @@ const Filter = () => {
         className={
           isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
         }
-        height="390px">
+        height="430px">
         <Suspense fallback={<Spinner />}>
           <ManosFilter items={FormaManoData} onChange={changeManos} />
         </Suspense>
@@ -133,14 +135,11 @@ const Filter = () => {
         className={
           isUbicacion ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
         }
-        height="180px"
+        height="280px"
         top="-30px"
         zindex="2">
         <Suspense fallback={<Spinner />}>
-          <UbicacionFilter
-            items={UbicCuerpoDelanteData}
-            onChange={changeManos}
-          />
+          <UbicacionFilter onChange={changeManos} />
         </Suspense>
       </OptionFilter>
 

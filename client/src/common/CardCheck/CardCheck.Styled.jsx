@@ -7,8 +7,7 @@ export const CardWarpper = styled.div`
   justify-content: center;
   width: 72px;
   height: 80px;
-  margin: 6px 10px;
-  padding: 20px;
+  margin: 8px;
   background-color: #fff;
   border-radius: 6px;
   transition: all 0.3s ease-in;

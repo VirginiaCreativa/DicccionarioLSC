@@ -25,6 +25,8 @@ export const Title = styled.h1`
 
 export const Selections = styled.div`
   display: flex;
+  justify-content: center;
+  padding: 10px;
   button {
     margin-right: 10px;
     margin-bottom: 6px;
@@ -32,6 +34,7 @@ export const Selections = styled.div`
     line-height: 1;
     text-transform: uppercase;
     border: none;
+    border-radius: 2px;
   }
 `;
 
@@ -44,7 +47,7 @@ export const BoxCard = styled.div`
 
 export const Group = styled.div`
   position: relative;
-  padding: 10px 0 0;
+  padding: 10px;
 `;
 
 export const Ul = styled.ul`
@@ -112,7 +115,7 @@ export const Select = styled.select`
   line-height: 14px;
   background-color: var(--body);
   border: 0;
-  border-radius: 4px;
+  border-radius: 54px;
   appearance: none;
   option {
     padding: 10px;

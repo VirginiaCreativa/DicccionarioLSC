@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Group, Select, Option, Icon, Ul } from './Filters.Styled';
+import { Group, Ul } from './Filters.Styled';
 
 const TemasFilter = ({ items, onChange, valueSelect }) => {
   const hasOptionActive = useSelector(state => state.Getting.optionTemas);
