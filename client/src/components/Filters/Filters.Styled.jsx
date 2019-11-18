@@ -29,12 +29,19 @@ export const Selections = styled.div`
   padding: 10px;
   button {
     margin-right: 10px;
-    margin-bottom: 6px;
-    font-size: 0.8rem;
-    line-height: 1;
+    padding: 12px 14px;
+    color: var(--gray_medium);
+    font-size: 0.845rem;
+    line-height: 0;
     text-transform: uppercase;
+    background-color: transparent;
     border: none;
-    border-radius: 2px;
+    &.active {
+      padding: 12px 14px;
+      color: #fff;
+      background-color: var(--blue);
+      border-radius: 20px;
+    }
   }
 `;
 
@@ -177,5 +184,21 @@ export const OptionFilter = styled.div`
     ${BoxCard} {
       animation: ${OffOption} 0.3s forwards;
     }
+  }
+`;
+
+export const TitleUbic = styled.h2`
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--gray_1);
+  &::after {
+    position: relative;
+    top: 8px;
+    display: block;
+    width: 10%;
+    height: 2px;
+    background-color: var(--blue);
+    content: '';
   }
 `;

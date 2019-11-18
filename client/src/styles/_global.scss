@@ -83,8 +83,8 @@ input {
 }
 
 .btn-secondary {
-  background-color: $gray_medium;
-
+  background-color: $gray_1 !important;
+  color: $blue !important;
   &:hover {
     background-color: $gray_dark;
   }

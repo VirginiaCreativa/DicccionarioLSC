@@ -14,7 +14,6 @@ import Button from './UI/ButtonFilter';
 import Spinner from '../../common/Spinner/Spinner';
 
 import FormaManoData from '../../assets/Data/FormaMano';
-
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
 
@@ -135,7 +134,7 @@ const Filter = () => {
         className={
           isUbicacion ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
         }
-        height="280px"
+        height="540px"
         top="-30px"
         zindex="2">
         <Suspense fallback={<Spinner />}>
@@ -152,6 +151,18 @@ const Filter = () => {
         zindex="4">
         <Suspense fallback={<Spinner />}>
           <TemasFilter items={TemasData} onChange={changeManos} />
+        </Suspense>
+      </OptionFilter>
+
+      <OptionFilter
+        className={
+          isUso ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+        }
+        height="280px"
+        top="-90px"
+        zindex="2">
+        <Suspense fallback={<Spinner />}>
+          <UsoFilter items={UsoData} onChange={changeManos} />
         </Suspense>
       </OptionFilter>
     </Filters>

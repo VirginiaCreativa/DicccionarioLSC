@@ -2,35 +2,49 @@
     "id": 1,
     "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
     "artibuto": "ubicacion",
-    "seleccion": "central",
+    "seleccion": "delatnte",
     "value": "mano en A"
   },
   {
     "id": 2,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
     "artibuto": "ubicacion",
-    "seleccion": "central",
+    "seleccion": "delatnte",
     "value": "mano en Ab"
   },
   {
     "id": 3,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
     "artibuto": "ubicacion",
-    "seleccion": "central",
+    "seleccion": "delatnte",
     "value": "mano en B"
   },
   {
     "id": 4,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "ubicacion",
-    "seleccion": "central",
+    "seleccion": "delatnte",
     "value": "mano en B"
   },
   {
     "id": 5,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "ubicacion",
-    "seleccion": "central",
+    "seleccion": "delatnte",
+    "value": "mano en B"
+  },
+  {
+    "id": 6,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "ubicacion",
+    "seleccion": "delatnte",
+    "value": "mano en B"
+  },
+  {
+    "id": 7,
+    "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
+    "artibuto": "ubicacion",
+    "seleccion": "delatnte",
     "value": "mano en B"
   }
 ]
