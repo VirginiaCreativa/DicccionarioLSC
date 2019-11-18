@@ -235,7 +235,7 @@ const OffFi = keyframes`
 `;
 
 export const Filters = styled.div`
-  margin-top: 40px;
+  margin-top: 30px;
   &.Show {
     animation: ${OnFi} 0.2s forwards;
   }
