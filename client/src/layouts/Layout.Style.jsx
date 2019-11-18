@@ -28,7 +28,6 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-content: center;
-  align-items: center;
   height: 89vh;
   transition: all 0.3s ease-in;
 
@@ -212,10 +211,6 @@ export const FooterBottomRight = styled.div`
 `;
 
 export const SearchComp = styled.div`
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  width: 100%;
   margin-bottom: 40px;
 `;
 
@@ -241,9 +236,7 @@ const OffFi = keyframes`
 
 export const Filters = styled.div`
   margin-top: 40px;
-  transition: all 1s ease-in;
   &.Show {
-    height: 100%;
     animation: ${OnFi} 0.2s forwards;
   }
   &.Hide {

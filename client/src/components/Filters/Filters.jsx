@@ -9,7 +9,7 @@ import {
   optionUso,
 } from '../../redux/actions/GettingAction';
 
-import { BtnOptions, OptionFilter, Filters } from './Filters.Styled';
+import { Options, BtnOptions, OptionFilter, Filters } from './Filters.Styled';
 import Button from './UI/ButtonFilter';
 import Spinner from '../../common/Spinner/Spinner';
 
@@ -120,51 +120,46 @@ const Filter = () => {
         </Button>
       </BtnOptions>
 
-      <OptionFilter
-        className={
-          isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
-        }
-        height="430px">
-        <Suspense fallback={<Spinner />}>
-          <ManosFilter items={FormaManoData} onChange={changeManos} />
-        </Suspense>
-      </OptionFilter>
+      <Options className={isMano || isUbicacion ? 'Show' : 'Hide'}>
+        <OptionFilter
+          className={
+            isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+          }>
+          <Suspense fallback={<Spinner />}>
+            <ManosFilter items={FormaManoData} onChange={changeManos} />
+          </Suspense>
+        </OptionFilter>
 
-      <OptionFilter
-        className={
-          isUbicacion ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
-        }
-        height="540px"
-        top="-30px"
-        zindex="2">
-        <Suspense fallback={<Spinner />}>
-          <UbicacionFilter onChange={changeManos} />
-        </Suspense>
-      </OptionFilter>
+        <OptionFilter
+          className={
+            isUbicacion ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+          }
+          zindex="2">
+          <Suspense fallback={<Spinner />}>
+            <UbicacionFilter onChange={changeManos} />
+          </Suspense>
+        </OptionFilter>
 
-      <OptionFilter
-        className={
-          isTemas ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
-        }
-        height="320px"
-        top="-60px"
-        zindex="4">
-        <Suspense fallback={<Spinner />}>
-          <TemasFilter items={TemasData} onChange={changeManos} />
-        </Suspense>
-      </OptionFilter>
+        <OptionFilter
+          className={
+            isTemas ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+          }
+          zindex="4">
+          <Suspense fallback={<Spinner />}>
+            <TemasFilter items={TemasData} onChange={changeManos} />
+          </Suspense>
+        </OptionFilter>
 
-      <OptionFilter
-        className={
-          isUso ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
-        }
-        height="280px"
-        top="-90px"
-        zindex="2">
-        <Suspense fallback={<Spinner />}>
-          <UsoFilter items={UsoData} onChange={changeManos} />
-        </Suspense>
-      </OptionFilter>
+        <OptionFilter
+          className={
+            isUso ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
+          }
+          zindex="2">
+          <Suspense fallback={<Spinner />}>
+            <UsoFilter items={UsoData} onChange={changeManos} />
+          </Suspense>
+        </OptionFilter>
+      </Options>
     </Filters>
   );
 };

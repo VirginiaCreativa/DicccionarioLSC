@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const BoxSearch = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
 `;
 
-export const SearchInp = styled.input`
-  width: 300px;
+export const Search = styled.div`
+  position: relative;
+`;
+
+export const Input = styled.input`
+  width: 100%;
   padding: 10px 10px 10px 38px;
   border-top: none;
   border-right: none;

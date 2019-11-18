@@ -1,9 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 
 export const Filters = styled.div`
-  position: relative;
   h3 {
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     text-align: center;
   }
 `;
@@ -54,7 +53,6 @@ export const BoxCard = styled.div`
 
 export const Group = styled.div`
   position: relative;
-  padding: 10px;
 `;
 
 export const Ul = styled.ul`
@@ -156,29 +154,39 @@ const OffOption = keyframes`
     opacity: 0;
   }
 `;
+export const Options = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease-in;
+  &.Show {
+    height: 400px;
+  }
+  &.Hide {
+    height: 0;
+  }
+`;
 
 export const OptionFilter = styled.div`
-  position: relative;
-  margin-top: 10px;
+  position: absolute;
+  top: 10px;
   &.Box {
-    width: 736px;
-    padding: 10px 0;
+    padding: 20px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: var(--boxshadow);
     transition: all 0.3s ease-in;
   }
   &.Show {
-    top: ${props => props.top};
     z-index: ${props => props.zindex};
-    height: ${props => props.height};
+    width: 100%;
     opacity: 1;
     ${BoxCard} {
       animation: ${OnOption} 0.6s forwards;
     }
   }
   &.Hide {
-    top: 0;
+    width: 100%;
     height: 0;
     opacity: 0;
     ${BoxCard} {

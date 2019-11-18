@@ -22,6 +22,7 @@ const OffFi = keyframes`
 
 export const Items = styled.div`
   display: flex;
+  justify-content: center;
   &.Show {
     animation: ${OnFi} 0.3s forwards;
   }
@@ -35,8 +36,8 @@ export const Item = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 160px;
+  width: 120px;
+  height: 140px;
   margin: 0 10px;
   padding: 20px;
   background-color: #fff;

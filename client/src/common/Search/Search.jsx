@@ -1,20 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { BoxSearch, SearchInp, Icon, Filter } from './Search.Styled';
+import { BoxSearch, Search, Input, Icon, Filter } from './Search.Styled';
 
 const SearchCommon = ({ onSubmit, onChange, value, onFilter }) => {
   const hasFilterActive = useSelector(state => state.Getting.activeFilter);
   return (
     <BoxSearch>
-      <Icon className="bx bx-search-alt" />
-      <SearchInp
-        type="text"
-        value={value}
-        onSubmit={onSubmit}
-        onChange={onChange}
-        name="search"
-        aria-label="Buscador"
-      />
+      <Search>
+        <Icon className="bx bx-search-alt" />
+        <Input
+          type="text"
+          value={value}
+          onSubmit={onSubmit}
+          onChange={onChange}
+          name="search"
+          aria-label="Buscador"
+        />
+      </Search>
       <Filter type="button" onClick={onFilter} aria-label="ButtonFilter">
         <i
           className={[

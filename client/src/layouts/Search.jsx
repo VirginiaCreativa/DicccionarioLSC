@@ -6,7 +6,6 @@ import { SearchComp, Filters } from './Layout.Style';
 
 import { getFilterActive } from '../redux/actions/GettingAction.js';
 import SearchCommon from '../common/Search/Search';
-import Button from './UI/Button';
 
 import FiltersOptions from '../components/Filters/Filters';
 
