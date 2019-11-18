@@ -158,18 +158,11 @@ export const Options = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  transition: all 0.3s ease-in;
-  &.Show {
-    height: 400px;
-  }
-  &.Hide {
-    height: 0;
-  }
 `;
 
 export const OptionFilter = styled.div`
   position: absolute;
-  top: 10px;
+  top: 20px;
   &.Box {
     padding: 20px;
     background-color: #fff;
@@ -180,6 +173,7 @@ export const OptionFilter = styled.div`
   &.Show {
     z-index: ${props => props.zindex};
     width: 100%;
+    height: ${props => props.height};
     opacity: 1;
     ${BoxCard} {
       animation: ${OnOption} 0.6s forwards;

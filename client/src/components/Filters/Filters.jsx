@@ -120,8 +120,11 @@ const Filter = () => {
         </Button>
       </BtnOptions>
 
-      <Options className={isMano || isUbicacion ? 'Show' : 'Hide'}>
+      <Options
+        className={isMano || isUbicacion || isTemas || isUso ? 'Show' : 'Hide'}>
         <OptionFilter
+          zindex="1"
+          height="330px"
           className={
             isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }>
@@ -131,6 +134,7 @@ const Filter = () => {
         </OptionFilter>
 
         <OptionFilter
+          height="310px"
           className={
             isUbicacion ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }
@@ -141,20 +145,22 @@ const Filter = () => {
         </OptionFilter>
 
         <OptionFilter
+          height="270px"
           className={
             isTemas ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }
-          zindex="4">
+          zindex="3">
           <Suspense fallback={<Spinner />}>
             <TemasFilter items={TemasData} onChange={changeManos} />
           </Suspense>
         </OptionFilter>
 
         <OptionFilter
+          height="150px"
           className={
             isUso ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }
-          zindex="2">
+          zindex="4">
           <Suspense fallback={<Spinner />}>
             <UsoFilter items={UsoData} onChange={changeManos} />
           </Suspense>

@@ -41,12 +41,12 @@ const ManosFilter = ({ onChange, className }) => {
                 <CardCheck key={item.id} {...item} onChange={onChange} />
               ))}
             </BoxCard>
-            <TitleUbic>Brazo y Mano</TitleUbic>
+            {/* <TitleUbic>Brazo y Mano</TitleUbic>
             <BoxCard>
               {brazo.map(item => (
                 <CardCheck key={item.id} {...item} onChange={onChange} />
               ))}
-            </BoxCard>
+            </BoxCard> */}
           </Group>
         </>
       )}
