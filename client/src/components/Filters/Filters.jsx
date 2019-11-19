@@ -156,7 +156,7 @@ const Filter = () => {
         </OptionFilter>
 
         <OptionFilter
-          height="150px"
+          height="110px"
           className={
             isUso ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }

@@ -1,27 +1,30 @@
+/* eslint-disable import/no-dynamic-require */
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Group, BoxRadio } from './Filters.Styled';
+import { GroupUso, BoxUso, IconUso } from './Filters.Styled';
 
-const FilterUso = ({ items, onChange, valueSelect }) => {
+const FilterUso = ({ items, onChange }) => {
   const hasOptionUso = useSelector(state => state.Getting.optionUso);
   return (
     <>
       {hasOptionUso && (
-        <Group>
-          <BoxRadio>
-            <select value={valueSelect} onChange={onChange}>
-              {items.map(item => (
-                <option
-                  value={item.tema}
-                  key={item.id}
-                  aria-label={item.tema}
-                  {...item}>
-                  {item.tema}
-                </option>
-              ))}
-            </select>
-          </BoxRadio>
-        </Group>
+        <GroupUso>
+          {items.map(item => (
+            <BoxUso
+              onChange={onChange}
+              key={item.id}
+              aria-label={item.tema}
+              {...item}>
+              <IconUso>
+                <img
+                  alt={`icon de ${item.uso}`}
+                  src={require(`../../assets/Icons/${item.icon}`)}
+                />
+              </IconUso>
+              <span>{item.uso}</span>
+            </BoxUso>
+          ))}
+        </GroupUso>
       )}
     </>
   );

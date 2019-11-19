@@ -1,25 +1,31 @@
 [{
     "id": 1,
-    "uso": "antiguo"
+    "uso": "antiguo",
+    "icon": "old.svg"
   },
   {
     "id": 2,
-    "uso": "informal"
+    "uso": "informal",
+    "icon": "valid.svg"
   },
   {
     "id": 3,
-    "uso": "neologismo"
+    "uso": "neologismo",
+    "icon": "neologismo.svg"
   },
   {
     "id": 4,
-    "uso": "fundarvid"
+    "uso": "fundarvid",
+    "icon": "fundarvid.svg"
   },
   {
     "id": 5,
-    "uso": "groseria"
+    "uso": "groseria",
+    "icon": "groseria.svg"
   },
   {
     "id": 6,
-    "uso": "raro"
+    "uso": "raro",
+    "icon": "raro.svg"
   }
 ]

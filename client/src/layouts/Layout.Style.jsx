@@ -230,7 +230,7 @@ const OffFi = keyframes`
   }
 
   to {
-    opacity: 0;
+    opacity: 0;w
   }
 `;
 

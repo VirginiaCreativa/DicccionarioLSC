@@ -204,3 +204,45 @@ export const TitleUbic = styled.h2`
     content: '';
   }
 `;
+
+export const GroupUso = styled.div`
+  display: flex;
+`;
+
+export const BoxUso = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 70px;
+  margin: 0 10px;
+  text-transform: capitalize;
+  background-color: #fff;
+  border: 2px solid var(--gray_1);
+  border-radius: 6px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:hover {
+    background-color: var(--blue);
+  }
+`;
+
+export const IconUso = styled.div`
+  display: block;
+  width: 34px;
+  height: 30px;
+  margin-right: 10px;
+  padding: 8px 9px;
+  background-color: var(--blue);
+  border-radius: 10px;
+  img {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+  }
+`;
