@@ -209,7 +209,39 @@ export const GroupUso = styled.div`
   display: flex;
 `;
 
-export const BoxUso = styled.button`
+export const SpanUso = styled.div`
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 160px;
+  height: 70px;
+  border: 2px solid var(--gray_1);
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+`;
+
+export const IconCheck = styled.i`
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: var(--blue_medium);
+  border-radius: 100%;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+  &.bx {
+    color: #fff;
+    font-size: 12px;
+  }
+`;
+
+export const BoxUso = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,31 +250,48 @@ export const BoxUso = styled.button`
   margin: 0 10px;
   text-transform: capitalize;
   background-color: #fff;
-  border: 2px solid var(--gray_1);
-  border-radius: 6px;
   &:last-child {
     margin-right: 0;
   }
   &:first-child {
     margin-left: 0;
   }
+`;
+
+export const InputUso = styled.input.attrs({ type: 'checkbox' })`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 160px;
+  height: 70px;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  opacity: 0;
   &:hover {
-    background-color: var(--blue);
+    ~ ${SpanUso} {
+      border: 2px solid var(--blue);
+    }
+  }
+  &:checked {
+    ~ ${SpanUso} {
+      border: 2px solid var(--blue);
+      ${IconCheck} {
+        opacity: 1;
+      }
+    }
   }
 `;
 
 export const IconUso = styled.div`
   display: block;
-  width: 34px;
-  height: 30px;
   margin-right: 10px;
-  padding: 8px 9px;
-  background-color: var(--blue);
-  border-radius: 10px;
   img {
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     background-repeat: no-repeat;
+    opacity: 0.2;
   }
 `;
