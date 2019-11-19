@@ -2,49 +2,49 @@
     "id": 1,
     "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en A"
+    "seleccion": "cabeza",
+    "value": "cabeza"
   },
   {
     "id": 2,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en Ab"
+    "seleccion": "cabeza",
+    "value": "superior de la cabeza"
   },
   {
     "id": 3,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en B"
+    "seleccion": "cabeza",
+    "value": "ojos"
   },
   {
     "id": 4,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en B"
+    "seleccion": "cabeza",
+    "value": "nariz"
   },
   {
     "id": 5,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en B"
+    "seleccion": "cabeza",
+    "value": "orejas"
   },
   {
     "id": 6,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en B"
+    "seleccion": "cabeza",
+    "value": "mejilla"
   },
   {
     "id": 7,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165786.svg",
     "artibuto": "ubicacion",
-    "seleccion": "delatnte",
-    "value": "mano en B"
+    "seleccion": "cabeza",
+    "value": "inferior de la cabeza"
   }
 ]

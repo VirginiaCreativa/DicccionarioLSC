@@ -7,6 +7,7 @@ import CardCheck from '../../common/CardCheck/CardCheck';
 import cabeza from '../../assets/Data/UbicacionCuerpo_Cabeza';
 import tronco from '../../assets/Data/UbicacionCuerpo_Tronco';
 import brazo from '../../assets/Data/UbicacionCuerpo_Brazo';
+import mano from '../../assets/Data/UbicacionCuerpo_Mano';
 
 const ManosFilter = ({ onChange, className }) => {
   const hasOptionActive = useSelector(state => state.Getting.optionUbicacion);
@@ -41,9 +42,15 @@ const ManosFilter = ({ onChange, className }) => {
                 <CardCheck key={item.id} {...item} onChange={onChange} />
               ))}
             </BoxCard>
-            <TitleUbic>Brazo y Mano</TitleUbic>
+            <TitleUbic>Brazo</TitleUbic>
             <BoxCard>
               {brazo.map(item => (
+                <CardCheck key={item.id} {...item} onChange={onChange} />
+              ))}
+            </BoxCard>
+            <TitleUbic>Mano</TitleUbic>
+            <BoxCard>
+              {mano.map(item => (
                 <CardCheck key={item.id} {...item} onChange={onChange} />
               ))}
             </BoxCard>

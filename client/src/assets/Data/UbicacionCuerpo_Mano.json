@@ -2,48 +2,41 @@
     "id": 1,
     "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
     "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "cuerpo"
+    "seleccion": "mano",
+    "value": "mano"
   },
   {
     "id": 2,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
     "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "cuello"
+    "seleccion": "mano",
+    "value": "muñeca"
   },
   {
     "id": 3,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
     "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "hombro"
+    "seleccion": "mano",
+    "value": "dedos / pulgar"
   },
   {
     "id": 4,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
     "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "pecho"
+    "seleccion": "mano",
+    "value": "palma de la mano"
   }, {
     "id": 5,
     "icon": "https://image.flaticon.com/icons/svg/2165/2165802.svg",
     "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "abdomen"
+    "seleccion": "mano",
+    "value": "atras de la mano"
   },
   {
     "id": 6,
     "icon": "https://image.flaticon.com/icons/svg/2166/2166000.svg",
     "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "cadera / cintura"
-  },
-  {
-    "id": 7,
-    "icon": "https://image.flaticon.com/icons/svg/2165/2165888.svg",
-    "artibuto": "ubicacion",
-    "seleccion": "tronco",
-    "value": "muso"
+    "seleccion": "mano",
+    "value": "hojas de mano"
   }
 ]

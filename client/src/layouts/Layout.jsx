@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
       <div className="container">
         <Main
           className={location.pathname === '/' ? 'mainDown' : 'mainUp'}
-          height={hasActiveFilter ? '89vh' : '58vh'}>
+          height={hasActiveFilter ? '89vh' : '38vh'}>
           <Search />
           <>{children}</>
         </Main>
