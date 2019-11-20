@@ -12,7 +12,6 @@ import {
 } from '../../redux/actions/GettingAction';
 
 import {
-  getSearchTags,
   getTagsManos,
   getTagsUbicacion,
   getTagsTemas,
@@ -40,10 +39,7 @@ const Filter = () => {
   const [isUbicacion, setUbicacion] = useState(false);
   const [isTemas, setTemas] = useState(false);
   const [isUso, setUso] = useState(false);
-
   const hasShowTags = useSelector(state => state.Search.showTags);
-  const hasSelectManos = useSelector(state => state.Search.tagManos);
-  const hasSelectUbicacion = useSelector(state => state.Search.tagUbicacion);
 
   const changeManos = ev => {
     dispatch(getTagsManos(ev.target.value));
@@ -52,10 +48,10 @@ const Filter = () => {
     dispatch(getTagsUbicacion(ev.target.value));
   };
   const changeTemas = ev => {
-    console.log(ev.target.value);
+    dispatch(getTagsTemas(ev.target.value));
   };
   const changeUso = ev => {
-    console.log(ev.target.value);
+    dispatch(getTagsUso(ev.target.value));
   };
 
   const handleMano = () => {

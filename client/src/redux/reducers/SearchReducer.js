@@ -13,6 +13,8 @@ const initialState = {
   showTags: false,
   tagManos: [],
   tagUbicacion: [],
+  tagTemas: '',
+  tagUso: '',
 };
 
 function SearchingReducer(state = initialState, action) {
@@ -38,6 +40,19 @@ function SearchingReducer(state = initialState, action) {
       return {
         ...state,
         tagUbicacion: [...state.tagUbicacion, action.payload],
+        showTags: true,
+      };
+    case GET_TAGS_TEMAS:
+      return {
+        ...state,
+        tagTemas: action.payload,
+        showTags: true,
+      };
+
+    case GET_TAGS_USO:
+      return {
+        ...state,
+        tagUso: action.payload,
         showTags: true,
       };
 
