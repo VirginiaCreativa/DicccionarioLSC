@@ -13,7 +13,6 @@ const Search = () => {
   const [onFilter, setOnFilter] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
-  let animated;
 
   const changeSearch = ev => {
     console.log(ev.target.value);
@@ -26,14 +25,22 @@ const Search = () => {
     }
   };
 
-  const handleSubmitFilter = () => {
-    animated.hide();
-    history.push('/resultado');
+  const handleSubmit = () => {
+    history.push('/buscar');
   };
 
   return (
     <SearchComp>
-      <SearchCommon onChange={changeSearch} onFilter={handleFilters} />
+      <SearchCommon
+        onChange={changeSearch}
+        onFilter={handleFilters}
+        onSubmit={handleSubmit}
+        onKeyDown={ev => {
+          if (ev.key === 'Enter') {
+            handleSubmit();
+          }
+        }}
+      />
 
       {onFilter && (
         <Filters className={onFilter ? 'Show' : 'Hide'}>

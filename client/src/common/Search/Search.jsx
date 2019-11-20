@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { BoxSearch, Search, Input, Icon, Filter } from './Search.Styled';
 
-const SearchCommon = ({ onSubmit, onChange, value, onFilter }) => {
+const SearchCommon = ({ onSubmit, onChange, value, onFilter, onKeyDown }) => {
   const hasFilterActive = useSelector(state => state.Getting.activeFilter);
   return (
     <BoxSearch>
@@ -13,6 +13,7 @@ const SearchCommon = ({ onSubmit, onChange, value, onFilter }) => {
           value={value}
           onSubmit={onSubmit}
           onChange={onChange}
+          onKeyDown={onKeyDown}
           name="search"
           aria-label="Buscador"
         />
