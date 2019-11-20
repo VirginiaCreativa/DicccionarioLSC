@@ -2,6 +2,8 @@ import React, { useState, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import TagsResults from './TagsResults';
+
 import {
   optionManos,
   optionUbicacion,
@@ -9,7 +11,16 @@ import {
   optionUso,
 } from '../../redux/actions/GettingAction';
 
+import {
+  getSearchTags,
+  getTagsManos,
+  getTagsUbicacion,
+  getTagsTemas,
+  getTagsUso,
+} from '../../redux/actions/SearchAction';
+
 import { Options, BtnOptions, OptionFilter, Filters } from './Filters.Styled';
+
 import Button from './UI/ButtonFilter';
 import Spinner from '../../common/Spinner/Spinner';
 
@@ -24,18 +35,21 @@ const UsoFilter = lazy(() => import('./UsoFilters'));
 
 const Filter = () => {
   const dispatch = useDispatch();
+
   const [isMano, setMano] = useState(false);
   const [isUbicacion, setUbicacion] = useState(false);
   const [isTemas, setTemas] = useState(false);
   const [isUso, setUso] = useState(false);
 
-  const [isTags, setTags] = useState([]);
+  const hasShowTags = useSelector(state => state.Search.showTags);
+  const hasSelectManos = useSelector(state => state.Search.tagManos);
+  const hasSelectUbicacion = useSelector(state => state.Search.tagUbicacion);
 
   const changeManos = ev => {
-    console.log(ev.target.value);
+    dispatch(getTagsManos(ev.target.value));
   };
   const changeUbicCuerpo = ev => {
-    console.log(ev.target.value);
+    dispatch(getTagsUbicacion(ev.target.value));
   };
   const changeTemas = ev => {
     console.log(ev.target.value);
@@ -88,6 +102,7 @@ const Filter = () => {
   return (
     <Filters>
       <h4>Búsqueda Avanzada</h4>
+      {hasShowTags && <TagsResults />}
       <BtnOptions>
         <Button
           onClick={handleMano}

@@ -11,21 +11,34 @@ const initialState = {
   search: '',
   searchTags: [],
   showTags: false,
+  tagManos: [],
+  tagUbicacion: [],
 };
 
-function AuthReducer(state = initialState, action) {
+function SearchingReducer(state = initialState, action) {
   switch (action.type) {
     case GET_SEARCHING:
       return {
         ...state,
-        showTags: action.showTags,
-        searchTags: action.payload,
+        search: action.payload,
       };
     case GET_SEARCH_TAGS:
       return {
         ...state,
-        showTags: action.showTags,
+        showTags: true,
         searchTags: action.payload,
+      };
+    case GET_TAGS_MANOS:
+      return {
+        ...state,
+        tagManos: [...state.tagManos, action.payload],
+        showTags: true,
+      };
+    case GET_TAGS_UBICACION:
+      return {
+        ...state,
+        tagUbicacion: [...state.tagUbicacion, action.payload],
+        showTags: true,
       };
 
     default:
@@ -33,4 +46,4 @@ function AuthReducer(state = initialState, action) {
   }
 }
 
-export default AuthReducer;
+export default SearchingReducer;

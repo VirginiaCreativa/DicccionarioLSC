@@ -18,7 +18,7 @@ const initialState = {
   showTags: false,
 };
 
-function AuthReducer(state = initialState, action) {
+function GettingReducer(state = initialState, action) {
   switch (action.type) {
     case GET_MENU_ACTIVE:
       return {
@@ -56,4 +56,4 @@ function AuthReducer(state = initialState, action) {
   }
 }
 
-export default AuthReducer;
+export default GettingReducer;

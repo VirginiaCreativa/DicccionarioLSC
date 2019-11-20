@@ -268,3 +268,7 @@ export const InputTemas = styled.input.attrs({ type: 'checkbox' })`
     }
   }
 `;
+
+export const Tags = styled.div`
+  margin: 6px 0;
+`;

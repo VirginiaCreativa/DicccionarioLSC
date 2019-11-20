@@ -12,25 +12,24 @@ export const Searching = payload => ({
   payload,
 });
 
-export const SearchTags = payload => ({
+export const getSearchTags = payload => ({
   type: GET_SEARCH_TAGS,
-  showTags: true,
   payload,
 });
 
-export const TagsManos = payload => ({
+export const getTagsManos = payload => ({
   type: GET_TAGS_MANOS,
   payload,
 });
-export const TagsUbicacion = payload => ({
+export const getTagsUbicacion = payload => ({
   type: GET_TAGS_UBICACION,
   payload,
 });
-export const TagsTemas = payload => ({
+export const getTagsTemas = payload => ({
   type: GET_TAGS_TEMAS,
   payload,
 });
-export const TagsUso = payload => ({
+export const getTagsUso = payload => ({
   type: GET_TAGS_USO,
   payload,
 });
