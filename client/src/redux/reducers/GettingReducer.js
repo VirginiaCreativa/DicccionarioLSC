@@ -15,6 +15,7 @@ const initialState = {
   optionUbicacion: false,
   optionTemas: false,
   optionUso: false,
+  showTags: false,
 };
 
 function AuthReducer(state = initialState, action) {

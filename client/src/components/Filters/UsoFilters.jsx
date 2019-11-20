@@ -22,7 +22,7 @@ const FilterUso = ({ items, onChange, value }) => {
                 type="checkbox"
                 name={item.uso}
                 onChange={onChange}
-                value={value}
+                value={item.uso}
                 aria-label={item.uso}
               />
               <SpanUso>

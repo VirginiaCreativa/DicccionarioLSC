@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 export const Filters = styled.div`
-  h3 {
+  h4 {
     margin-bottom: 10px;
     text-align: center;
   }
@@ -22,28 +22,6 @@ export const Title = styled.h1`
   }
 `;
 
-export const Selections = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  button {
-    margin-right: 10px;
-    padding: 12px 14px;
-    color: var(--gray_medium);
-    font-size: 0.845rem;
-    line-height: 0;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: none;
-    &.active {
-      padding: 12px 14px;
-      color: #fff;
-      background-color: var(--blue);
-      border-radius: 20px;
-    }
-  }
-`;
-
 export const GroupCard = styled.div``;
 
 export const BoxCard = styled.div`
@@ -53,78 +31,6 @@ export const BoxCard = styled.div`
 
 export const Group = styled.div`
   position: relative;
-`;
-
-export const Ul = styled.ul`
-  margin: 0 20px;
-  column-count: 4;
-  column-gap: 20px;
-  li {
-    position: relative;
-    display: flex;
-    margin-bottom: 10px;
-    input {
-      position: absolute;
-      z-index: 3;
-      overflow: hidden;
-      outline: none;
-      cursor: pointer;
-      opacity: 0;
-      &:checked {
-        ~ span {
-          background-color: var(--blue);
-          border: none;
-        }
-      }
-    }
-    label {
-      margin-bottom: 0;
-      margin-left: 4px;
-      font-size: 0.75rem !important;
-    }
-    span {
-      position: absolute;
-      top: 4px;
-      left: 0;
-      width: 12px;
-      height: 12px;
-      background-color: var(--gray_1);
-      border: 2px solid var(--gray_2);
-      border-radius: 2px;
-      transition: all 0.3s ease-in;
-    }
-  }
-`;
-
-export const BoxRadio = styled.div`
-  display: flex;
-  padding: 10px 0 0;
-`;
-
-export const Icon = styled.i`
-  position: absolute;
-  top: 25px;
-  right: 10px;
-  z-index: 3;
-  &.bx {
-    color: var(--gray_medium);
-  }
-`;
-
-export const Select = styled.select`
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 15px 10px;
-  color: #62717a;
-  line-height: 14px;
-  background-color: var(--body);
-  border: 0;
-  border-radius: 54px;
-  appearance: none;
-  option {
-    padding: 10px;
-  }
 `;
 
 export const Option = styled.option`
@@ -271,12 +177,12 @@ export const InputUso = styled.input.attrs({ type: 'checkbox' })`
   opacity: 0;
   &:hover {
     ~ ${SpanUso} {
-      border: 2px solid var(--blue);
+      border: 2px solid var(--blue_medium);
     }
   }
   &:checked {
     ~ ${SpanUso} {
-      border: 2px solid var(--blue);
+      border: 2px solid var(--blue_medium);
       ${IconCheck} {
         opacity: 1;
       }
@@ -293,5 +199,72 @@ export const IconUso = styled.div`
     height: 24px;
     background-repeat: no-repeat;
     opacity: 0.2;
+  }
+`;
+
+export const Checkmark = styled.div`
+  position: absolute;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  border: 2px solid var(--gray_1);
+  border-radius: 4px;
+  transition: all 0.3s ease-in;
+  .bx {
+    position: relative;
+    top: -7.5px;
+    left: -1px;
+    color: #fff;
+    font-size: 12px;
+  }
+`;
+
+export const UlTemas = styled.ul`
+  margin: 0 20px;
+  column-count: 4;
+  column-gap: 20px;
+  li {
+    position: relative;
+    display: flex;
+    margin-bottom: 12px;
+    label {
+      margin: 0;
+      padding: 0;
+      padding-left: 24px;
+      font-size: 0.8rem;
+    }
+    input {
+      &:hover {
+        ${Checkmark} {
+          background-color: var(--blue_medium);
+          border: 2px solid var(--blue_medium);
+        }
+      }
+    }
+  }
+`;
+
+export const InputTemas = styled.input.attrs({ type: 'checkbox' })`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  opacity: 0;
+  &:checked {
+    ~ ${Checkmark} {
+      background-color: var(--blue_medium);
+      border: 2px solid var(--blue_medium);
+    }
+  }
+  &:hover {
+    ~ ${Checkmark} {
+      background-color: var(--blue_medium);
+      border: 2px solid var(--blue_medium);
+    }
   }
 `;

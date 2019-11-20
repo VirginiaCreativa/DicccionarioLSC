@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Group, Ul } from './Filters.Styled';
+import { Group, UlTemas, InputTemas, Checkmark } from './Filters.Styled';
 
-const TemasFilter = ({ items, onChange, valueSelect }) => {
+const TemasFilter = ({ onChange, items, value }) => {
   const hasOptionActive = useSelector(state => state.Getting.optionTemas);
   const myData = [].concat(items).sort((a, b) => a.tema > b.tema);
 
@@ -10,17 +10,25 @@ const TemasFilter = ({ items, onChange, valueSelect }) => {
     <>
       {hasOptionActive && (
         <Group>
-          <Ul className="list-unstyled">
+          <UlTemas className="list-unstyled">
             {myData.map(item => (
               <li key={item.id}>
-                <input type="checkbox" />
-                <label className="container">
+                <InputTemas
+                  type="checkbox"
+                  value={item.tema}
+                  aria-label={value}
+                  name={item.artibuto}
+                  onChange={onChange}
+                />
+                <label>
                   {item.tema.charAt(0).toUpperCase() + item.tema.slice(1)}
                 </label>
-                <span className="checkmark" />
+                <Checkmark>
+                  <i className="bx bx-check" />
+                </Checkmark>
               </li>
             ))}
-          </Ul>
+          </UlTemas>
         </Group>
       )}
     </>

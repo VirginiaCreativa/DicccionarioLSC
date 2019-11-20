@@ -7,6 +7,13 @@ export const GET_OPTION_UBICACION = 'GET_OPTION_UBICACION';
 export const GET_OPTION_TEMAS = 'GET_OPTION_TEMAS';
 export const GET_OPTION_USO = 'GET_OPTION_USO';
 
+export const GET_SEARCHING = 'GET_SEARCHING';
+export const GET_SEARCH_TAGS = 'GET_SEARCH_TAGS';
+export const GET_TAGS_MANOS = 'GET_TAGS_MANOS';
+export const GET_TAGS_UBICACION = 'GET_TAGS_UBICACION';
+export const GET_TAGS_TEMAS = 'GET_TAGS_TEMAS';
+export const GET_TAGS_USO = 'GET_TAGS_USO';
+
 // =========  AUTHENTICAT ========= //
 export const FETCH_AUTH_SUCCESS = 'FETCH_AUTH_SUCCESS';
 export const FETCH_AUTH_FALL = 'FETCH_AUTH_FALL';

@@ -28,10 +28,8 @@ const Filter = () => {
   const [isUbicacion, setUbicacion] = useState(false);
   const [isTemas, setTemas] = useState(false);
   const [isUso, setUso] = useState(false);
-  const activeOptionTemas = useSelector(state => state.Getting.optionUbicacion);
-  const activeOptionUbicacion = useSelector(state => state.Getting.optionTemas);
-  let activeMano;
-  let activeUbicacion;
+
+  const [isTags, setTags] = useState([]);
 
   const changeManos = ev => {
     console.log(ev.target.value);
@@ -62,9 +60,6 @@ const Filter = () => {
     setUso(false);
     setUbicacion(!isUbicacion);
     dispatch(optionUbicacion(true));
-    if (activeOptionTemas !== true) {
-      dispatch(optionTemas(false));
-    }
     if (isUbicacion === true) {
       dispatch(optionUbicacion(false));
     }
@@ -92,7 +87,7 @@ const Filter = () => {
 
   return (
     <Filters>
-      <h3>Búsqueda Avanzada</h3>
+      <h4>Búsqueda Avanzada</h4>
       <BtnOptions>
         <Button
           onClick={handleMano}
@@ -140,18 +135,18 @@ const Filter = () => {
           }
           zindex="2">
           <Suspense fallback={<Spinner />}>
-            <UbicacionFilter onChange={changeManos} />
+            <UbicacionFilter onChange={changeUbicCuerpo} />
           </Suspense>
         </OptionFilter>
 
         <OptionFilter
-          height="270px"
+          height="280px"
           className={
             isTemas ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }
           zindex="3">
           <Suspense fallback={<Spinner />}>
-            <TemasFilter items={TemasData} onChange={changeManos} />
+            <TemasFilter items={TemasData} onChange={changeTemas} />
           </Suspense>
         </OptionFilter>
 
@@ -162,7 +157,7 @@ const Filter = () => {
           }
           zindex="4">
           <Suspense fallback={<Spinner />}>
-            <UsoFilter items={UsoData} onChange={changeManos} />
+            <UsoFilter items={UsoData} onChange={changeUso} />
           </Suspense>
         </OptionFilter>
       </Options>
