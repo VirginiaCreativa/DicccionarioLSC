@@ -271,29 +271,36 @@ export const InputTemas = styled.input.attrs({ type: 'checkbox' })`
 
 export const GroupTags = styled.div`
   display: flex;
-  margin: 6px 0 10px;
+  flex-wrap: wrap;
 `;
 
 export const Tags = styled.div`
   display: flex;
-  line-height: 1;
-
+  margin: 0 6px 6px 6px;
   h6,
   button {
     font-size: 0.8rem;
   }
   h6 {
-    margin-right: 6px;
-    margin-bottom: 0;
-    color: var(--gray_medium);
+    margin: 0 6px;
+    color: var(--gray_dark);
+    line-height: 2;
   }
   button {
     margin-right: 6px;
-    padding: 4px 8px;
+    padding: 2px 12px;
     color: #fff;
+    line-height: 2;
     text-transform: capitalize;
-    background-color: var(--blue);
+    background-color: var(--green);
     border: none;
     border-radius: 20px;
+    .bx {
+      position: relative;
+      top: 3px;
+      margin-left: 8px;
+      color: var(--gray_1);
+      font-size: 18px;
+    }
   }
 `;

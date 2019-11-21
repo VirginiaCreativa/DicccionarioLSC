@@ -12,34 +12,42 @@ const TagsResults = () => {
     <GroupTags>
       {hasSelectManos.length >= 1 && (
         <Tags>
-          <h6>Forma de manos:</h6>
+          <h6>Forma de manos</h6>
           {hasSelectManos.map(item => (
             <button type="button" key={item}>
               {item}
+              <i className="bx bx-x" />
             </button>
           ))}
         </Tags>
       )}
       {hasSelectUbicacion.length >= 1 && (
         <Tags>
-          <h6>Ubicacion:</h6>
+          <h6>Ubicacion</h6>
           {hasSelectUbicacion.map(item => (
             <button type="button" key={item}>
               {item}
+              <i className="bx bx-x" />
             </button>
           ))}
         </Tags>
       )}
       {hasSelectTemas.length >= 1 && (
         <Tags>
-          <h6>Tema:</h6>
-          <button type="button">{hasSelectTemas}</button>
+          <h6>Tema</h6>
+          <button type="button">
+            {hasSelectTemas}
+            <i className="bx bx-x" />
+          </button>
         </Tags>
       )}
       {hasSelectUso.length >= 1 && (
         <Tags>
-          <h6>Uso:</h6>
-          <button type="button">{hasSelectUso}</button>
+          <h6>Uso</h6>
+          <button type="button">
+            {hasSelectUso}
+            <i className="bx bx-x" />
+          </button>
         </Tags>
       )}
     </GroupTags>
