@@ -269,6 +269,31 @@ export const InputTemas = styled.input.attrs({ type: 'checkbox' })`
   }
 `;
 
+export const GroupTags = styled.div`
+  display: flex;
+  margin: 6px 0 10px;
+`;
+
 export const Tags = styled.div`
-  margin: 6px 0;
+  display: flex;
+  line-height: 1;
+
+  h6,
+  button {
+    font-size: 0.8rem;
+  }
+  h6 {
+    margin-right: 6px;
+    margin-bottom: 0;
+    color: var(--gray_medium);
+  }
+  button {
+    margin-right: 6px;
+    padding: 4px 8px;
+    color: #fff;
+    text-transform: capitalize;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 20px;
+  }
 `;

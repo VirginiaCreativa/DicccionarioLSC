@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Tags } from './Filters.Styled';
+import { Tags, GroupTags } from './Filters.Styled';
 
 const TagsResults = () => {
   const hasSelectManos = useSelector(state => state.Search.tagManos);
@@ -9,12 +9,14 @@ const TagsResults = () => {
   const hasSelectTemas = useSelector(state => state.Search.tagTemas);
   const hasSelectUso = useSelector(state => state.Search.tagUso);
   return (
-    <>
+    <GroupTags>
       {hasSelectManos.length >= 1 && (
         <Tags>
           <h6>Forma de manos:</h6>
           {hasSelectManos.map(item => (
-            <p key={item}>{item}</p>
+            <button type="button" key={item}>
+              {item}
+            </button>
           ))}
         </Tags>
       )}
@@ -22,23 +24,25 @@ const TagsResults = () => {
         <Tags>
           <h6>Ubicacion:</h6>
           {hasSelectUbicacion.map(item => (
-            <p key={item}>{item}</p>
+            <button type="button" key={item}>
+              {item}
+            </button>
           ))}
         </Tags>
       )}
       {hasSelectTemas.length >= 1 && (
         <Tags>
           <h6>Tema:</h6>
-          <p>{hasSelectTemas}</p>
+          <button type="button">{hasSelectTemas}</button>
         </Tags>
       )}
       {hasSelectUso.length >= 1 && (
         <Tags>
           <h6>Uso:</h6>
-          <p>{hasSelectUso}</p>
+          <button type="button">{hasSelectUso}</button>
         </Tags>
       )}
-    </>
+    </GroupTags>
   );
 };
 
