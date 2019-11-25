@@ -221,8 +221,8 @@ export const Checkmark = styled.div`
 `;
 
 export const UlTemas = styled.ul`
-  margin: 0 20px;
-  column-count: 4;
+  margin: 0 10px;
+  column-count: 5;
   column-gap: 20px;
   li {
     position: relative;
@@ -272,6 +272,7 @@ export const InputTemas = styled.input.attrs({ type: 'checkbox' })`
 export const GroupTags = styled.div`
   display: flex;
   flex-wrap: wrap;
+  padding: 10px;
 `;
 
 export const Tags = styled.div`
@@ -289,17 +290,21 @@ export const Tags = styled.div`
   button {
     margin-right: 6px;
     padding: 2px 12px;
-    color: #fff;
+    color: var(--gray_1);
+    font-weight: 500;
     line-height: 2;
     text-transform: capitalize;
-    background-color: var(--green);
+    background-color: var(--blue_medium);
     border: none;
     border-radius: 20px;
+    &:hover {
+      background-color: var(--red);
+    }
     .bx {
       position: relative;
       top: 3px;
       margin-left: 8px;
-      color: var(--gray_1);
+      color: var(--gray_2);
       font-size: 18px;
     }
   }
