@@ -1,12 +1,12 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import TagsResults from './TagsResults';
 
 import {
   optionManos,
   optionUbicacion,
+  optionDepartamentos,
   optionTemas,
   optionUso,
 } from '../../redux/actions/GettingAction';
@@ -26,9 +26,11 @@ import Spinner from '../../common/Spinner/Spinner';
 import FormaManoData from '../../assets/Data/FormaMano';
 import TemasData from '../../assets/Data/Temas';
 import UsoData from '../../assets/Data/Uso';
+import DepartamentosData from '../../assets/Data/Departamentos';
 
 const ManosFilter = lazy(() => import('./ManosFilters'));
 const UbicacionFilter = lazy(() => import('./UbicacionsFilters'));
+const DepartamentosFilter = lazy(() => import('./DepartamentosFilters'));
 const TemasFilter = lazy(() => import('./TemasFilters'));
 const UsoFilter = lazy(() => import('./UsoFilters'));
 
@@ -38,6 +40,7 @@ const Filter = () => {
   const [isMano, setMano] = useState(false);
   const [isUbicacion, setUbicacion] = useState(false);
   const [isTemas, setTemas] = useState(false);
+  const [isDepartamentos, setDepartamentos] = useState(false);
   const [isUso, setUso] = useState(false);
   const hasShowTags = useSelector(state => state.Search.showTags);
 
@@ -45,6 +48,9 @@ const Filter = () => {
     dispatch(getTagsManos(ev.target.value));
   };
   const changeUbicCuerpo = ev => {
+    dispatch(getTagsUbicacion(ev.target.value));
+  };
+  const changeDepartamentos = ev => {
     dispatch(getTagsUbicacion(ev.target.value));
   };
   const changeTemas = ev => {
@@ -72,6 +78,17 @@ const Filter = () => {
     dispatch(optionUbicacion(true));
     if (isUbicacion === true) {
       dispatch(optionUbicacion(false));
+    }
+  };
+  const handleDepartamentos = () => {
+    setMano(false);
+    setTemas(false);
+    setUso(false);
+    setUbicacion(false);
+    setDepartamentos(!isDepartamentos);
+    dispatch(optionDepartamentos(true));
+    if (isUbicacion === true) {
+      dispatch(optionDepartamentos(false));
     }
   };
   const handleTemas = () => {
@@ -113,6 +130,12 @@ const Filter = () => {
           Ubicación del cuerpo
         </Button>
         <Button
+          onClick={handleDepartamentos}
+          active={isDepartamentos ? '#2572dd' : ''}
+          activeColor={isDepartamentos ? '#fff' : ''}>
+          Departamentos
+        </Button>
+        <Button
           onClick={handleTemas}
           active={isTemas ? '#2572dd' : ''}
           activeColor={isTemas ? '#fff' : ''}>
@@ -147,6 +170,22 @@ const Filter = () => {
           zindex="2">
           <Suspense fallback={<Spinner />}>
             <UbicacionFilter onChange={changeUbicCuerpo} />
+          </Suspense>
+        </OptionFilter>
+
+        <OptionFilter
+          height="300px"
+          className={
+            isDepartamentos
+              ? ['Box', 'Show'].join(' ')
+              : ['Box', 'Hide'].join(' ')
+          }
+          zindex="2">
+          <Suspense fallback={<Spinner />}>
+            <DepartamentosFilter
+              items={DepartamentosData}
+              onChange={changeDepartamentos}
+            />
           </Suspense>
         </OptionFilter>
 

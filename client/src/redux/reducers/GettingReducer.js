@@ -3,8 +3,11 @@ import {
   GET_FILTER_ACTIVE,
   GET_OPTION_MANOS,
   GET_OPTION_UBICACION,
+  GET_OPTION_DEPARTAMENTOS,
   GET_OPTION_TEMAS,
   GET_OPTION_USO,
+  GET_DISABLED_USO,
+  GET_ACTIVE_USO,
 } from '../types';
 
 const initialState = {
@@ -13,9 +16,11 @@ const initialState = {
   activeOption: false,
   optionManos: false,
   optionUbicacion: false,
+  optionDepartamentos: false,
   optionTemas: false,
   optionUso: false,
   showTags: false,
+  checkbox: true,
 };
 
 function GettingReducer(state = initialState, action) {
@@ -40,6 +45,11 @@ function GettingReducer(state = initialState, action) {
         ...state,
         optionUbicacion: action.payload,
       };
+    case GET_OPTION_DEPARTAMENTOS:
+      return {
+        ...state,
+        optionDepartamentos: action.payload,
+      };
     case GET_OPTION_TEMAS:
       return {
         ...state,
@@ -49,6 +59,16 @@ function GettingReducer(state = initialState, action) {
       return {
         ...state,
         optionUso: action.payload,
+      };
+    case GET_DISABLED_USO:
+      return {
+        ...state,
+        checkbox: action.disabledCheck,
+      };
+    case GET_ACTIVE_USO:
+      return {
+        ...state,
+        checkbox: action.activeCheck,
       };
 
     default:

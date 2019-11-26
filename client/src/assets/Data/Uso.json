@@ -1,31 +1,43 @@
 [{
     "id": 1,
+    "artibuto": "forma_mano",
     "uso": "antiguo",
     "icon": "old.svg"
   },
   {
     "id": 2,
-    "uso": "informal",
+    "artibuto": "forma_mano",
+    "uso": "Oficial",
     "icon": "valid.svg"
   },
   {
     "id": 3,
+    "artibuto": "forma_mano",
     "uso": "neologismo",
     "icon": "neologismo.svg"
   },
   {
     "id": 4,
+    "artibuto": "forma_mano",
     "uso": "fundarvid",
     "icon": "fundarvid.svg"
   },
   {
     "id": 5,
+    "artibuto": "forma_mano",
     "uso": "groseria",
     "icon": "groseria.svg"
   },
   {
     "id": 6,
+    "artibuto": "uso",
     "uso": "raro",
     "icon": "raro.svg"
+  },
+  {
+    "id": 7,
+    "artibuto": "uso",
+    "uso": "universitarios",
+    "icon": "universitarios.svg"
   }
 ]

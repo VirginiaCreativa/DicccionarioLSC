@@ -1,6 +1,6 @@
 /* eslint-disable import/no-dynamic-require */
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   GroupUso,
   BoxUso,
@@ -10,8 +10,20 @@ import {
   SpanUso,
 } from './Filters.Styled';
 
-const FilterUso = ({ items, onChange, value }) => {
+import { checkActivUso } from '../../redux/actions/GettingAction';
+
+const FilterUso = ({ items, onChange }) => {
+  const dispatch = useDispatch();
+  const inputCheck = useRef(null);
   const hasOptionUso = useSelector(state => state.Getting.optionUso);
+  const checkbox = useSelector(state => state.Getting.checkbox);
+
+  console.log(inputCheck.current);
+  const handleChekbox = () => {
+    console.log(inputCheck.current.checked);
+    if (inputCheck.current.checked === true) dispatch(checkActivUso());
+  };
+
   return (
     <>
       {hasOptionUso && (
@@ -24,10 +36,15 @@ const FilterUso = ({ items, onChange, value }) => {
                 onChange={onChange}
                 value={item.uso}
                 aria-label={item.uso}
+                activeCheck={checkbox}
+                ref={inputCheck}
+                onClick={handleChekbox}
               />
+
               <SpanUso>
                 <IconCheck className="bx bx-check" />
               </SpanUso>
+
               <IconUso>
                 <img
                   alt={`icon de ${item.uso}`}

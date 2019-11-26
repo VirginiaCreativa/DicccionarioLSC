@@ -119,7 +119,7 @@ export const SpanUso = styled.div`
   position: absolute;
   top: -1px;
   left: -1px;
-  width: 160px;
+  width: 140px;
   height: 70px;
   border: 2px solid var(--gray_1);
   border-radius: 6px;
@@ -151,7 +151,7 @@ export const BoxUso = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
+  width: 140px;
   height: 70px;
   margin: 0 10px;
   text-transform: capitalize;
@@ -162,6 +162,9 @@ export const BoxUso = styled.div`
   &:first-child {
     margin-left: 0;
   }
+  span {
+    font-size: 0.8rem;
+  }
 `;
 
 export const InputUso = styled.input.attrs({ type: 'checkbox' })`
@@ -169,7 +172,7 @@ export const InputUso = styled.input.attrs({ type: 'checkbox' })`
   top: 0;
   left: 0;
   z-index: 2;
-  width: 160px;
+  width: 140px;
   height: 70px;
   overflow: hidden;
   outline: none;
@@ -182,9 +185,12 @@ export const InputUso = styled.input.attrs({ type: 'checkbox' })`
   }
   &:checked {
     ~ ${SpanUso} {
-      border: 2px solid var(--blue_medium);
+      border: ${props =>
+        props.activeCheck
+          ? '2px solid var(--blue_medium)'
+          : '2px solid var(--gray_1)'};
       ${IconCheck} {
-        opacity: 1;
+        opacity: ${props => (props.activeCheck ? '1' : '0')};
       }
     }
   }
@@ -220,7 +226,7 @@ export const Checkmark = styled.div`
   }
 `;
 
-export const UlTemas = styled.ul`
+const listTemas = styled.ul`
   margin: 0 10px;
   column-count: 5;
   column-gap: 20px;
@@ -243,6 +249,17 @@ export const UlTemas = styled.ul`
       }
     }
   }
+`;
+
+export const UlTemas = styled(listTemas)`
+  margin: 0 10px;
+  column-count: 5;
+  column-gap: 20px;
+`;
+export const UlDepartamentos = styled(listTemas)`
+  margin: 0 10px;
+  column-count: 3;
+  column-gap: 20px;
 `;
 
 export const InputTemas = styled.input.attrs({ type: 'checkbox' })`
