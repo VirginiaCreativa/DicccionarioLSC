@@ -62,6 +62,7 @@ const Filter = () => {
 
   const handleMano = () => {
     setUbicacion(false);
+    setDepartamentos(false);
     setTemas(false);
     setUso(false);
     setMano(!isMano);
@@ -73,6 +74,7 @@ const Filter = () => {
   const handleUbicacion = () => {
     setMano(false);
     setTemas(false);
+    setDepartamentos(false);
     setUso(false);
     setUbicacion(!isUbicacion);
     dispatch(optionUbicacion(true));
@@ -94,6 +96,7 @@ const Filter = () => {
   const handleTemas = () => {
     setMano(false);
     setUbicacion(false);
+    setDepartamentos(false);
     setUso(false);
     setTemas(!isTemas);
     dispatch(optionTemas(true));
@@ -105,6 +108,7 @@ const Filter = () => {
     setMano(false);
     setTemas(false);
     setUbicacion(false);
+    setDepartamentos(false);
     setUso(!isUso);
     dispatch(optionUso(true));
     if (isUso === true) {
@@ -174,7 +178,7 @@ const Filter = () => {
         </OptionFilter>
 
         <OptionFilter
-          height="300px"
+          height="380px"
           className={
             isDepartamentos
               ? ['Box', 'Show'].join(' ')

@@ -20,7 +20,7 @@ const DepartamentosFilters = ({ onChange, items, value }) => {
       {hasOptionActive && (
         <Group>
           <UlDepartamentos className="list-unstyled">
-            {myData.map(item => (
+            {items.map(item => (
               <li key={item.id}>
                 <InputTemas
                   type="checkbox"
@@ -29,10 +29,7 @@ const DepartamentosFilters = ({ onChange, items, value }) => {
                   name={item.artibuto}
                   onChange={onChange}
                 />
-                <label>
-                  {item.departamento.charAt(0).toUpperCase() +
-                    item.departamento.slice(1)}
-                </label>
+                <label>{item.departamento}</label>
                 <Checkmark>
                   <i className="bx bx-check" />
                 </Checkmark>
