@@ -6,6 +6,8 @@ import {
   GET_TAGS_DEPARTAMENTO,
   GET_TAGS_TEMAS,
   GET_TAGS_USO,
+  REMOVE_TAGS_MANOS,
+  REMOVE_TAGS_UBICACION,
 } from '../types';
 
 const initialState = {
@@ -62,6 +64,11 @@ function SearchingReducer(state = initialState, action) {
         ...state,
         tagDepartamento: action.payload,
         showTags: true,
+      };
+    case REMOVE_TAGS_MANOS:
+      return {
+        ...state,
+        tagManos: state.tagManos.filter(item => !action.index.includes(item)),
       };
 
     default:

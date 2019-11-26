@@ -21,13 +21,20 @@
   },
   {
     "id": 4,
+    "title": "Universitarios",
+    "icon": "bx-layer",
+    "page": "universitarios",
+    "path": "/universitarios"
+  },
+  {
+    "id": 5,
     "title": "Cordiales",
     "icon": "bx-chat",
     "page": "cordiales",
     "path": "/cordiales"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Orientar",
     "icon": "bx-receipt",
     "page": "orientar",

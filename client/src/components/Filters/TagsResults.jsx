@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Tags, GroupTags } from './Filters.Styled';
 
 import {
-  getTagsManos,
-  getTagsUbicacion,
+  removeTagsManos,
   getTagsTemas,
   getTagsUso,
 } from '../../redux/actions/SearchAction';
@@ -22,6 +21,10 @@ const TagsResults = () => {
   const hasSelectTemas = useSelector(state => state.Search.tagTemas);
   const hasSelectUso = useSelector(state => state.Search.tagUso);
 
+  const handleRemoveManos = (index, item) => {
+    dispatch(removeTagsManos(item));
+  };
+
   const handleDeleteUso = ev => {
     dispatch(getTagsUso(''));
     dispatch(checkDisableUso());
@@ -35,8 +38,11 @@ const TagsResults = () => {
       {hasSelectManos.length >= 1 && (
         <Tags>
           <h6>Forma de manos</h6>
-          {hasSelectManos.map(item => (
-            <button type="button" key={item}>
+          {hasSelectManos.map((item, index) => (
+            <button
+              type="button"
+              key={index}
+              onClick={() => handleRemoveManos(index, item)}>
               {item}
               <i className="bx bx-x" />
             </button>

@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState, Suspense, lazy, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import TagsResults from './TagsResults';
@@ -37,6 +37,7 @@ const UsoFilter = lazy(() => import('./UsoFilters'));
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const manosRef = useRef();
 
   const [isMano, setMano] = useState(false);
   const [isUbicacion, setUbicacion] = useState(false);
@@ -135,16 +136,16 @@ const Filter = () => {
           Ubicación del cuerpo
         </Button>
         <Button
-          onClick={handleDepartamentos}
-          active={isDepartamentos ? '#2572dd' : ''}
-          activeColor={isDepartamentos ? '#fff' : ''}>
-          Departamentos
-        </Button>
-        <Button
           onClick={handleTemas}
           active={isTemas ? '#2572dd' : ''}
           activeColor={isTemas ? '#fff' : ''}>
           Temas
+        </Button>
+        <Button
+          onClick={handleDepartamentos}
+          active={isDepartamentos ? '#2572dd' : ''}
+          activeColor={isDepartamentos ? '#fff' : ''}>
+          Departamentos
         </Button>
         <Button
           onClick={handleUso}
@@ -163,7 +164,11 @@ const Filter = () => {
             isMano ? ['Box', 'Show'].join(' ') : ['Box', 'Hide'].join(' ')
           }>
           <Suspense fallback={<Spinner />}>
-            <ManosFilter items={FormaManoData} onChange={changeManos} />
+            <ManosFilter
+              items={FormaManoData}
+              onChange={changeManos}
+              Ref={manosRef}
+            />
           </Suspense>
         </OptionFilter>
 

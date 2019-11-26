@@ -6,6 +6,8 @@ import {
   GET_TAGS_DEPARTAMENTO,
   GET_TAGS_TEMAS,
   GET_TAGS_USO,
+  REMOVE_TAGS_MANOS,
+  REMOVE_TAGS_UBICACION,
 } from '../types';
 
 export const Searching = payload => ({
@@ -41,4 +43,14 @@ export const getTagsTemas = payload => ({
 export const getTagsUso = payload => ({
   type: GET_TAGS_USO,
   payload,
+});
+
+export const removeTagsManos = index => ({
+  type: REMOVE_TAGS_MANOS,
+  index,
+});
+
+export const removeTagsUbicacion = index => ({
+  type: REMOVE_TAGS_UBICACION,
+  index,
 });

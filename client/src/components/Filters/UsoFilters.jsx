@@ -18,9 +18,7 @@ const FilterUso = ({ items, onChange }) => {
   const hasOptionUso = useSelector(state => state.Getting.optionUso);
   const checkbox = useSelector(state => state.Getting.checkbox);
 
-  console.log(inputCheck.current);
   const handleChekbox = () => {
-    console.log(inputCheck.current.checked);
     if (inputCheck.current.checked === true) dispatch(checkActivUso());
   };
 
