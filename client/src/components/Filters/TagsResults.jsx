@@ -16,6 +16,9 @@ const TagsResults = () => {
   const dispatch = useDispatch();
   const hasSelectManos = useSelector(state => state.Search.tagManos);
   const hasSelectUbicacion = useSelector(state => state.Search.tagUbicacion);
+  const hasSelectDepartament = useSelector(
+    state => state.Search.tagDepartamento
+  );
   const hasSelectTemas = useSelector(state => state.Search.tagTemas);
   const hasSelectUso = useSelector(state => state.Search.tagUso);
 
@@ -49,6 +52,15 @@ const TagsResults = () => {
               <i className="bx bx-x" />
             </button>
           ))}
+        </Tags>
+      )}
+      {hasSelectDepartament.length >= 1 && (
+        <Tags>
+          <h6>Departamento</h6>
+          <button type="button" onClick={handleDeleteTema}>
+            {hasSelectDepartament}
+            <i className="bx bx-x" />
+          </button>
         </Tags>
       )}
       {hasSelectTemas.length >= 1 && (

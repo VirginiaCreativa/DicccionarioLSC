@@ -3,6 +3,7 @@ import {
   GET_SEARCH_TAGS,
   GET_TAGS_MANOS,
   GET_TAGS_UBICACION,
+  GET_TAGS_DEPARTAMENTO,
   GET_TAGS_TEMAS,
   GET_TAGS_USO,
 } from '../types';
@@ -21,14 +22,22 @@ export const getTagsManos = payload => ({
   type: GET_TAGS_MANOS,
   payload,
 });
+
 export const getTagsUbicacion = payload => ({
   type: GET_TAGS_UBICACION,
   payload,
 });
+
+export const getTagsDepartamento = payload => ({
+  type: GET_TAGS_DEPARTAMENTO,
+  payload,
+});
+
 export const getTagsTemas = payload => ({
   type: GET_TAGS_TEMAS,
   payload,
 });
+
 export const getTagsUso = payload => ({
   type: GET_TAGS_USO,
   payload,

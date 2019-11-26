@@ -14,6 +14,7 @@ import {
 import {
   getTagsManos,
   getTagsUbicacion,
+  getTagsDepartamento,
   getTagsTemas,
   getTagsUso,
 } from '../../redux/actions/SearchAction';
@@ -51,7 +52,7 @@ const Filter = () => {
     dispatch(getTagsUbicacion(ev.target.value));
   };
   const changeDepartamentos = ev => {
-    dispatch(getTagsUbicacion(ev.target.value));
+    dispatch(getTagsDepartamento(ev.target.value));
   };
   const changeTemas = ev => {
     dispatch(getTagsTemas(ev.target.value));
@@ -89,7 +90,7 @@ const Filter = () => {
     setUbicacion(false);
     setDepartamentos(!isDepartamentos);
     dispatch(optionDepartamentos(true));
-    if (isUbicacion === true) {
+    if (isDepartamentos === true) {
       dispatch(optionDepartamentos(false));
     }
   };

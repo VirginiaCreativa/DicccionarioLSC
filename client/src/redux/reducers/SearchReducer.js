@@ -3,6 +3,7 @@ import {
   GET_SEARCH_TAGS,
   GET_TAGS_MANOS,
   GET_TAGS_UBICACION,
+  GET_TAGS_DEPARTAMENTO,
   GET_TAGS_TEMAS,
   GET_TAGS_USO,
 } from '../types';
@@ -13,6 +14,7 @@ const initialState = {
   showTags: false,
   tagManos: [],
   tagUbicacion: [],
+  tagDepartamento: '',
   tagTemas: '',
   tagUso: '',
 };
@@ -53,6 +55,12 @@ function SearchingReducer(state = initialState, action) {
       return {
         ...state,
         tagUso: action.payload,
+        showTags: true,
+      };
+    case GET_TAGS_DEPARTAMENTO:
+      return {
+        ...state,
+        tagDepartamento: action.payload,
         showTags: true,
       };
 
