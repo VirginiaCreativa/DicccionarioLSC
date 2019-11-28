@@ -7,9 +7,13 @@ import {
   removeTagsManos,
   getTagsTemas,
   getTagsUso,
+  takeTagMano,
 } from '../../redux/actions/SearchAction';
 
-import { checkDisableUso } from '../../redux/actions/GettingAction';
+import {
+  checkDisableUso,
+  checkDisableManos,
+} from '../../redux/actions/GettingAction';
 
 const TagsResults = () => {
   const dispatch = useDispatch();
@@ -22,6 +26,7 @@ const TagsResults = () => {
   const hasSelectUso = useSelector(state => state.Search.tagUso);
 
   const handleRemoveManos = (index, item) => {
+    dispatch(takeTagMano(item));
     dispatch(removeTagsManos(item));
   };
 

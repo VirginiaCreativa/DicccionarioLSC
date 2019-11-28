@@ -13,6 +13,7 @@ import {
 
 import {
   getTagsManos,
+  removeTagsManos,
   getTagsUbicacion,
   getTagsDepartamento,
   getTagsTemas,

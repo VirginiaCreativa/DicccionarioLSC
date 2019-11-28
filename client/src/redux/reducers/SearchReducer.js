@@ -2,6 +2,7 @@ import {
   GET_SEARCHING,
   GET_SEARCH_TAGS,
   GET_TAGS_MANOS,
+  TAKE_TAG_MANO,
   GET_TAGS_UBICACION,
   GET_TAGS_DEPARTAMENTO,
   GET_TAGS_TEMAS,
@@ -14,6 +15,7 @@ const initialState = {
   search: '',
   searchTags: [],
   showTags: false,
+  takeTagMano: '',
   tagManos: [],
   tagUbicacion: [],
   tagDepartamento: '',
@@ -68,7 +70,12 @@ function SearchingReducer(state = initialState, action) {
     case REMOVE_TAGS_MANOS:
       return {
         ...state,
-        tagManos: state.tagManos.filter(item => !action.index.includes(item)),
+        tagManos: state.tagManos.filter(item => item !== action.name),
+      };
+    case TAKE_TAG_MANO:
+      return {
+        ...state,
+        takeTagMano: action.value,
       };
 
     default:

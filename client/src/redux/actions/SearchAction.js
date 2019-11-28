@@ -2,6 +2,7 @@ import {
   GET_SEARCHING,
   GET_SEARCH_TAGS,
   GET_TAGS_MANOS,
+  TAKE_TAG_MANO,
   GET_TAGS_UBICACION,
   GET_TAGS_DEPARTAMENTO,
   GET_TAGS_TEMAS,
@@ -45,12 +46,17 @@ export const getTagsUso = payload => ({
   payload,
 });
 
-export const removeTagsManos = index => ({
+export const removeTagsManos = name => ({
   type: REMOVE_TAGS_MANOS,
-  index,
+  name,
 });
 
-export const removeTagsUbicacion = index => ({
+export const removeTagsUbicacion = item => ({
   type: REMOVE_TAGS_UBICACION,
-  index,
+  item,
+});
+
+export const takeTagMano = value => ({
+  type: TAKE_TAG_MANO,
+  value,
 });

@@ -8,6 +8,8 @@ import {
   GET_OPTION_USO,
   GET_DISABLED_USO,
   GET_ACTIVE_USO,
+  GET_ACTIVE_MANOS,
+  GET_DISABLED_MANOS,
 } from '../types';
 
 export const getMenuActive = payload => ({
@@ -52,5 +54,15 @@ export const checkDisableUso = () => ({
 
 export const checkActivUso = () => ({
   type: GET_ACTIVE_USO,
+  activeCheck: true,
+});
+
+export const checkDisableManos = () => ({
+  type: GET_DISABLED_MANOS,
+  disabledCheck: false,
+});
+
+export const checkActivManos = () => ({
+  type: GET_ACTIVE_MANOS,
   activeCheck: true,
 });

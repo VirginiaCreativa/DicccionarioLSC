@@ -8,6 +8,8 @@ import {
   GET_OPTION_USO,
   GET_DISABLED_USO,
   GET_ACTIVE_USO,
+  GET_ACTIVE_MANOS,
+  GET_DISABLED_MANOS,
 } from '../types';
 
 const initialState = {
@@ -21,6 +23,7 @@ const initialState = {
   optionUso: false,
   showTags: false,
   checkbox: true,
+  checkManos: false,
 };
 
 function GettingReducer(state = initialState, action) {
@@ -69,6 +72,16 @@ function GettingReducer(state = initialState, action) {
       return {
         ...state,
         checkbox: action.activeCheck,
+      };
+    case GET_DISABLED_MANOS:
+      return {
+        ...state,
+        checkManos: action.disabledCheck,
+      };
+    case GET_ACTIVE_MANOS:
+      return {
+        ...state,
+        checkManos: action.activeCheck,
       };
 
     default:

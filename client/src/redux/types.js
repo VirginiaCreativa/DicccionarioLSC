@@ -11,6 +11,7 @@ export const GET_OPTION_USO = 'GET_OPTION_USO';
 export const GET_SEARCHING = 'GET_SEARCHING';
 export const GET_SEARCH_TAGS = 'GET_SEARCH_TAGS';
 export const GET_TAGS_MANOS = 'GET_TAGS_MANOS';
+export const TAKE_TAG_MANO = 'TAKE_TAG_MANO';
 export const GET_TAGS_UBICACION = 'GET_TAGS_UBICACION';
 export const GET_TAGS_TEMAS = 'GET_TAGS_TEMAS';
 export const GET_TAGS_USO = 'GET_TAGS_USO';
@@ -21,6 +22,8 @@ export const REMOVE_TAGS_UBICACION = 'REMOVE_TAGS_UBICACION';
 
 export const GET_DISABLED_USO = 'GET_DISABLED_USO';
 export const GET_ACTIVE_USO = 'GET_ACTIVE_USO';
+export const GET_DISABLED_MANOS = 'GET_DISABLED_MANOS';
+export const GET_ACTIVE_MANOS = 'GET_ACTIVE_MANOS';
 
 // =========  AUTHENTICAT ========= //
 export const FETCH_AUTH_SUCCESS = 'FETCH_AUTH_SUCCESS';

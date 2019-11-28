@@ -16,17 +16,6 @@ export const CardWarpper = styled.div`
   }
 `;
 
-export const SpanCard = styled.span`
-  position: absolute;
-  top: -1;
-  left: -1;
-  width: 72px;
-  height: 80px;
-  border: 2px solid var(--gray_2);
-  border-radius: 6px;
-  transition: all 0.2s ease-in;
-`;
-
 export const IconCheck = styled.i`
   position: absolute;
   top: -8px;
@@ -47,6 +36,17 @@ export const IconCheck = styled.i`
   }
 `;
 
+export const StyleCard = styled.div`
+  position: absolute;
+  top: -1;
+  left: -1;
+  width: 72px;
+  height: 80px;
+  border: 2px solid var(--gray_2);
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+`;
+
 export const Check = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
   top: 0;
@@ -57,19 +57,12 @@ export const Check = styled.input.attrs({ type: 'checkbox' })`
   cursor: pointer;
   opacity: 0;
   &:checked {
-    ~ ${SpanCard} {
-      border: 2px solid var(--blue_medium);
-      border-radius: 6px;
-      ${IconCheck} {
-        opacity: 1;
-      }
-    }
-  }
-  &:hover {
-    ~ ${SpanCard} {
-      border: 2px solid var(--blue_medium);
-      ${IconCheck} {
-        opacity: 1;
+    &.Show {
+      ~ ${StyleCard} {
+        border: 2px solid var(--blue_medium);
+        ${IconCheck} {
+          opacity: 1;
+        }
       }
     }
   }
